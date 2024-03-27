@@ -1,4 +1,4 @@
-#45902_BattleJanggi
+# 45902_BattleJanggi
 
 팀명 : 45902
 

@@ -36,6 +36,7 @@ public class JanggiLogic : MonoBehaviour
                 }
 
                 spots[z, x] = GetComponentInChildren<Spot>();
+                
             }
         }
 

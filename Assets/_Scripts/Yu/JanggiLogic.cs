@@ -20,9 +20,7 @@ public class JanggiLogic : MonoBehaviour
         { null, null, null, null, null, null, null, null, null},
         { null, null, null, null, null, null, null, null, null}
     };
-
     
-
     private void Start()
     {
         for (int z = 0; z < 10; z++)

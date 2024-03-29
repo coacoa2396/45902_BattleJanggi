@@ -13,6 +13,7 @@ public class Spot : MonoBehaviour
 
     bool onPiece;
     string whosPiece;   // tag = cho, han 초나라 한나라
+    string pieceName;
 
     public string WhosePiece { get { return whosPiece;} set { whosPiece = value; } }
 
@@ -20,9 +21,12 @@ public class Spot : MonoBehaviour
     {
         if (playerCheck.Contain(other.gameObject.layer))        // 기물이 있다면
         {
+            // 기물이 위에 있다는 bool을 true로 바꿔준다
             onPiece = true;
             // 내 위에 기물의 태그를 가져옴
             whosPiece = other.gameObject.tag;
+
+
         }
     }
 

@@ -29,69 +29,20 @@ public class JanggiLogic : Singleton<JanggiLogic>        // ½Ì±ÛÅæÀ¸·Î ¸¸µé¾î¾ßÇ
     /// </summary>
     private void Start()
     {
+        Spot[] children = GetComponentsInChildren<Spot>();
         for (int z = 0; z < 10; z++)
         {
             for(int x = 0; x < 9; x++)
             {
-                if (GetComponentInChildren<Spot>() == null)
+                if (children[z * 9 + x] == null)
                 {
                     Debug.Log($"Null ({x}, {z})");
                     break;
                 }
 
-                spots[z, x] = GetComponentInChildren<Spot>();
-                spots[z, x].SetVec(z, x);
+                spots[z, x] = children[z * 9 + x];
+                spots[z, x].SetPos(z, x);
             }
         }
-
-        /*bool cheak = true;
-
-        foreach (Spot spot in spots)
-        {
-            if (spot == null)
-            {
-                Debug.Log("null is exist");
-                Debug.Log(spot.name);
-                cheak = false;
-                break;
-            }
-        }
-
-        if (cheak)
-        {
-            Debug.Log("Ok");
-        }*/
-    }
-
-    void MaLogic()
-    {
-        // ¾Õ Ä­À» °¥ ¼ö ÀÖ´ÂÁö È®ÀÎÇÑ´Ù
-            // °¥ ¼ö ¾ø´Ù¸é ´ÙÀ½À¸·Î ³Ñ¾î°£´Ù
-            // °¥ ¼ö ÀÖ´Ù¸é
-                // ´ë°¢¼±À» È®ÀÎÇÑ´Ù
-                    // ¾Æ±º ±â¹°ÀÌ¸é ´ÙÀ½À¸·Î ³Ñ¾î°£´Ù
-                    // ºó Ä­ÀÌ°Å³ª »ó´ë ±â¹°ÀÌ¸é ÀÌµ¿ °¡´É Ç¥½Ã¸¦ ÇØÁØ´Ù
-
-
-        // ¿À¸¥ÂÊ Ä­À» °¥ ¼ö ÀÖ´ÂÁö È®ÀÎÇÑ´Ù
-            // °¥ ¼ö ¾ø´Ù¸é ´ÙÀ½À¸·Î ³Ñ¾î°£´Ù
-            // °¥ ¼ö ÀÖ´Ù¸é
-                // ´ë°¢¼±À» È®ÀÎÇÑ´Ù
-                    // ¾Æ±º ±â¹°ÀÌ¸é ´ÙÀ½À¸·Î ³Ñ¾î°£´Ù
-                    // ºó Ä­ÀÌ°Å³ª »ó´ë ±â¹°ÀÌ¸é ÀÌµ¿ °¡´É Ç¥½Ã¸¦ ÇØÁØ´Ù
-
-        // µÞ Ä­À» °¥ ¼ö ÀÖ´ÂÁö È®ÀÎÇÑ´Ù
-            // °¥ ¼ö ¾ø´Ù¸é ´ÙÀ½À¸·Î ³Ñ¾î°£´Ù
-            // °¥ ¼ö ÀÖ´Ù¸é
-                // ´ë°¢¼±À» È®ÀÎÇÑ´Ù
-                    // ¾Æ±º ±â¹°ÀÌ¸é ´ÙÀ½À¸·Î ³Ñ¾î°£´Ù
-                    // ºó Ä­ÀÌ°Å³ª »ó´ë ±â¹°ÀÌ¸é ÀÌµ¿ °¡´É Ç¥½Ã¸¦ ÇØÁØ´Ù
-
-        // ¿ÞÂÊ Ä­À» °¥ ¼ö ÀÖ´ÂÁö È®ÀÎÇÑ´Ù
-            // °¥ ¼ö ¾ø´Ù¸é ´ÙÀ½À¸·Î ³Ñ¾î°£´Ù
-            // °¥ ¼ö ÀÖ´Ù¸é
-                // ´ë°¢¼±À» È®ÀÎÇÑ´Ù
-                    // ¾Æ±º ±â¹°ÀÌ¸é ´ÙÀ½À¸·Î ³Ñ¾î°£´Ù
-                    // ºó Ä­ÀÌ°Å³ª »ó´ë ±â¹°ÀÌ¸é ÀÌµ¿ °¡´É Ç¥½Ã¸¦ ÇØÁØ´Ù
     }
 }

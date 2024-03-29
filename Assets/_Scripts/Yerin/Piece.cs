@@ -12,11 +12,19 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private Spot[,] JanggiSituation;    // 현재 장기판 위 말의 상황을 받아 올 배열
+    protected Spot[,] JanggiSituation;    // 현재 장기판 위 말의 상황을 받아 올 배열
 
     Material pieceMaterial; // 해당 장기말의 Material을 받을 변수
 
-    private void Start()
+    protected string pieceName;
+
+    private string whosPiece;
+
+    public string PieceName { get { return pieceName; } }
+
+    public string WhosPiece { get { return whosPiece; } }
+
+    protected virtual void Start()
     {
         pieceMaterial = gameObject.GetComponent<Renderer>().material;
     }
@@ -36,6 +44,16 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         }
 
         pieceMaterial.color = Color.red;
+
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                JanggiSituation[i, j].gameObject.GetComponent<Renderer>().material.color = Color.red;
+            }
+        }
+
+        FindCanGo();
     }
     /// <summary>
     /// 플레이어가 해당 장기말 위에 마우스를 올릴 시 오브젝트의 색을 노란색으로 변경
@@ -62,7 +80,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         pieceMaterial.color = Color.white;
     }
 
-    public virtual void FindCanGo(int z, int x)
+    public virtual void FindCanGo()
     {
 
     }

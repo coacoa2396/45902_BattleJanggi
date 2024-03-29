@@ -9,6 +9,7 @@ public static class Manager
     public static SceneManager Scene { get { return SceneManager.Instance; } }
     public static SoundManager Sound { get { return SoundManager.Instance; } }
     public static UIManager UI { get { return UIManager.Instance; } }
+    public static JanggiLogic JanggiLogic { get {  return JanggiLogic.Instance; } }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()

@@ -11,10 +11,12 @@ public class Spot : MonoBehaviour
 
     [SerializeField] LayerMask playerCheck;
 
+    Piece whatPiece;
+
     bool onPiece;
     string whosPiece;   // tag = cho, han 초나라 한나라
-    string pieceName;
 
+    public Piece WhatPiece {  get { return whatPiece; } }
     public string WhosePiece { get { return whosPiece;} set { whosPiece = value; } }
 
     private void OnTriggerEnter(Collider other)
@@ -25,8 +27,8 @@ public class Spot : MonoBehaviour
             onPiece = true;
             // 내 위에 기물의 태그를 가져옴
             whosPiece = other.gameObject.tag;
-
-
+            // 어떤 기물인지 받아오기
+            whatPiece = other.GetComponent<Piece>();
         }
     }
 

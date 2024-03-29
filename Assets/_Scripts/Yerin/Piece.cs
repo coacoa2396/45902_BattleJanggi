@@ -6,17 +6,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// °³¹ßÀÚ: Yerin
+/// ê°œë°œì: Yerin
 /// 
-/// Àå±â¸»ÀÇ ±â´É ±¸Çö
+/// ì¥ê¸°ë§ì˜ ê¸°ëŠ¥ êµ¬í˜„
 /// </summary>
 public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    protected Spot[,] JanggiSituation;    // ÇöÀç Àå±âÆÇ À§ ¸»ÀÇ »óÈ²À» ¹Ş¾Æ ¿Ã ¹è¿­
+    protected Spot[,] JanggiSituation;    // í˜„ì¬ ì¥ê¸°íŒ ìœ„ ë§ì˜ ìƒí™©ì„ ë°›ì•„ ì˜¬ ë°°ì—´
 
-    Material pieceMaterial; // ÇØ´ç Àå±â¸»ÀÇ MaterialÀ» ¹ŞÀ» º¯¼ö
+    Material pieceMaterial; // í•´ë‹¹ ì¥ê¸°ë§ì˜ Materialì„ ë°›ì„ ë³€ìˆ˜
 
-    protected string pieceName; // Àå±â¸»ÀÇ Á¾·ù
+    protected string pieceName; // ì¥ê¸°ë§ì˜ ì¢…ë¥˜
 
     [SerializeField] string whosPiece;
 
@@ -32,8 +32,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     }
 
     /// <summary>
-    /// ÇØ´ç Àå±â¸» ¼±ÅÃ ½Ã Àå±âÆÇÀÇ ÀüÃ¼ÀûÀÎ »óÈ² ¹Ş¾Æ¿È
-    /// ÇÃ·¹ÀÌ¾î°¡ Àå±â¸»À» ¼±ÅÃ ½Ã ÇØ´ç ¿ÀºêÁ§Æ®ÀÇ »öÀ» »¡°£»öÀ¸·Î º¯°æ
+    /// í•´ë‹¹ ì¥ê¸°ë§ ì„ íƒ ì‹œ ì¥ê¸°íŒì˜ ì „ì²´ì ì¸ ìƒí™© ë°›ì•„ì˜´
+    /// í”Œë ˆì´ì–´ê°€ ì¥ê¸°ë§ì„ ì„ íƒ ì‹œ í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ì˜ ìƒ‰ì„ ë¹¨ê°„ìƒ‰ìœ¼ë¡œ ë³€ê²½
     /// </summary>
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
@@ -50,8 +50,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         FindCanGo();
     }
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾î°¡ ÇØ´ç Àå±â¸» À§¿¡ ¸¶¿ì½º¸¦ ¿Ã¸± ½Ã ¿ÀºêÁ§Æ®ÀÇ »öÀ» ³ë¶õ»öÀ¸·Î º¯°æ
-    /// ¼±ÅÃÇÒ ¼ö ÀÖÀ½À» ¾Ë·ÁÁÖ±â À§ÇØ
+    /// í”Œë ˆì´ì–´ê°€ í•´ë‹¹ ì¥ê¸°ë§ ìœ„ì— ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë¦´ ì‹œ ì˜¤ë¸Œì íŠ¸ì˜ ìƒ‰ì„ ë…¸ë€ìƒ‰ìœ¼ë¡œ ë³€ê²½
+    /// ì„ íƒí•  ìˆ˜ ìˆìŒì„ ì•Œë ¤ì£¼ê¸° ìœ„í•´
     /// </summary>
     /// <param name="eventData"></param>
 
@@ -61,7 +61,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     }
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾î°¡ ÇØ´ç Àå±â¸»À» ¼±ÅÃÇÏÁö ¾Ê°í ³ª¿ÔÀ» ½Ã ¿ÀºêÁ§Æ®ÀÇ »öÀ» ¿ø·¡´ë·Î º¯°æ
+    /// í”Œë ˆì´ì–´ê°€ í•´ë‹¹ ì¥ê¸°ë§ì„ ì„ íƒí•˜ì§€ ì•Šê³  ë‚˜ì™”ì„ ì‹œ ì˜¤ë¸Œì íŠ¸ì˜ ìƒ‰ì„ ì›ë˜ëŒ€ë¡œ ë³€ê²½
     /// </summary>
     /// <param name="eventData"></param>
     public void OnPointerExit(PointerEventData eventData)

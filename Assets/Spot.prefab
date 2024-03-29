@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8092136126913354874}
   - component: {fileID: 3559444572594337562}
   - component: {fileID: 5702216628879467856}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,3 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e59572de77f1b42ad6fe8468ea1768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCheck:
+    serializedVersion: 2
+    m_Bits: 64

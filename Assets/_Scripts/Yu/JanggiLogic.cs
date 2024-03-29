@@ -24,7 +24,9 @@ public class JanggiLogic : Singleton<JanggiLogic>        // ΩÃ±€≈Ê¿∏∑Œ ∏∏µÈæÓæﬂ«
 
     public Spot[,] JanggiLogicSituation { get { return spots; } }
 
-
+    /// <summary>
+    /// ¿Â±‚æ¿¿Ã Ω√¿€µ…∂ß 
+    /// </summary>
     private void Start()
     {
         for (int z = 0; z < 10; z++)
@@ -38,7 +40,7 @@ public class JanggiLogic : Singleton<JanggiLogic>        // ΩÃ±€≈Ê¿∏∑Œ ∏∏µÈæÓæﬂ«
                 }
 
                 spots[z, x] = GetComponentInChildren<Spot>();
-                
+                spots[z, x].SetVec(z, x);
             }
         }
 

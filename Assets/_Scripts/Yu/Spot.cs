@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spot : MonoBehaviour
 {
-    
+
     // 현재 위에 기물이 있는지 없는지?
     // 기물이 있다면
     // 기물의 레이어를 받아온다
@@ -12,7 +12,9 @@ public class Spot : MonoBehaviour
     [SerializeField] LayerMask playerCheck;
 
     bool onPiece;
-    string whosPiece;   // tag = cho, han 초나라 한다라
+    string whosPiece;   // tag = cho, han 초나라 한나라
+
+    public string WhosePiece { get { return whosPiece;} set { whosPiece = value; } }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,16 +26,19 @@ public class Spot : MonoBehaviour
         }
     }
 
-    
 
-    /* 비교하는 함수
-     * if(other.CompareTag("cho"))
-            {
-                // 초나라 기물임
-            }
-            else
-            {
-                // 한나라 기물임
-            }
-    */
+
+    void ComparePiece()
+    {
+        //if ()
+        //{
+        //    // 초나라 기물임
+        //}
+        //else
+        //{
+        //    // 한나라 기물임
+        //}
+
+
+    }
 }

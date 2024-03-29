@@ -12,14 +12,20 @@ public class Spot : MonoBehaviour
     [SerializeField] LayerMask playerCheck;
 
     Piece whatPiece;
-    Vector2 thisVec;
+    Dictionary<char, int> thisPos;
 
     bool onPiece;
     string whosPiece;   // tag = cho, han 초나라 한나라
 
     public Piece WhatPiece {  get { return whatPiece; } }
     public string WhosePiece { get { return whosPiece;} set { whosPiece = value; } }
-    public Vector2 ThisVec { get { return thisVec; } }
+    public bool OnPiece { get { return onPiece; } }
+    public Dictionary<char, int> ThisPos { get { return thisPos; } }
+
+    private void Start()
+    {
+        thisPos = new Dictionary<char, int>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,8 +45,9 @@ public class Spot : MonoBehaviour
     /// </summary>
     /// <param name="z"></param>
     /// <param name="x"></param>
-    public void SetVec(int z, int x)
+    public void SetPos(int z, int x)
     {
-        thisVec = new Vector2(z,x);
+        thisPos.Add('z', z);
+        thisPos.Add('x', x);
     }    
 }

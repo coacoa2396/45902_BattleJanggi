@@ -40,7 +40,7 @@ public class JanggiLogic : Singleton<JanggiLogic>        // ½Ì±ÛÅæÀ¸·Î ¸¸µé¾î¾ßÇ
                 }
 
                 spots[z, x] = GetComponentInChildren<Spot>();
-                spots[z, x].SetVec(z, x);
+                spots[z, x].SetPos(z, x);
             }
         }
 

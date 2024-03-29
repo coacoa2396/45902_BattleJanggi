@@ -36,8 +36,8 @@ public class Spot : MonoBehaviour
         {
             // 기물이 위에 있다는 bool을 true로 바꿔준다
             onPiece = true;
-            // 내 위에 기물의 태그를 가져옴
-            whosPiece = other.gameObject.tag;
+            // 내 위에 기물의 팀을 가져옴
+            whosPiece = other.gameObject.GetComponent<Piece>().WhosPiece;
             // 어떤 기물인지 받아오기
             whatPiece = other.GetComponent<Piece>();
         }

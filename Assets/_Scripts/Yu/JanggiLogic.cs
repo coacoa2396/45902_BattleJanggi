@@ -21,7 +21,9 @@ public class JanggiLogic : MonoBehaviour        // 싱글톤으로 만들어야함
         { null, null, null, null, null, null, null, null, null}
     };
 
-    
+
+    public Spot[,] JanggiLogicSituation { get { return spots; } }
+
 
     private void Start()
     {
@@ -40,7 +42,7 @@ public class JanggiLogic : MonoBehaviour        // 싱글톤으로 만들어야함
             }
         }
 
-        bool cheak = true;
+        /*bool cheak = true;
 
         foreach (Spot spot in spots)
         {
@@ -56,7 +58,7 @@ public class JanggiLogic : MonoBehaviour        // 싱글톤으로 만들어야함
         if (cheak)
         {
             Debug.Log("Ok");
-        }
+        }*/
     }
 
     void MaLogic()

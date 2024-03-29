@@ -16,17 +16,19 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     Material pieceMaterial; // 해당 장기말의 Material을 받을 변수
 
-    protected string pieceName;
+    protected string pieceName; // 장기말의 종류
 
-    private string whosPiece;
+    [SerializeField] string whosPiece;
 
-    public string PieceName { get { return pieceName; } }
+    public string PieceName { get { return pieceName; }}
 
     public string WhosPiece { get { return whosPiece; } }
 
     protected virtual void Start()
     {
         pieceMaterial = gameObject.GetComponent<Renderer>().material;
+
+        pieceName = "PP";
     }
 
     /// <summary>
@@ -44,14 +46,6 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         }
 
         pieceMaterial.color = Color.red;
-
-        for (int i = 0; i < 10; i++)
-        {
-            for (int j = 0; j < 9; j++)
-            {
-                JanggiSituation[i, j].gameObject.GetComponent<Renderer>().material.color = Color.red;
-            }
-        }
 
         FindCanGo();
     }

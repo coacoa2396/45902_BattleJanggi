@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JanggiLogic : MonoBehaviour        // 싱글톤으로 만들어야함
+public class JanggiLogic : Singleton<JanggiLogic>        // 싱글톤으로 만들어야함
 {
     // 장기판은 가로 9, 세로 10 의 크기
     // 장기판의 2차원 배열을 만든다면 9x10의 배열을 생성해야함

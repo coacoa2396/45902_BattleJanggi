@@ -27,6 +27,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     protected virtual void Start()
     {
         pieceMaterial = gameObject.GetComponent<Renderer>().material;
+
+        pieceName = "PP";
     }
 
     /// <summary>
@@ -44,15 +46,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         }
 
         pieceMaterial.color = Color.red;
-
-        for (int i = 0; i < 10; i++)
-        {
-            for (int j = 0; j < 9; j++)
-            {
-                JanggiSituation[i, j].gameObject.GetComponent<Renderer>().material.color = Color.red;
-            }
-        }
-
+       
         FindCanGo();
     }
     /// <summary>

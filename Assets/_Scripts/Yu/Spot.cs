@@ -12,12 +12,14 @@ public class Spot : MonoBehaviour
     [SerializeField] LayerMask playerCheck;
 
     Piece whatPiece;
+    Vector2 thisVec;
 
     bool onPiece;
     string whosPiece;   // tag = cho, han 초나라 한나라
 
     public Piece WhatPiece {  get { return whatPiece; } }
     public string WhosePiece { get { return whosPiece;} set { whosPiece = value; } }
+    public Vector2 ThisVec { get { return thisVec; } }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,19 +34,13 @@ public class Spot : MonoBehaviour
         }
     }
 
-
-
-    void ComparePiece()
+    /// <summary>
+    /// 각 spot이 자기자신의 위치를 기억하게 하는 함수
+    /// </summary>
+    /// <param name="z"></param>
+    /// <param name="x"></param>
+    public void SetVec(int z, int x)
     {
-        //if ()
-        //{
-        //    // 초나라 기물임
-        //}
-        //else
-        //{
-        //    // 한나라 기물임
-        //}
-
-
-    }
+        thisVec = new Vector2(z,x);
+    }    
 }

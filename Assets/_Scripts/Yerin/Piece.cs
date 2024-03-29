@@ -61,4 +61,9 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
         pieceMaterial.color = Color.white;
     }
+
+    public virtual void FindCanGo(int z, int x)
+    {
+
+    }
 }

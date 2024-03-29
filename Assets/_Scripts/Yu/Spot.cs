@@ -25,6 +25,9 @@ public class Spot : MonoBehaviour
     private void Start()
     {
         thisPos = new Dictionary<char, int>();
+
+        thisPos.Add('z', 0);
+        thisPos.Add('x', 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,7 +50,7 @@ public class Spot : MonoBehaviour
     /// <param name="x"></param>
     public void SetPos(int z, int x)
     {
-        thisPos.Add('z', z);
-        thisPos.Add('x', x);
+        thisPos['z'] = z;
+        thisPos['x'] = x;
     }    
 }

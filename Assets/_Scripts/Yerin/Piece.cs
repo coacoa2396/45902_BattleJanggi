@@ -36,7 +36,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// 플레이어가 장기말을 선택 시 해당 오브젝트의 색을 빨간색으로 변경
     /// </summary>
     /// <param name="eventData"></param>
-    public virtual void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
         JanggiSituation = Manager.JanggiLogic.JanggiLogicSituation;
 
@@ -55,7 +55,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// </summary>
     /// <param name="eventData"></param>
 
-    public virtual void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
         pieceMaterial.color = Color.yellow;
     }
@@ -64,7 +64,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// 플레이어가 해당 장기말을 선택하지 않고 나왔을 시 오브젝트의 색을 원래대로 변경
     /// </summary>
     /// <param name="eventData"></param>
-    public virtual void OnPointerExit(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
         if (pieceMaterial.color == Color.red)
         {

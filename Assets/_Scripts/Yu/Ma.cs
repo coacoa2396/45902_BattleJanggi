@@ -62,7 +62,7 @@ public class Ma : Piece
         if (Manager.JanggiLogic.JanggiLogicSituation[curSpot.ThisPos['z'], curSpot.ThisPos['x'] +1].OnPiece == false)       // 갈 수 있다면?
         {
             // 윗 대각
-            if (Manager.JanggiLogic.JanggiLogicSituation)
+            //if (Manager.JanggiLogic.JanggiLogicSituation)
         }
         // 대각선을 확인한다
         // 아군 기물이면 다음으로 넘어간다

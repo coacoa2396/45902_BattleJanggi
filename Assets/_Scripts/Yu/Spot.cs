@@ -14,7 +14,7 @@ public class Spot : MonoBehaviour
     Piece whatPiece;
     Dictionary<char, int> thisPos;
 
-    bool onPiece;
+    [SerializeField] bool onPiece;
     string whosPiece;   // tag = cho, han 초나라 한나라
 
     public Piece WhatPiece {  get { return whatPiece; } }
@@ -40,6 +40,16 @@ public class Spot : MonoBehaviour
             whosPiece = other.gameObject.GetComponent<Piece>().WhosPiece;
             // 어떤 기물인지 받아오기
             whatPiece = other.GetComponent<Piece>();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)              // 기물이 없다면
+    {
+        if (playerCheck.Contain(other.gameObject.layer))
+        {
+            onPiece = false;
+            whosPiece = null;
+            whatPiece = null;
         }
     }
 

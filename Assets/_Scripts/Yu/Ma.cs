@@ -48,7 +48,7 @@ public class Ma : Piece
             if (Manager.JanggiLogic.JanggiLogicSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1].OnPiece == false ||            // 칸이 비어있거나
                 !Manager.JanggiLogic.JanggiLogicSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1].WhosePiece.Equals(WhosPiece))  // 상대 기물이면
             {
-                AddList(Manager.JanggiLogic.JanggiLogicSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1]);          // CanGoSpots에 넣고 색을 바꿔준다
+                AddList(Manager.JanggiLogic.JanggiLogicSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1]);          // CanGoSpots 리스트에 넣고 색을 바꿔준다
             }
             // 우측 대각
             if (Manager.JanggiLogic.JanggiLogicSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1].OnPiece == false ||
@@ -58,7 +58,12 @@ public class Ma : Piece
             }
         }
 
-
+        // 오른쪽 칸을 갈 수 있는지 확인한다
+        if (Manager.JanggiLogic.JanggiLogicSituation[curSpot.ThisPos['z'], curSpot.ThisPos['x'] +1].OnPiece == false)       // 갈 수 있다면?
+        {
+            // 윗 대각
+            if (Manager.JanggiLogic.JanggiLogicSituation)
+        }
         // 대각선을 확인한다
         // 아군 기물이면 다음으로 넘어간다
         // 빈 칸이거나 상대 기물이면 이동 가능 표시를 해준다

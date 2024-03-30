@@ -29,14 +29,14 @@ public class Ma : Piece
         CanGoSpots.Add(destSpot);
     }
 
-    private void Update()
+    public override void FindCanGo()
     {
         MaLogic();
     }
 
     void MaLogic()
     {
-        if(curSpot == null)
+        if (curSpot == null)
         {
             Debug.Log("null");
             return;

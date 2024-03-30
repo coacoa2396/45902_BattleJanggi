@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Yerin
+/// 
+/// 포(장기말) 관련 클래스
+/// </summary>
+
 public class Po : Piece
 {
     [SerializeField] LayerMask checkSpot;
@@ -29,38 +35,35 @@ public class Po : Piece
 
         for (int x = currentPos['x'] - 1; x >= 0 ; x--)
         {
-            bool checkStop = false;
+            bool checkStop = false;     // 검사 필요 여부 확인 변수
 
-            if (JanggiSituation[currentPos['z'], x].OnPiece)
+            if (JanggiSituation[currentPos['z'], x].OnPiece)    // 찾는 경로에 말이 있는지 검사
             {
-                if (JanggiSituation[currentPos['z'], x].WhatPiece.PieceName.Equals("Po"))
+                if (JanggiSituation[currentPos['z'], x].WhatPiece.PieceName.Equals("Po"))   // 있는 말이 포인지 검사
                 {
-                    Debug.Log("This is Po");
-                    break;
+                    break;  // 포일시 중단
                 }
 
                 x--;
 
                 for (; x >= 0; x--)
                 {
-                    if (JanggiSituation[currentPos['z'], x].OnPiece)
+                    if (JanggiSituation[currentPos['z'], x].OnPiece)    // 건넌 뛴 너머에 말이 있는지 검사
                     {
-                        if (JanggiSituation[currentPos['z'], x].WhatPiece.PieceName.Equals("Po") || JanggiSituation[currentPos['z'], x].WhosePiece.Equals(WhosPiece))
+                        if (JanggiSituation[currentPos['z'], x].WhatPiece.PieceName.Equals("Po") || JanggiSituation[currentPos['z'], x].WhosePiece.Equals(WhosPiece))   // 말이 포거나 내 말일 경우
                         {
                             checkStop = true;
                             break;
                         }
-                        else if (!JanggiSituation[currentPos['z'], x].WhosePiece.Equals(WhosPiece))
+                        else if (!JanggiSituation[currentPos['z'], x].WhosePiece.Equals(WhosPiece))     // 말이 상대팀 말일 경우
                         {
                             checkStop = true;
-                            Debug.Log($"({currentPos['z']},{x}) 2");
                             JanggiSituation[currentPos['z'], x].gameObject.GetComponent<Renderer>().material.color = Color.red;
                             break;
                         }
                     }
                     else
                     {
-                        Debug.Log($"({currentPos['z']},{x}) 1");
                         JanggiSituation[currentPos['z'], x].gameObject.GetComponent<Renderer>().material.color = Color.red;
                     }
                 }
@@ -82,7 +85,6 @@ public class Po : Piece
             {
                 if (JanggiSituation[currentPos['z'], x].WhatPiece.PieceName.Equals("Po"))
                 {
-                    Debug.Log("This is Po");
                     break;
                 }
 
@@ -100,14 +102,12 @@ public class Po : Piece
                         else if (!JanggiSituation[currentPos['z'], x].WhosePiece.Equals(WhosPiece))
                         {
                             checkStop = true;
-                            Debug.Log($"({currentPos['z']},{x}) 2");
                             JanggiSituation[currentPos['z'], x].gameObject.GetComponent<Renderer>().material.color = Color.red;
                             break;
                         }
                     }
                     else
                     {
-                        Debug.Log($"({currentPos['z']},{x}) 1");
                         JanggiSituation[currentPos['z'], x].gameObject.GetComponent<Renderer>().material.color = Color.red;
                     }
                 }
@@ -129,7 +129,6 @@ public class Po : Piece
             {
                 if (JanggiSituation[z, currentPos['x']].WhatPiece.PieceName.Equals("Po"))
                 {
-                    Debug.Log("This is Po");
                     break;
                 }
 
@@ -147,14 +146,12 @@ public class Po : Piece
                         else if (!JanggiSituation[z, currentPos['x']].WhosePiece.Equals(WhosPiece))
                         {
                             checkStop = true;
-                            Debug.Log($"({currentPos['x']},{z}) 2");
                             JanggiSituation[z, currentPos['x']].gameObject.GetComponent<Renderer>().material.color = Color.red;
                             break;
                         }
                     }
                     else
                     {
-                        Debug.Log($"({currentPos['x']},{z}) 1");
                         JanggiSituation[z, currentPos['x']].gameObject.GetComponent<Renderer>().material.color = Color.red;
                     }
                 }
@@ -176,7 +173,6 @@ public class Po : Piece
             {
                 if (JanggiSituation[z, currentPos['x']].WhatPiece.PieceName.Equals("Po"))
                 {
-                    Debug.Log("This is Po");
                     break;
                 }
 
@@ -194,14 +190,12 @@ public class Po : Piece
                         else if (!JanggiSituation[z, currentPos['x']].WhosePiece.Equals(WhosPiece))
                         {
                             checkStop = true;
-                            Debug.Log($"({currentPos['x']},{z}) 2");
                             JanggiSituation[z, currentPos['x']].gameObject.GetComponent<Renderer>().material.color = Color.red;
                             break;
                         }
                     }
                     else
                     {
-                        Debug.Log($"({currentPos['x']},{z}) 1");
                         JanggiSituation[z, currentPos['x']].gameObject.GetComponent<Renderer>().material.color = Color.red;
                     }
                 }

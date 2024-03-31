@@ -10,6 +10,9 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class FPSPiece : MonoBehaviour
 {
+    [Header("Spec")]
+    [SerializeField] float hp;
+
     [Header("Componemt")]
     [SerializeField] InputActionAsset inputAction;
     [SerializeField] Rigidbody rigid;
@@ -67,6 +70,28 @@ public class FPSPiece : MonoBehaviour
 
     // 점프
     private void OuJump(InputValue value)
+    {
+
+    }
+
+    /// <summary>
+    /// 데미지를 받는 함수
+    /// </summary>
+    /// <param name="damage"></param>
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+
+        if (hp > 0)     // 체력이 0이상이면 리턴
+            return;
+
+        Die();
+    }
+
+    /// <summary>
+    /// 사망하는 함수
+    /// </summary>
+    void Die()
     {
 
     }

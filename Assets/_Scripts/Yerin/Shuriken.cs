@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shuriken : Weapon
+public class Shuriken : ChargingWeapon
 {
     float value;
     Vector3 lookPos;

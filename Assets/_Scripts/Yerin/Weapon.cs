@@ -17,4 +17,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] float damage;
 
     public float Damage { get { return damage; } }
+
+    public virtual void Fire() { }
 }

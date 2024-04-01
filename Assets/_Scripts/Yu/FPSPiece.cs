@@ -16,6 +16,7 @@ public class FPSPiece : MonoBehaviour
     [Header("Componemt")]
     [SerializeField] InputActionAsset inputAction;
     [SerializeField] Rigidbody rigid;
+    [SerializeField] Weapon weapon;
 
     [Header("Property")]
     [SerializeField] float movePower;
@@ -85,6 +86,34 @@ public class FPSPiece : MonoBehaviour
         
     }
     
+    /// <summary>
+    /// 마우스 클릭을 했을 시 발사하는 함수
+    /// 차징무기를 위한 로직을 따로 구현한 상태
+    /// </summary>
+    /// <param name="value"></param>
+    void OnFire(InputValue value)
+    {
+        ChargingWeapon charge = weapon.GetComponent<ChargingWeapon>();
+
+        if (value.isPressed)
+        {
+            if (charge != null)
+            {
+                charge.Charging();
+            }
+            else
+            {
+                weapon.Fire();
+            }
+        }
+        else
+        {
+            if(charge != null)
+            {
+                charge.Fire();
+            }
+        }
+    }
 
     // 인풋액션에서 받아오는 정보
     private void OnMove(InputValue value)
@@ -116,7 +145,7 @@ public class FPSPiece : MonoBehaviour
     /// 데미지를 받는 함수
     /// </summary>
     /// <param name="damage"></param>
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
 

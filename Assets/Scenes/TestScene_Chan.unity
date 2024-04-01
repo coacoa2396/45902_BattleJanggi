@@ -5525,10 +5525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a460fedd068a4b4ca7b26b96115814e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whosPiece: 
+  whosPiece: han
   checkSpot:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!1001 &1770092569
 PrefabInstance:
   m_ObjectHideFlags: 0

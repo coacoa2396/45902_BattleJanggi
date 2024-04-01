@@ -35,7 +35,12 @@ public class FPSPiece : MonoBehaviour
     /// 플레이어 이동 함수
     /// </summary>
     public void Move()
-    {        
+    {
+        if (moveDir.x == 0 && rigid.velocity.magnitude < 0.001f)
+        {
+            rigid.velocity = Vector3.zero;
+        }
+
         // x방향(좌우) 체크
         if (moveDir.x < 0 && rigid.velocity.x > -maxMoveSpeed)      // 왼쪽 이동
         {
@@ -75,9 +80,12 @@ public class FPSPiece : MonoBehaviour
         if (rigid.velocity.sqrMagnitude > maxMoveSpeed * maxMoveSpeed)  // 최고속도 제한걸기
         {
             rigid.velocity = rigid.velocity.normalized * maxMoveSpeed;
-        }        
+        }
+
+        
     }
     
+
     // 인풋액션에서 받아오는 정보
     private void OnMove(InputValue value)
     {

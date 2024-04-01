@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Spot : MonoBehaviour
+using UnityEngine.EventSystems;
+/// <summary>
+/// ChanGyu
+/// </summary>
+public class Spot : MonoBehaviour, IPointerClickHandler
 {
 
     // 현재 위에 기물이 있는지 없는지?
@@ -13,13 +16,16 @@ public class Spot : MonoBehaviour
 
     Piece whatPiece;
     Dictionary<char, int> thisPos;
+    Piece listPiece;
 
     [SerializeField] bool onPiece;
+    [SerializeField] bool checkCanGo;           // 갈수있는 체크리스트에 포함이 되었는지 체크
     string whosPiece;   // tag = cho, han 초나라 한나라
 
     public Piece WhatPiece {  get { return whatPiece; } }
     public string WhosePiece { get { return whosPiece;} set { whosPiece = value; } }
     public bool OnPiece { get { return onPiece; } }
+    public bool ChaeckCanGo { get { return checkCanGo; } set { checkCanGo = value; } }
     public Dictionary<char, int> ThisPos { get { return thisPos; } }
 
     private void Start()
@@ -62,5 +68,22 @@ public class Spot : MonoBehaviour
     {
         thisPos['z'] = z;
         thisPos['x'] = x;
-    }    
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!checkCanGo)
+            return;
+
+        listPiece.MovePiece(this);
+    }
+
+    /// <summary>
+    /// spot이 들어가있는 list를 가지고 있는 기물을 세팅
+    /// </summary>
+    /// <param name="listPiece"></param>
+    public void SetList(Piece listPiece)
+    {
+        this.listPiece = listPiece;
+    }
 }

@@ -21,8 +21,10 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     [SerializeField] string whosPiece;
 
     public string PieceName { get { return pieceName; }}
-
     public string WhosPiece { get { return whosPiece; } }
+
+
+    List<Spot> CanGoSpots = new List<Spot>();
 
     protected virtual void Start()
     {
@@ -74,8 +76,30 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         pieceMaterial.color = Color.white;
     }
 
+    /// <summary>
+    /// 기물을 해당 spot의 위치로 옮기는 함수
+    /// </summary>
+    /// <param name="selectSpot"></param>
+    public void MovePiece(Spot selectSpot)
+    {
+        transform.position = selectSpot.transform.position;
+    }
+
+    /// <summary>
+    /// 갈수있는 spot을 리스트에 넣고 빨간색으로 표시해준다
+    /// </summary>
+    /// <param name="destSpot"></param>
+    protected void AddList(Spot destSpot)
+    {
+        destSpot.GetComponent<Renderer>().material.color = Color.red;
+        destSpot.ChaeckCanGo = true;
+        destSpot.SetList(this);
+        CanGoSpots.Add(destSpot);
+    }
+
     public virtual void FindCanGo()
     {
 
     }
+
 }

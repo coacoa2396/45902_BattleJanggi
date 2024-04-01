@@ -13,6 +13,7 @@ public class Po : Piece
     [SerializeField] LayerMask checkSpot;
 
     Dictionary<char, int> currentPos;  // 현재 있는 Spot의 배열 위치 (== 말의 현재 위치)
+    List<int> CanGoSpots;   // 갈 수 있는 Spot의 위치 저장
 
     protected override void Start()
     {
@@ -58,17 +59,12 @@ public class Po : Piece
                         {
                             checkStop = true;
                             JanggiSituation[currentPos['z'], x].gameObject.GetComponent<Renderer>().material.color = Color.red;
-
-                            AddList(JanggiSituation[currentPos['z'], x]);
-
                             break;
                         }
                     }
                     else
                     {
                         JanggiSituation[currentPos['z'], x].gameObject.GetComponent<Renderer>().material.color = Color.red;
-
-                        AddList(JanggiSituation[currentPos['z'], x]);
                     }
                 }
             }
@@ -107,17 +103,12 @@ public class Po : Piece
                         {
                             checkStop = true;
                             JanggiSituation[currentPos['z'], x].gameObject.GetComponent<Renderer>().material.color = Color.red;
-
-                            AddList(JanggiSituation[currentPos['z'], x]);
-
                             break;
                         }
                     }
                     else
                     {
                         JanggiSituation[currentPos['z'], x].gameObject.GetComponent<Renderer>().material.color = Color.red;
-
-                        AddList(JanggiSituation[currentPos['z'], x]);
                     }
                 }
             }
@@ -156,17 +147,12 @@ public class Po : Piece
                         {
                             checkStop = true;
                             JanggiSituation[z, currentPos['x']].gameObject.GetComponent<Renderer>().material.color = Color.red;
-
-                            AddList(JanggiSituation[z, currentPos['x']]);
-
                             break;
                         }
                     }
                     else
                     {
                         JanggiSituation[z, currentPos['x']].gameObject.GetComponent<Renderer>().material.color = Color.red;
-
-                        AddList(JanggiSituation[z, currentPos['x']]);
                     }
                 }
             }
@@ -205,17 +191,12 @@ public class Po : Piece
                         {
                             checkStop = true;
                             JanggiSituation[z, currentPos['x']].gameObject.GetComponent<Renderer>().material.color = Color.red;
-
-                            AddList(JanggiSituation[z, currentPos['x']]);
-
                             break;
                         }
                     }
                     else
                     {
                         JanggiSituation[z, currentPos['x']].gameObject.GetComponent<Renderer>().material.color = Color.red;
-
-                        AddList(JanggiSituation[z, currentPos['x']]);
                     }
                 }
             }

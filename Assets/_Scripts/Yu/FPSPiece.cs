@@ -30,7 +30,7 @@ public class FPSPiece : MonoBehaviour
     {
         Move();
     }
-
+     
     /// <summary>
     /// 플레이어 이동 함수
     /// </summary>

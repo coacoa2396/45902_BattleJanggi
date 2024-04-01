@@ -121,3 +121,4 @@ MonoBehaviour:
   playerCheck:
     serializedVersion: 2
     m_Bits: 64
+  onPiece: 0

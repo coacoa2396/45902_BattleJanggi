@@ -13,7 +13,7 @@ public class Po : Piece
     [SerializeField] LayerMask checkSpot;
 
     Dictionary<char, int> currentPos;  // 현재 있는 Spot의 배열 위치 (== 말의 현재 위치)
-    List<int> CanGoSpots;   // 갈 수 있는 Spot의 위치 저장
+    
 
     protected override void Start()
     {

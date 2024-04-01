@@ -6,15 +6,6 @@
             "id": "1830f6d1-f8f7-4bfd-8325-c7c02813af95",
             "actions": [
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "1b9e0ab4-4032-4898-b6df-61a774cea3f6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "0e3d4ea1-9382-4355-8157-d4b926628de9",
@@ -22,20 +13,20 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "b172bab5-1d23-4cb9-9da3-1100bf825057",
+
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "f25b45b6-9542-43c6-92c7-ea54e82b3a75",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "f2e36ccf-5003-4bd1-bbe8-45f97551be8b",
@@ -101,6 +92,19 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+
+                    "id": "a5895b08-7646-4db0-8536-0f1a3616e808",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

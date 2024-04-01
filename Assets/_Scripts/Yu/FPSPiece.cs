@@ -31,43 +31,45 @@ public class FPSPiece : MonoBehaviour
         Move();
     }
 
-    // 이동
+    /// <summary>
+    /// 플레이어 이동 함수
+    /// </summary>
     public void Move()
     {        
         // x방향(좌우) 체크
         if (moveDir.x < 0 && rigid.velocity.x > -maxMoveSpeed)      // 왼쪽 이동
         {
-            rigid.AddForce(Vector3.right * moveDir.x * movePower * Time.fixedDeltaTime);
+            rigid.AddForce(Vector3.right * moveDir.x * movePower);
         }
         else if (moveDir.x > 0 && rigid.velocity.x < maxMoveSpeed)  // 오른쪽 이동
         {
-            rigid.AddForce(Vector3.right * moveDir.x * movePower * Time.fixedDeltaTime);
+            rigid.AddForce(Vector3.right * moveDir.x * movePower);
         }
-        else if (moveDir.x == 0 && rigid.velocity.x > 0.1f)         // 입력이 없을 시 반대로 힘을 줘서 빠르게 멈추게 하여 조작감 개선
+        else if (moveDir.x == 0 && rigid.velocity.x > 0.001f)         // 입력이 없을 시 반대로 힘을 줘서 빠르게 멈추게 하여 조작감 개선
         {
-            rigid.AddForce(Vector3.left * breakPower * Time.fixedDeltaTime);
+            rigid.AddForce(Vector3.left * breakPower);
         }
-        else if (moveDir.x == 0 && rigid.velocity.x < -0.1f)        // 입력이 없을 시 반대로 힘을 줘서 빠르게 멈추게 하여 조작감 개선
+        else if (moveDir.x == 0 && rigid.velocity.x < -0.001f)        // 입력이 없을 시 반대로 힘을 줘서 빠르게 멈추게 하여 조작감 개선
         {
-            rigid.AddForce(Vector3.right * breakPower * Time.fixedDeltaTime);
+            rigid.AddForce(Vector3.right * breakPower);
         }
 
         // z방향(앞뒤) 체크
         if (moveDir.z < 0 && rigid.velocity.z > -maxMoveSpeed)      // 뒤 이동
         {
-            rigid.AddForce(Vector3.forward * moveDir.z * movePower * Time.fixedDeltaTime);
+            rigid.AddForce(Vector3.forward * moveDir.z * movePower);
         }
         else if (moveDir.z > 0 && rigid.velocity.z < maxMoveSpeed)  // 앞 이동
         {
-            rigid.AddForce(Vector3.forward * moveDir.z * movePower * Time.fixedDeltaTime);
+            rigid.AddForce(Vector3.forward * moveDir.z * movePower);
         }
-        else if (moveDir.z == 0 && rigid.velocity.z > 0.1f)         // 입력이 없을 시 반대로 힘을 줘서 조작감 개선
+        else if (moveDir.z == 0 && rigid.velocity.z > 0.001f)         // 입력이 없을 시 반대로 힘을 줘서 조작감 개선
         {
-            rigid.AddForce(Vector3.back * breakPower * Time.fixedDeltaTime);
+            rigid.AddForce(Vector3.back * breakPower);
         }
-        else if (moveDir.z == 0 && rigid.velocity.z < -0.1f)        // 입력이 없을 시 반대로 힘을 줘서 조작감 개선
+        else if (moveDir.z == 0 && rigid.velocity.z < -0.001f)        // 입력이 없을 시 반대로 힘을 줘서 조작감 개선
         {
-            rigid.AddForce(Vector3.forward * breakPower * Time.fixedDeltaTime);
+            rigid.AddForce(Vector3.forward * breakPower);
         }
 
         if (rigid.velocity.sqrMagnitude > maxMoveSpeed * maxMoveSpeed)  // 최고속도 제한걸기
@@ -86,7 +88,7 @@ public class FPSPiece : MonoBehaviour
     }
 
     // 점프
-    private void OuJump(InputValue value)
+    private void OnJump(InputValue value)
     {
         Debug.Log("온점프");
         if (value.isPressed)
@@ -99,7 +101,7 @@ public class FPSPiece : MonoBehaviour
     void Jump()
     {
         Debug.Log("점프");                
-        rigid.AddForce(Vector3.up * jumpPower * Time.fixedDeltaTime, ForceMode.Impulse);
+        rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
     }
 
     /// <summary>

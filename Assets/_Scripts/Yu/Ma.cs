@@ -8,7 +8,7 @@ public class Ma : Piece
 
     Spot curSpot;       // 현재 있는 스팟의 정보를 가져올 변수
 
-    List<Spot> CanGoSpots = new List<Spot>();
+    
 
     // spot과 만났을 때 해당 스팟의 포지션을 가져와서 본인의 포지션으로 초기화
     private void OnTriggerEnter(Collider other)
@@ -19,15 +19,7 @@ public class Ma : Piece
         }
     }
 
-    /// <summary>
-    /// 갈수있는 spot을 리스트에 넣고 빨간색으로 표시해준다
-    /// </summary>
-    /// <param name="destSpot"></param>
-    void AddList(Spot destSpot)
-    {
-        destSpot.GetComponent<Renderer>().material.color = Color.red;
-        CanGoSpots.Add(destSpot);
-    }
+    
 
     public override void FindCanGo()
     {

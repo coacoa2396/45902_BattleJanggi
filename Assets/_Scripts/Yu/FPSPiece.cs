@@ -31,7 +31,7 @@ public class FPSPiece : MonoBehaviour
     {
         Move();
     }
-     
+
     /// <summary>
     /// 플레이어 이동 함수
     /// </summary>
@@ -83,9 +83,9 @@ public class FPSPiece : MonoBehaviour
             rigid.velocity = rigid.velocity.normalized * maxMoveSpeed;
         }
 
-        
+
     }
-    
+
     /// <summary>
     /// 마우스 클릭을 했을 시 발사하는 함수
     /// 차징무기를 위한 로직을 따로 구현한 상태
@@ -93,7 +93,9 @@ public class FPSPiece : MonoBehaviour
     /// <param name="value"></param>
     void OnFire(InputValue value)
     {
-        ChargingWeapon charge = weapon.GetComponent<ChargingWeapon>();
+        ChargingWeapon charge;
+        if (!weapon.TryGetComponent(out charge))
+            charge = null;
 
         if (value.isPressed)
         {
@@ -108,7 +110,7 @@ public class FPSPiece : MonoBehaviour
         }
         else
         {
-            if(charge != null)
+            if (charge != null)
             {
                 charge.Fire();
             }
@@ -137,7 +139,7 @@ public class FPSPiece : MonoBehaviour
     /// </summary>
     void Jump()
     {
-        Debug.Log("점프");                
+        Debug.Log("점프");
         rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
     }
 

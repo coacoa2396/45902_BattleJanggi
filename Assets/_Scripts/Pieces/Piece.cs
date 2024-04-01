@@ -17,6 +17,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     Material pieceMaterial; // 해당 장기말의 Material을 받을 변수
 
     protected string pieceName; // 장기말의 종류
+    bool isCliked;  // 해당 말이 클릭됐는지 아닌지 판단하는 변수
 
     [SerializeField] string whosPiece;
 
@@ -40,6 +41,16 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (isCliked)
+        {
+            pieceMaterial.color = Color.white;
+            isCliked = false;
+
+            DeleteList();
+
+            return;
+        }
+
         JanggiSituation = Manager.JanggiLogic.JanggiLogicSituation;
 
         if (JanggiSituation == null)
@@ -48,6 +59,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         }
 
         pieceMaterial.color = Color.red;
+        isCliked = true;
 
         FindCanGo();
     }
@@ -59,6 +71,11 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (isCliked)
+        {
+            return;
+        }
+
         pieceMaterial.color = Color.yellow;
     }
 
@@ -68,7 +85,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="eventData"></param>
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (pieceMaterial.color == Color.red)
+        if (isCliked)
         {
             return;
         }
@@ -83,18 +100,35 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     public void MovePiece(Spot selectSpot)
     {
         transform.position = selectSpot.transform.position;
+
+        DeleteList();
     }
 
     /// <summary>
-    /// 갈수있는 spot을 리스트에 넣고 빨간색으로 표시해준다
+    /// 갈 수있는 spot을 리스트에 넣고 빨간색으로 표시해준다
     /// </summary>
     /// <param name="destSpot"></param>
-    protected void AddList(Spot destSpot)
+    public void AddList(Spot destSpot)
     {
         destSpot.GetComponent<Renderer>().material.color = Color.red;
         destSpot.ChaeckCanGo = true;
         destSpot.SetList(this);
         CanGoSpots.Add(destSpot);
+    }
+
+    /// <summary>
+    /// 갈 수 있는 Spot을 저장한 리스트 전체 삭제
+    /// </summary>
+    public void DeleteList()
+    {
+        foreach (Spot spot in CanGoSpots)
+        {
+            Color color = new Color(0, 0, 0, 0);
+
+            spot.gameObject.GetComponent<Renderer>().material.color = color;
+        }
+
+        CanGoSpots.Clear();
     }
 
     public virtual void FindCanGo()

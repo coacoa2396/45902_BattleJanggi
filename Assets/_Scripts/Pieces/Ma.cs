@@ -73,7 +73,7 @@ public class Ma : Piece
                 }
             }
             // 아랫 대각
-            if (curSpot.ThisPos['z'] + 1 <= 8)
+            if (curSpot.ThisPos['z'] + 1 <= 9)
             {
                 if (JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] + 2].OnPiece == false ||
                     !JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] + 2].WhosePiece.Equals(WhosPiece))
@@ -84,7 +84,7 @@ public class Ma : Piece
         }
 
         // 아랫 칸을 갈 수 있는지 확인한다
-        if (curSpot.ThisPos['z'] + 2 <= 8 && JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x']].OnPiece == false)
+        if (curSpot.ThisPos['z'] + 2 <= 9 && JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x']].OnPiece == false)
         {
             // 우측 대각
             if (curSpot.ThisPos['x'] + 1 <= 8)
@@ -119,7 +119,7 @@ public class Ma : Piece
                 }
             }
             // 윗 대각
-            if (curSpot.ThisPos['z'] + 1 <= 8)
+            if (curSpot.ThisPos['z'] + 1 <= 9)
             {
                 if (JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].OnPiece == false ||
                     JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))

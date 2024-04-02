@@ -18,6 +18,7 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] Rigidbody rigid;
     [SerializeField] Weapon weapon;
+    [SerializeField] LODGroup lOD;
 
     [Header("Property")]
     [SerializeField] float moveSpeed;
@@ -94,7 +95,7 @@ public class FPSPiece : MonoBehaviour
     /// </summary>
     void JumpMove()
     {
-        Debug.Log("점프");
+        //Debug.Log("점프");
         ySpeed += Physics.gravity.y * Time.deltaTime;
 
         if (controller.isGrounded)

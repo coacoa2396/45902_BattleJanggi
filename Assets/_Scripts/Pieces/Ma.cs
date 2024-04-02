@@ -8,14 +8,17 @@ public class Ma : Piece
 
     Spot curSpot;       // 현재 있는 스팟의 정보를 가져올 변수
 
-    
+    protected override void Start()
+    {
+        base.Start();
+        pieceName = "Ma";
+    }
 
     // spot과 만났을 때 해당 스팟의 포지션을 가져와서 본인의 포지션으로 초기화
     private void OnTriggerEnter(Collider other)
     {
         if (checkLayer.Contain(other.gameObject.layer))
         {
-            transform.position = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             curSpot = other.GetComponent<Spot>();
         }
     }

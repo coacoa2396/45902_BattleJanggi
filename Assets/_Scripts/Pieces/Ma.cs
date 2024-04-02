@@ -38,7 +38,7 @@ public class Ma : Piece
         }
 
         // 앞 칸을 갈 수 있는지 확인한다
-        if (curSpot.ThisPos['z'] - 2 >= 0 && JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x']].OnPiece == false)    // 장기판을 벗어나지 않고 갈 수 있다면?
+        if (curSpot.ThisPos['z'] - 2 >= 0 && !JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x']].OnPiece)    // 장기판을 벗어나지 않고 갈 수 있다면?
         {
             //  왼쪽 대각
             if (curSpot.ThisPos['x'] - 1 >= 0)  // 장기판을 벗어나지 않고
@@ -90,7 +90,7 @@ public class Ma : Piece
             if (curSpot.ThisPos['x'] + 1 <= 8)
             {
                 if (JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] + 1].OnPiece == false ||
-                    JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] + 1].WhosePiece.Equals(WhosPiece))
+                    !JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] + 1].WhosePiece.Equals(WhosPiece))
                 {
                     AddList(JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] + 1]);
                 }
@@ -99,7 +99,7 @@ public class Ma : Piece
             if (curSpot.ThisPos['x'] - 1 >= 0)
             {
                 if (JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] - 1].OnPiece == false ||
-                   JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] - 1].WhosePiece.Equals(WhosPiece))
+                   !JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] - 1].WhosePiece.Equals(WhosPiece))
                 {
                     AddList(JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] - 1]);
                 }
@@ -113,7 +113,7 @@ public class Ma : Piece
             if (curSpot.ThisPos['z'] - 1 >= 0)
             {
                 if (JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].OnPiece == false ||
-                    JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))
+                    !JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))
                 {
                     AddList(JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2]);
                 }
@@ -122,7 +122,7 @@ public class Ma : Piece
             if (curSpot.ThisPos['z'] + 1 <= 9)
             {
                 if (JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].OnPiece == false ||
-                    JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))
+                    !JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))
                 {
                     AddList(JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2]);
                 }

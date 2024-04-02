@@ -22,6 +22,7 @@ public class Jol : Piece
     {
         if (checkSpot.Contain(other.gameObject.layer))
         {
+            //transform.position = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             currentPos = other.gameObject.GetComponent<Spot>().ThisPos;
         }
     }

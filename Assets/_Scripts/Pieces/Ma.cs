@@ -8,7 +8,11 @@ public class Ma : Piece
 
     Spot curSpot;       // 현재 있는 스팟의 정보를 가져올 변수
 
-    
+    protected override void Start()
+    {
+        base.Start();
+        pieceName = "Ma";
+    }
 
     // spot과 만났을 때 해당 스팟의 포지션을 가져와서 본인의 포지션으로 초기화
     private void OnTriggerEnter(Collider other)
@@ -18,8 +22,6 @@ public class Ma : Piece
             curSpot = other.GetComponent<Spot>();
         }
     }
-
-    
 
     public override void FindCanGo()
     {

@@ -1671,7 +1671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4188279278602961837, guid: 69476c2e01ebdf94e9071e5b3b3ad923, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -109.979126
+      value: -113.0497
       objectReference: {fileID: 0}
     - target: {fileID: 4188279278602961837, guid: 69476c2e01ebdf94e9071e5b3b3ad923, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1954,7 +1954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4188279278602961837, guid: 69476c2e01ebdf94e9071e5b3b3ad923, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -113.04975
+      value: -113.0497
       objectReference: {fileID: 0}
     - target: {fileID: 4188279278602961837, guid: 69476c2e01ebdf94e9071e5b3b3ad923, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2280,7 +2280,7 @@ Transform:
   m_GameObject: {fileID: 1941940158}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -11, y: 125.81, z: 4.9}
+  m_LocalPosition: {x: -11.7, y: 125.81, z: 4.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2354,63 +2354,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1001 &1961268592
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -45.012917
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.6706152
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 3455122425627369526, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8574747122306539006, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
-      propertyPath: m_Name
-      value: Jol(Han)1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7c94d8ef6638ab147af0d9a8a932ef4e, type: 3}
 --- !u!1 &1982722762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +2441,7 @@ Transform:
   m_GameObject: {fileID: 1982722762}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -26, y: 95.81, z: 4.9}
+  m_LocalPosition: {x: -26.7, y: 95.81, z: 4.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

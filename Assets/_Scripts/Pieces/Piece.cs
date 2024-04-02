@@ -113,6 +113,11 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     {
         transform.position = new Vector3(selectSpot.transform.position.x, transform.position.y, selectSpot.transform.position.z);
 
+        JanggiLogic.Instance.ClickedPieceExist = false;
+
+        pieceMaterial.color = Color.white;
+        isClicked = false;
+
         DeleteList();
     }
 

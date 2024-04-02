@@ -17,12 +17,13 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     Material pieceMaterial; // 해당 장기말의 Material을 받을 변수
 
     protected string pieceName; // 장기말의 종류
-    bool isCliked;  // 해당 말이 클릭됐는지 아닌지 판단하는 변수
+    bool isClicked;  // 해당 말이 클릭됐는지 아닌지 판단하는 변수
 
     [SerializeField] string whosPiece;
 
     public string PieceName { get { return pieceName; }}
     public string WhosPiece { get { return whosPiece; } }
+    public bool IsClicked { set { isClicked = value; } }
 
 
     List<Spot> CanGoSpots = new List<Spot>();
@@ -30,8 +31,6 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     protected virtual void Start()
     {
         pieceMaterial = gameObject.GetComponent<Renderer>().material;
-
-        pieceName = "PP";
     }
 
     /// <summary>
@@ -41,10 +40,12 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (isCliked)
+        if (isClicked)
         {
+            JanggiLogic.Instance.ClickedPieceExist = false;
+
             pieceMaterial.color = Color.white;
-            isCliked = false;
+            isClicked = false;
 
             DeleteList();
 
@@ -58,8 +59,19 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
             Debug.Log("Get JanggiLogic Fail");
         }
 
+        if (JanggiLogic.Instance.ClickedPieceExist)  // 장기판에 다른 말이 이미 선택되어 있을 경우
+        {
+            JanggiLogic.Instance.ClickedPiece.pieceMaterial.color = Color.white;
+            JanggiLogic.Instance.ClickedPiece.IsClicked = false;
+
+            JanggiLogic.Instance.ClickedPiece.DeleteList();
+        }
+
+        JanggiLogic.Instance.ClickedPieceExist = true;
+        JanggiLogic.Instance.ClickedPiece = this;
+
         pieceMaterial.color = Color.red;
-        isCliked = true;
+        isClicked = true;
 
         FindCanGo();
     }
@@ -71,7 +83,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (isCliked)
+        if (isClicked)
         {
             return;
         }
@@ -85,7 +97,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="eventData"></param>
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (isCliked)
+        if (isClicked)
         {
             return;
         }
@@ -99,7 +111,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="selectSpot"></param>
     public void MovePiece(Spot selectSpot)
     {
-        transform.position = selectSpot.transform.position;
+        transform.position = new Vector3(selectSpot.transform.position.x, transform.position.y, selectSpot.transform.position.z);
 
         DeleteList();
     }

@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JanggiLogic : Singleton<JanggiLogic>        // ½Ì±ÛÅæÀ¸·Î ¸¸µé¾î¾ßÇÔ
+/// <summary>
+/// °³¹ßÀÚ: Yerin, ChanGyu
+/// 
+/// Àå±âÆÇ ·ÎÁ÷ °ü·Ã ÇÔ¼ö (½Ì±ÛÅæ)
+/// </summary>
+public class JanggiLogic : Singleton<JanggiLogic>
 {
     // Àå±âÆÇÀº °¡·Î 9, ¼¼·Î 10 ÀÇ Å©±â
     // Àå±âÆÇÀÇ 2Â÷¿ø ¹è¿­À» ¸¸µç´Ù¸é 9x10ÀÇ ¹è¿­À» »ý¼ºÇØ¾ßÇÔ
@@ -21,8 +26,12 @@ public class JanggiLogic : Singleton<JanggiLogic>        // ½Ì±ÛÅæÀ¸·Î ¸¸µé¾î¾ßÇ
         { null, null, null, null, null, null, null, null, null}
     };
 
+    bool clickedPieceExist;
+    Piece clickedPiece;
 
     public Spot[,] JanggiLogicSituation { get { return spots; } }
+    public bool ClickedPieceExist { get { return clickedPieceExist; } set { clickedPieceExist = value; } }
+    public Piece ClickedPiece { get { return clickedPiece; } set { clickedPiece = value; } }
 
     /// <summary>
     /// Àå±â¾ÀÀÌ ½ÃÀÛµÉ¶§ 

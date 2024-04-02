@@ -15,11 +15,10 @@ public class Ma : Piece
     {
         if (checkLayer.Contain(other.gameObject.layer))
         {
+            transform.position = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             curSpot = other.GetComponent<Spot>();
         }
     }
-
-    
 
     public override void FindCanGo()
     {

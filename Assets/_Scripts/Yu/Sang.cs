@@ -125,10 +125,10 @@ public class Sang : Piece
         }
 
         // ¿ÞÂÊ Ä­À» °¥ ¼ö ÀÖ´ÂÁö È®ÀÎÇÑ´Ù
-        if (curSpot.ThisPos['x'] - 3 >= 0 && JanggiSituation[curSpot.ThisPos['z'], curSpot.ThisPos['x'] - 1].OnPiece == false)
+        if (curSpot.ThisPos['x'] - 3 >= 0 && !JanggiSituation[curSpot.ThisPos['z'], curSpot.ThisPos['x'] - 1].OnPiece)
         {
             // ¾Æ·§ ´ë°¢
-            if (curSpot.ThisPos['z'] + 2 >= 9)
+            if (curSpot.ThisPos['z'] + 2 <= 9)
             {
                 if (!JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].OnPiece)
                 {
@@ -140,9 +140,9 @@ public class Sang : Piece
                 }
             }
             // À­ ´ë°¢
-            if (curSpot.ThisPos['z'] - 2 <= 0)
+            if (curSpot.ThisPos['z'] - 2 >= 0)
             {
-                if (JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].OnPiece == false)
+                if (!JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].OnPiece)
                 {
                     if (!JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 3].OnPiece ||
                         !JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 3].WhosePiece.Equals(WhosPiece))

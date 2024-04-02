@@ -21,6 +21,7 @@ public class Ma : Piece
         {
             curSpot = other.GetComponent<Spot>();
         }
+        Debug.Log($"{curSpot.ThisPos['z']},{curSpot.ThisPos['x']}");
     }
 
     public override void FindCanGo()
@@ -35,71 +36,96 @@ public class Ma : Piece
             Debug.Log("null");
             return;
         }
+
         // 앞 칸을 갈 수 있는지 확인한다
-        if (JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x']].OnPiece == false)    // 갈 수 있다면?
+        if (curSpot.ThisPos['z'] - 2 >= 0 && JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x']].OnPiece == false)    // 장기판을 벗어나지 않고 갈 수 있다면?
         {
             //  왼쪽 대각
-            if (JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1].OnPiece == false ||            // 칸이 비어있거나
-                !JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1].WhosePiece.Equals(WhosPiece))  // 상대 기물이면
+            if (curSpot.ThisPos['x'] - 1 >= 0)  // 장기판을 벗어나지 않고
             {
-                AddList(JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1]);          // CanGoSpots 리스트에 넣고 색을 바꿔준다
+                if (JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1].OnPiece == false ||            // 칸이 비어있거나
+                    !JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1].WhosePiece.Equals(WhosPiece))  // 상대 기물이면
+                {
+                    AddList(JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1]);          // CanGoSpots 리스트에 넣고 색을 바꿔준다
+                }
             }
             // 우측 대각
-            if (JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1].OnPiece == false ||
-                !JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1].WhosePiece.Equals(WhosPiece))
+            if (curSpot.ThisPos['x'] + 1 <= 8)  // 장기판을 벗어나지 않고
             {
-                AddList(JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1]);
+                if (JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1].OnPiece == false ||
+                    !JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1].WhosePiece.Equals(WhosPiece))
+                {
+                    AddList(JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1]);
+                }
             }
         }
 
         // 오른쪽 칸을 갈 수 있는지 확인한다
-        if (JanggiSituation[curSpot.ThisPos['z'], curSpot.ThisPos['x'] + 1].OnPiece == false)       // 갈 수 있다면?
+        if (curSpot.ThisPos['x'] + 2 <= 8 && JanggiSituation[curSpot.ThisPos['z'], curSpot.ThisPos['x'] + 1].OnPiece == false)       // 장기판을 벗어나지 않고 갈 수 있다면?
         {
             // 윗 대각
-            if (JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] + 2].OnPiece == false ||            // 칸이 비어있거나
-                !JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] + 2].WhosePiece.Equals(WhosPiece)) // 상대 기물이면
+            if (curSpot.ThisPos['z'] - 1 >= 0)      // 장기판을 벗어나지 않고
             {
-                AddList(JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] + 2]);
+                if (JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] + 2].OnPiece == false ||            // 칸이 비어있거나
+                    !JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] + 2].WhosePiece.Equals(WhosPiece)) // 상대 기물이면
+                {
+                    AddList(JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] + 2]);
+                }
             }
             // 아랫 대각
-            if (JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] + 2].OnPiece == false ||
-                !JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] + 2].WhosePiece.Equals(WhosPiece))
+            if (curSpot.ThisPos['z'] + 1 <= 8)
             {
-                AddList(JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] + 2]);
+                if (JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] + 2].OnPiece == false ||
+                    !JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] + 2].WhosePiece.Equals(WhosPiece))
+                {
+                    AddList(JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] + 2]);
+                }
             }
         }
 
         // 아랫 칸을 갈 수 있는지 확인한다
-        if (JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x']].OnPiece == false)
+        if (curSpot.ThisPos['z'] + 2 <= 8 && JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x']].OnPiece == false)
         {
             // 우측 대각
-            if (JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1].OnPiece == false ||
-                JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1].WhosePiece.Equals(WhosPiece))
+            if (curSpot.ThisPos['x'] + 1 <= 8)
             {
-                AddList(JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] + 1]);
+                if (JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] + 1].OnPiece == false ||
+                    JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] + 1].WhosePiece.Equals(WhosPiece))
+                {
+                    AddList(JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] + 1]);
+                }
             }
             // 좌측 대각
-            if (JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1].OnPiece == false ||
-               JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1].WhosePiece.Equals(WhosPiece))
+            if (curSpot.ThisPos['x'] - 1 >= 0)
             {
-                AddList(JanggiSituation[curSpot.ThisPos['z'] - 2, curSpot.ThisPos['x'] - 1]);
+                if (JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] - 1].OnPiece == false ||
+                   JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] - 1].WhosePiece.Equals(WhosPiece))
+                {
+                    AddList(JanggiSituation[curSpot.ThisPos['z'] + 2, curSpot.ThisPos['x'] - 1]);
+                }
             }
         }
 
         // 왼쪽 칸을 갈 수 있는지 확인한다
-        if (JanggiSituation[curSpot.ThisPos['z'], curSpot.ThisPos['x'] - 1].OnPiece == false)
+        if (curSpot.ThisPos['x'] - 2 >= 0 && JanggiSituation[curSpot.ThisPos['z'], curSpot.ThisPos['x'] - 1].OnPiece == false)
         {
             // 아랫 대각
-            if (JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].OnPiece == false ||
-                JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))
+            if (curSpot.ThisPos['z'] - 1 >= 0)
             {
-                AddList(JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2]);
+                if (JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].OnPiece == false ||
+                    JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))
+                {
+                    AddList(JanggiSituation[curSpot.ThisPos['z'] - 1, curSpot.ThisPos['x'] - 2]);
+                }
             }
             // 윗 대각
-            if (JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].OnPiece == false ||
-                JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))
+            if (curSpot.ThisPos['z'] + 1 <= 8)
             {
-                AddList(JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2]);
+                if (JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].OnPiece == false ||
+                    JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2].WhosePiece.Equals(WhosPiece))
+                {
+                    AddList(JanggiSituation[curSpot.ThisPos['z'] + 1, curSpot.ThisPos['x'] - 2]);
+                }
             }
         }
     }

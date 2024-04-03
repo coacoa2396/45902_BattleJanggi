@@ -99,8 +99,7 @@ public class FPSPiece : MonoBehaviour
 
     // 점프
     private void OnJump(InputValue value)
-    {
-        Debug.Log("온점프");
+    {       
         ySpeed = jumpSpeed;
     }
 

@@ -18,6 +18,7 @@ public class ChaLazerGun : Weapon
 
         if (Physics.Raycast(muzzlePoint.position, muzzlePoint.forward, out RaycastHit hitInfo, maxDistance))
         {
+
             // 레이캐스트 보이게 하기
             Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * hitInfo.distance, Color.red, 0.5f);
             // Camera.main.transform

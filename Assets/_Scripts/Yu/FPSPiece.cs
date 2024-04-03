@@ -19,13 +19,9 @@ public class FPSPiece : MonoBehaviour
     [Header("Componemt")]
     [SerializeField] CharacterController controller;
     [SerializeField] Rigidbody rigid;
-    [SerializeField] Weapon weapon;
-    [SerializeField] CinemachineVirtualCamera FPSCamera;
-    [SerializeField] CinemachineVirtualCamera ZoomCamera;
+    [SerializeField] Weapon weapon;    
     [SerializeField] Animator animator;
-    [SerializeField] LayerMask groundCheck;
-
-    CinemachineVirtualCamera curCamera;
+    [SerializeField] LayerMask groundCheck;    
 
     [Header("Property")]
     [SerializeField] float moveSpeed;
@@ -37,17 +33,11 @@ public class FPSPiece : MonoBehaviour
     bool isWalking; // 플레이어의 걷기 여부
     bool isJumping; // 플레이어의 점프 여부
     
-    private Vector3 moveDir;
-
-    private void Start()
-    {
-        curCamera = FPSCamera;
-    }
+    private Vector3 moveDir;      
 
     private void FixedUpdate()
     {
-        Move();
-        //JumpMove();
+        Move();        
     }
 
     /// <summary>
@@ -170,25 +160,7 @@ public class FPSPiece : MonoBehaviour
     void Die()
     {
 
-    }
-
-    /// <summary>
-    /// 우클릭 시에 줌을 해주고 카메라의 시점을 바꾸는 함수
-    /// </summary>
-    /// <param name="value"></param>
-    void OnZoom(InputValue value)
-    {
-        if (curCamera == FPSCamera)
-        {
-            curCamera = ZoomCamera;
-            ZoomCamera.Priority = 11;
-        }
-        else
-        {
-            curCamera = FPSCamera;
-            ZoomCamera.Priority = 1;
-        }
-    }
+    }   
 
     private void OnCollisionEnter(Collision collision)
     {

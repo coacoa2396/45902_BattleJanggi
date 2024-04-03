@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,6 +20,9 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] Rigidbody rigid;
     [SerializeField] Weapon weapon;
+    [SerializeField] CinemachineVirtualCamera curCamera;
+    [SerializeField] CinemachineVirtualCamera FPSCamera;
+    [SerializeField] CinemachineVirtualCamera ZoomCamera;
     [SerializeField] Animator animator;
 
     [Header("Property")]
@@ -29,6 +33,11 @@ public class FPSPiece : MonoBehaviour
     
     private Vector3 moveDir;
 
+    private void Start()
+    {
+        curCamera = FPSCamera;
+    }
+
     private void FixedUpdate()
     {
         Move();
@@ -38,6 +47,7 @@ public class FPSPiece : MonoBehaviour
     }
 
     /// <summary>
+    /// ChanGyu
     /// 플레이어 이동 함수
     /// </summary>
     public void Move()
@@ -47,6 +57,7 @@ public class FPSPiece : MonoBehaviour
     }
 
     /// <summary>
+    /// ChanGyu
     /// 마우스 클릭을 했을 시 발사하는 함수
     /// 차징무기를 위한 로직을 따로 구현한 상태
     /// </summary>
@@ -89,6 +100,7 @@ public class FPSPiece : MonoBehaviour
     // 점프
     private void OnJump(InputValue value)
     {
+        Debug.Log("온점프");
         ySpeed = jumpSpeed;
     }
 
@@ -96,7 +108,7 @@ public class FPSPiece : MonoBehaviour
     /// 점프를 실행하는 함수
     /// </summary>
     void JumpMove()
-    {
+    {        
         ySpeed += Physics.gravity.y * Time.deltaTime;
 
         if (controller.isGrounded)
@@ -127,5 +139,23 @@ public class FPSPiece : MonoBehaviour
     void Die()
     {
 
+    }
+
+    /// <summary>
+    /// 우클릭 시에 줌을 해주고 카메라의 시점을 바꾸는 함수
+    /// </summary>
+    /// <param name="value"></param>
+    void OnZoom(InputValue value)
+    {
+        if (curCamera == FPSCamera)
+        {
+            curCamera = ZoomCamera;
+            ZoomCamera.Priority = 11;
+        }
+        else
+        {
+            curCamera = FPSCamera;
+            ZoomCamera.Priority = 1;
+        }
     }
 }

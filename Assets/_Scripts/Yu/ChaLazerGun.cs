@@ -20,7 +20,7 @@ public class ChaLazerGun : Weapon
         {
             // 레이캐스트 보이게 하기
             Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * hitInfo.distance, Color.red, 0.5f);
-
+            // Camera.main.transform
             // 맞는 위치에 총자국 이펙트
             ParticleSystem partcl = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
             partcl.transform.position = hitInfo.point;

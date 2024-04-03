@@ -25,24 +25,22 @@ public class FPSPiece : MonoBehaviour
 
     [Header("Property")]
     [SerializeField] float moveSpeed;
-    [SerializeField] float jumpSpeed;
     [SerializeField] float breakPower;
-    [SerializeField] float ySpeed;
 
-    bool isGround;  // ÇÃ·¹ÀÌ¾îÀÇ ¶¥ À§ ¿©ºÎ
-    bool isWalking; // ÇÃ·¹ÀÌ¾îÀÇ °È±â ¿©ºÎ
-    bool isJumping; // ÇÃ·¹ÀÌ¾îÀÇ Á¡ÇÁ ¿©ºÎ
+    bool isGround;  // í”Œë ˆì´ì–´ì˜ ë•… ìœ„ ì—¬ë¶€
+    bool isWalking; // í”Œë ˆì´ì–´ì˜ ê±·ê¸° ì—¬ë¶€
+    bool isJumping; // í”Œë ˆì´ì–´ì˜ ì í”„ ì—¬ë¶€
     
     private Vector3 moveDir;      
 
     private void FixedUpdate()
     {
-        Move();        
+        Move();      
     }
 
     /// <summary>
     /// ChanGyu
-    /// ÇÃ·¹ÀÌ¾î ÀÌµ¿ ÇÔ¼ö
+    /// í”Œë ˆì´ì–´ ì´ë™ í•¨ìˆ˜
     /// </summary>
     public void Move()
     {
@@ -76,8 +74,8 @@ public class FPSPiece : MonoBehaviour
 
     /// <summary>
     /// ChanGyu
-    /// ¸¶¿ì½º Å¬¸¯À» ÇßÀ» ½Ã ¹ß»çÇÏ´Â ÇÔ¼ö
-    /// Â÷Â¡¹«±â¸¦ À§ÇÑ ·ÎÁ÷À» µû·Î ±¸ÇöÇÑ »óÅÂ
+    /// ë§ˆìš°ìŠ¤ í´ë¦­ì„ í–ˆì„ ì‹œ ë°œì‚¬í•˜ëŠ” í•¨ìˆ˜
+    /// ì°¨ì§•ë¬´ê¸°ë¥¼ ìœ„í•œ ë¡œì§ì„ ë”°ë¡œ êµ¬í˜„í•œ ìƒíƒœ
     /// </summary>
     /// <param name="value"></param>
     void OnFire(InputValue value)
@@ -106,7 +104,7 @@ public class FPSPiece : MonoBehaviour
         }
     }
 
-    // ÀÎÇ²¾×¼Ç¿¡¼­ ¹Ş¾Æ¿À´Â Á¤º¸
+    // ì¸í’‹ì•¡ì…˜ì—ì„œ ë°›ì•„ì˜¤ëŠ” ì •ë³´
     private void OnMove(InputValue value)
     {
         Vector2 input = value.Get<Vector2>();
@@ -117,45 +115,28 @@ public class FPSPiece : MonoBehaviour
         isWalking = true;
     }
 
-    // Á¡ÇÁ
+    // ì í”„
     private void OnJump(InputValue value)
     {       
-        ySpeed = jumpSpeed;
-
         isJumping = true;
     }
 
     /// <summary>
-    /// Á¡ÇÁ¸¦ ½ÇÇàÇÏ´Â ÇÔ¼ö
-    /// </summary>
-    void JumpMove()
-    {        
-        ySpeed += Physics.gravity.y * Time.deltaTime;
-
-        if (controller.isGrounded)
-        {
-            ySpeed = 0f;
-        }
-
-        controller.Move(Vector3.up * ySpeed * Time.deltaTime);      // ¿©±â¼­ deltaTimeÀ» ÇÑ¹ø ´õ °öÇØÁÖ´Ï±î Á¦°öÀÌ µÈ´Ù
-    }
-
-    /// <summary>
-    /// µ¥¹ÌÁö¸¦ ¹Ş´Â ÇÔ¼ö
+    /// ë°ë¯¸ì§€ë¥¼ ë°›ëŠ” í•¨ìˆ˜
     /// </summary>
     /// <param name="damage"></param>
     public void TakeDamage(float damage)
     {
         hp -= damage;
 
-        if (hp > 0)     // Ã¼·ÂÀÌ 0ÃÊ°ú¸é ¸®ÅÏ
+        if (hp > 0)     // ì²´ë ¥ì´ 0ì´ˆê³¼ë©´ ë¦¬í„´
             return;
 
         Die();
     }
 
     /// <summary>
-    /// »ç¸ÁÇÏ´Â ÇÔ¼ö
+    /// ì‚¬ë§í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
     void Die()
     {
@@ -164,22 +145,24 @@ public class FPSPiece : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (groundCheck.Contain(collision.gameObject.layer))    // ÇÃ·¹ÀÌ¾î°¡ ¶¥ À§¿¡ ÀÖÀ» °æ¿ì
+        if (groundCheck.Contain(collision.gameObject.layer))    // í”Œë ˆì´ì–´ê°€ ë•… ìœ„ì— ìˆì„ ê²½ìš°
         {
             isGround = true;
 
-            if (isJumping)
-            {
-                isJumping = false;
-            }
+            isJumping = false;
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (groundCheck.Contain(collision.gameObject.layer))    // ÇÃ·¹ÀÌ¾î°¡ ¶¥ À§¿¡ ¾øÀ» °æ¿ì
+        if (groundCheck.Contain(collision.gameObject.layer))    // í”Œë ˆì´ì–´ê°€ ë•… ìœ„ì— ì—†ì„ ê²½ìš°
         {
             isGround = false;
         }
+    }
+
+    public void makeIsJumpingFalse()
+    {
+        isJumping = false;
     }
 }

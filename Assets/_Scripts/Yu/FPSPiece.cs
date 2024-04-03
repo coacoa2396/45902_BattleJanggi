@@ -19,37 +19,28 @@ public class FPSPiece : MonoBehaviour
     [Header("Componemt")]
     [SerializeField] CharacterController controller;
     [SerializeField] Rigidbody rigid;
-    [SerializeField] Weapon weapon;
-    [SerializeField] CinemachineVirtualCamera FPSCamera;
-    [SerializeField] CinemachineVirtualCamera ZoomCamera;
+    [SerializeField] Weapon weapon;    
     [SerializeField] Animator animator;
-    [SerializeField] LayerMask groundCheck;
-
-    CinemachineVirtualCamera curCamera;
+    [SerializeField] LayerMask groundCheck;    
 
     [Header("Property")]
     [SerializeField] float moveSpeed;
     [SerializeField] float breakPower;
 
-    bool isGround;  // ÇÃ·¹ÀÌ¾îÀÇ ¶¥ À§ ¿©ºÎ
-    bool isWalking; // ÇÃ·¹ÀÌ¾îÀÇ °È±â ¿©ºÎ
-    bool isJumping; // ÇÃ·¹ÀÌ¾îÀÇ Á¡ÇÁ ¿©ºÎ
+    bool isGround;  // í”Œë ˆì´ì–´ì˜ ë•… ìœ„ ì—¬ë¶€
+    bool isWalking; // í”Œë ˆì´ì–´ì˜ ê±·ê¸° ì—¬ë¶€
+    bool isJumping; // í”Œë ˆì´ì–´ì˜ ì í”„ ì—¬ë¶€
     
-    private Vector3 moveDir;
-
-    private void Start()
-    {
-        curCamera = FPSCamera;
-    }
+    private Vector3 moveDir;      
 
     private void FixedUpdate()
     {
-        Move();
+        Move();      
     }
 
     /// <summary>
     /// ChanGyu
-    /// ÇÃ·¹ÀÌ¾î ÀÌµ¿ ÇÔ¼ö
+    /// í”Œë ˆì´ì–´ ì´ë™ í•¨ìˆ˜
     /// </summary>
     public void Move()
     {
@@ -83,8 +74,8 @@ public class FPSPiece : MonoBehaviour
 
     /// <summary>
     /// ChanGyu
-    /// ¸¶¿ì½º Å¬¸¯À» ÇßÀ» ½Ã ¹ß»çÇÏ´Â ÇÔ¼ö
-    /// Â÷Â¡¹«±â¸¦ À§ÇÑ ·ÎÁ÷À» µû·Î ±¸ÇöÇÑ »óÅÂ
+    /// ë§ˆìš°ìŠ¤ í´ë¦­ì„ í–ˆì„ ì‹œ ë°œì‚¬í•˜ëŠ” í•¨ìˆ˜
+    /// ì°¨ì§•ë¬´ê¸°ë¥¼ ìœ„í•œ ë¡œì§ì„ ë”°ë¡œ êµ¬í˜„í•œ ìƒíƒœ
     /// </summary>
     /// <param name="value"></param>
     void OnFire(InputValue value)
@@ -113,7 +104,7 @@ public class FPSPiece : MonoBehaviour
         }
     }
 
-    // ÀÎÇ²¾×¼Ç¿¡¼­ ¹Ş¾Æ¿À´Â Á¤º¸
+    // ì¸í’‹ì•¡ì…˜ì—ì„œ ë°›ì•„ì˜¤ëŠ” ì •ë³´
     private void OnMove(InputValue value)
     {
         Vector2 input = value.Get<Vector2>();
@@ -124,55 +115,37 @@ public class FPSPiece : MonoBehaviour
         isWalking = true;
     }
 
-    // Á¡ÇÁ
+    // ì í”„
     private void OnJump(InputValue value)
     {       
         isJumping = true;
     }
 
     /// <summary>
-    /// µ¥¹ÌÁö¸¦ ¹Ş´Â ÇÔ¼ö
+    /// ë°ë¯¸ì§€ë¥¼ ë°›ëŠ” í•¨ìˆ˜
     /// </summary>
     /// <param name="damage"></param>
     public void TakeDamage(float damage)
     {
         hp -= damage;
 
-        if (hp > 0)     // Ã¼·ÂÀÌ 0ÃÊ°ú¸é ¸®ÅÏ
+        if (hp > 0)     // ì²´ë ¥ì´ 0ì´ˆê³¼ë©´ ë¦¬í„´
             return;
 
         Die();
     }
 
     /// <summary>
-    /// »ç¸ÁÇÏ´Â ÇÔ¼ö
+    /// ì‚¬ë§í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
     void Die()
     {
 
-    }
-
-    /// <summary>
-    /// ¿ìÅ¬¸¯ ½Ã¿¡ ÁÜÀ» ÇØÁÖ°í Ä«¸Ş¶óÀÇ ½ÃÁ¡À» ¹Ù²Ù´Â ÇÔ¼ö
-    /// </summary>
-    /// <param name="value"></param>
-    void OnZoom(InputValue value)
-    {
-        if (curCamera == FPSCamera)
-        {
-            curCamera = ZoomCamera;
-            ZoomCamera.Priority = 11;
-        }
-        else
-        {
-            curCamera = FPSCamera;
-            ZoomCamera.Priority = 1;
-        }
-    }
+    }   
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (groundCheck.Contain(collision.gameObject.layer))    // ÇÃ·¹ÀÌ¾î°¡ ¶¥ À§¿¡ ÀÖÀ» °æ¿ì
+        if (groundCheck.Contain(collision.gameObject.layer))    // í”Œë ˆì´ì–´ê°€ ë•… ìœ„ì— ìˆì„ ê²½ìš°
         {
             isGround = true;
 
@@ -182,7 +155,7 @@ public class FPSPiece : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (groundCheck.Contain(collision.gameObject.layer))    // ÇÃ·¹ÀÌ¾î°¡ ¶¥ À§¿¡ ¾øÀ» °æ¿ì
+        if (groundCheck.Contain(collision.gameObject.layer))    // í”Œë ˆì´ì–´ê°€ ë•… ìœ„ì— ì—†ì„ ê²½ìš°
         {
             isGround = false;
         }

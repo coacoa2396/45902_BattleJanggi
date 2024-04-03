@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -18,7 +19,7 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] Rigidbody rigid;
     [SerializeField] Weapon weapon;
-    [SerializeField] LODGroup lOD;
+    [SerializeField] Animator animator;
 
     [Header("Property")]
     [SerializeField] float moveSpeed;
@@ -32,6 +33,8 @@ public class FPSPiece : MonoBehaviour
     {
         Move();
         JumpMove();
+
+        //animatorController.
     }
 
     /// <summary>
@@ -86,7 +89,6 @@ public class FPSPiece : MonoBehaviour
     // 점프
     private void OnJump(InputValue value)
     {
-        Debug.Log("온점프");
         ySpeed = jumpSpeed;
     }
 
@@ -95,7 +97,6 @@ public class FPSPiece : MonoBehaviour
     /// </summary>
     void JumpMove()
     {
-        //Debug.Log("점프");
         ySpeed += Physics.gravity.y * Time.deltaTime;
 
         if (controller.isGrounded)

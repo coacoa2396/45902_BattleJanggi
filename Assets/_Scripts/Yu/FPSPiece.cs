@@ -20,16 +20,22 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] Rigidbody rigid;
     [SerializeField] Weapon weapon;
-    [SerializeField] CinemachineVirtualCamera curCamera;
     [SerializeField] CinemachineVirtualCamera FPSCamera;
     [SerializeField] CinemachineVirtualCamera ZoomCamera;
     [SerializeField] Animator animator;
+    [SerializeField] LayerMask groundCheck;
+
+    CinemachineVirtualCamera curCamera;
 
     [Header("Property")]
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpSpeed;
     [SerializeField] float breakPower;
     [SerializeField] float ySpeed;
+
+    bool isGround;  // 플레이어의 땅 위 여부
+    bool isWalking; // 플레이어의 걷기 여부
+    bool isJumping; // 플레이어의 점프 여부
     
     private Vector3 moveDir;
 
@@ -41,9 +47,7 @@ public class FPSPiece : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        JumpMove();
-
-        //animatorController.
+        //JumpMove();
     }
 
     /// <summary>
@@ -54,6 +58,30 @@ public class FPSPiece : MonoBehaviour
     {
         controller.Move(transform.right * moveDir.x * moveSpeed * Time.deltaTime);
         controller.Move(transform.forward * moveDir.z * moveSpeed * Time.deltaTime);
+
+        if (moveDir.x == 0 && moveDir.z == 0)
+        {
+            isWalking = false;
+        }
+
+        if (isGround)
+        {
+            if (!isJumping)
+            {
+                if (isWalking)
+                {
+                    animator.Play("Walk");
+                }
+                else
+                {
+                    animator.Play("Idle A");
+                }
+            }
+            else
+            {
+                animator.Play("Jump");
+            }
+        }
     }
 
     /// <summary>
@@ -95,12 +123,16 @@ public class FPSPiece : MonoBehaviour
 
         moveDir.x = input.x;
         moveDir.z = input.y;
+
+        isWalking = true;
     }
 
     // 점프
     private void OnJump(InputValue value)
     {       
         ySpeed = jumpSpeed;
+
+        isJumping = true;
     }
 
     /// <summary>
@@ -155,6 +187,27 @@ public class FPSPiece : MonoBehaviour
         {
             curCamera = FPSCamera;
             ZoomCamera.Priority = 1;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (groundCheck.Contain(collision.gameObject.layer))    // 플레이어가 땅 위에 있을 경우
+        {
+            isGround = true;
+
+            if (isJumping)
+            {
+                isJumping = false;
+            }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (groundCheck.Contain(collision.gameObject.layer))    // 플레이어가 땅 위에 없을 경우
+        {
+            isGround = false;
         }
     }
 }

@@ -350,6 +350,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 495678285330788294, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503432379258821709, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2676398880196730207, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -390,9 +398,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3676111239735331224, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586273495853963045, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6628353771314542527, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
       propertyPath: m_Name
       value: JanggiBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628353771314542527, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360645259642568629, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -558,7 +582,12 @@ MonoBehaviour:
   controller: {fileID: 603813258}
   rigid: {fileID: 603813259}
   weapon: {fileID: 0}
+  FPSCamera: {fileID: 0}
+  ZoomCamera: {fileID: 0}
   animator: {fileID: 0}
+  groundCheck:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 10
   jumpSpeed: 8
   breakPower: 5
@@ -659,6 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRoot: {fileID: 982880372}
+  muzzlePointRoot: {fileID: 0}
   mouseSensitivity: 10
   xRotation: 0
 --- !u!1 &653661525
@@ -2250,6 +2280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRoot: {fileID: 1245908219}
+  muzzlePointRoot: {fileID: 0}
   mouseSensitivity: 10
   xRotation: 0
 --- !u!114 &1468779009
@@ -2268,7 +2299,12 @@ MonoBehaviour:
   controller: {fileID: 1468779002}
   rigid: {fileID: 1468779003}
   weapon: {fileID: 0}
+  FPSCamera: {fileID: 0}
+  ZoomCamera: {fileID: 0}
   animator: {fileID: 0}
+  groundCheck:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 10
   jumpSpeed: 8
   breakPower: 5
@@ -2707,6 +2743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRoot: {fileID: 1698893120}
+  muzzlePointRoot: {fileID: 0}
   mouseSensitivity: 10
   xRotation: 0
 --- !u!114 &3065427581678022749
@@ -2725,7 +2762,12 @@ MonoBehaviour:
   controller: {fileID: 3065427581678022750}
   rigid: {fileID: 3065427581678022751}
   weapon: {fileID: 0}
+  FPSCamera: {fileID: 1698893121}
+  ZoomCamera: {fileID: 0}
   animator: {fileID: 3478962133216653760}
+  groundCheck:
+    serializedVersion: 2
+    m_Bits: 256
   moveSpeed: 10
   jumpSpeed: 8
   breakPower: 5

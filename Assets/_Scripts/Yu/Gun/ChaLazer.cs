@@ -2,25 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaLazerGun : Weapon
+public class ChaLazer : Weapon
 {
     [SerializeField] Transform muzzlePoint;    
     [SerializeField] float maxDistance;
     [SerializeField] LayerMask layerMask;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem hitEffect;
+    [SerializeField] LineRenderer lineRenderer;
 
     [SerializeField] Transform hitPoint;
 
     public override void Fire()
     {
         muzzleFlash.Play();
-
+        lineRenderer.SetPosition(0, transform.position);
         if (Physics.Raycast(muzzlePoint.position, muzzlePoint.forward, out RaycastHit hitInfo, maxDistance))
         {
 
             // 레이캐스트 보이게 하기
             Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * hitInfo.distance, Color.red, 0.5f);
+            lineRenderer.SetPosition(1, hitInfo.transform.position);
             // Camera.main.transform
             // 맞는 위치에 총자국 이펙트
             ParticleSystem partcl = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));

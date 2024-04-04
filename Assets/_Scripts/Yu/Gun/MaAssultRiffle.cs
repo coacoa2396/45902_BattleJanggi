@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class MaAssultRiffle : MonoBehaviour
+/// <summary>
+/// 제작자 : Changyu
+/// 장기말 (마)의 무기
+/// </summary>
+public class MaAssultRiffle : Gun
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Transform muzzlePoint;
 
-    // Update is called once per frame
-    void Update()
+    public override void Fire()
     {
-        
+        PooledObject PO = Manager.Pool.GetPool(Bullet, muzzlePoint.position, muzzlePoint.rotation);
+        Bullet initBullet = PO.GetComponent<Bullet>();
+
+        initBullet.Damage = Damage;
+        initBullet.Weapon = GetComponent<Weapon>();
     }
 }

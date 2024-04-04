@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Gun : MonoBehaviour
+/// <summary>
+/// 제작 : changyu
+/// 탄환 발사형 무기들의 베이스
+/// </summary>
+public class Gun : Weapon
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Bullet bullet;         // 총에서 나갈 탄환의 프리팹
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Bullet Bullet {  get { return bullet; } }
 }

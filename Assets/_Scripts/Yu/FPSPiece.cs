@@ -19,9 +19,9 @@ public class FPSPiece : MonoBehaviour
     [Header("Componemt")]
     [SerializeField] CharacterController controller;
     [SerializeField] Rigidbody rigid;
-    [SerializeField] Weapon weapon;    
+    [SerializeField] Weapon weapon;
     [SerializeField] Animator animator;
-    [SerializeField] LayerMask groundCheck;    
+    [SerializeField] LayerMask groundCheck;
 
     [Header("Property")]
     [SerializeField] float moveSpeed;
@@ -30,12 +30,12 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] bool isGround;  // 플레이어의 땅 위 여부
     [SerializeField] bool isWalking; // 플레이어의 걷기 여부
     [SerializeField] bool isJumping; // 플레이어의 점프 여부
-    
-    private Vector3 moveDir;      
+
+    private Vector3 moveDir;
 
     private void FixedUpdate()
     {
-        Move();      
+        Move();
     }
 
     /// <summary>
@@ -80,6 +80,13 @@ public class FPSPiece : MonoBehaviour
     /// <param name="value"></param>
     void OnFire(InputValue value)
     {
+        MaAssultRiffle assultRiffle;
+        if (weapon.TryGetComponent(out assultRiffle))
+        {
+            weapon.Fire();
+            return;
+        }
+
         ChargingWeapon charge;
         if (!weapon.TryGetComponent(out charge))
             charge = null;
@@ -117,7 +124,7 @@ public class FPSPiece : MonoBehaviour
 
     // 점프
     private void OnJump(InputValue value)
-    {       
+    {
         isJumping = true;
     }
 
@@ -141,7 +148,7 @@ public class FPSPiece : MonoBehaviour
     void Die()
     {
 
-    }   
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

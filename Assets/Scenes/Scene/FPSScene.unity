@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8044815578677316396, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.89
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -822,7 +826,7 @@ Transform:
   m_GameObject: {fileID: 1678958452}
   serializedVersion: 2
   m_LocalRotation: {x: 0.016037246, y: -0.9833985, z: 0.14349823, w: 0.10990224}
-  m_LocalPosition: {x: -29.624065, y: -2.6885571, z: -22.122036}
+  m_LocalPosition: {x: -29.624065, y: -2.6885571, z: -0.07999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -914,9 +918,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1966230361527614061, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 4935311212739296441, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_Name
       value: FPSDog
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343113599113048077, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
+      propertyPath: m_Center.y
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343113599113048077, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8980925058027238599, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -928,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980925058027238599, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.712036
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 8980925058027238599, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -974,6 +990,10 @@ PrefabInstance:
     - target: {fileID: 1926576335583989376, guid: 24158d767edf8524986d79d3d381f513, type: 3}
       propertyPath: m_Name
       value: FPSHorse
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926576335583989376, guid: 24158d767edf8524986d79d3d381f513, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4336751918707472269, guid: 24158d767edf8524986d79d3d381f513, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1032,6 +1052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSCat
       objectReference: {fileID: 0}
+    - target: {fileID: 132726116675195552, guid: f2fc7b6256607e146b6cdd200b9b764a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3246424093271196124, guid: f2fc7b6256607e146b6cdd200b9b764a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.109738
@@ -1088,6 +1112,10 @@ PrefabInstance:
     - target: {fileID: 3654009547200630817, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
       propertyPath: m_Name
       value: FPSLion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654009547200630817, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6318484153471003985, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1186,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSTiger
       objectReference: {fileID: 0}
+    - target: {fileID: 7996843082193188837, guid: 906a55d94bf449349b0e4906669fdae6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1243,6 +1275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSAlpaca
       objectReference: {fileID: 0}
+    - target: {fileID: 1501187199936161611, guid: 24417409adc6b414db4f9c559cec95dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1299,6 +1335,10 @@ PrefabInstance:
     - target: {fileID: 8757254092524764855, guid: a2e4b3f9d9e933642a1db6004a90f5b8, type: 3}
       propertyPath: m_Name
       value: FPSElephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757254092524764855, guid: a2e4b3f9d9e933642a1db6004a90f5b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

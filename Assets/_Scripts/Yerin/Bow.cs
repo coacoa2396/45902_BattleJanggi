@@ -34,9 +34,14 @@ public class Bow : ChargingWeapon
         }
     }
 
-    private void Shot(float chargingPower)
+    private void Shoot(float chargingPower)
     {
-        Instantiate(arrow, transform.position, transform.rotation);
+        PooledObject PO = Manager.Pool.GetPool(arrow, transform.position, transform.rotation);
+        Bullet initBullet = PO.GetComponent<Bullet>();
+
+        initBullet.Damage = Damage;
+        initBullet.Weapon = GetComponent<Weapon>();
+        PO.GetComponent<Arrow>()?.Shoot(transform.forward);
     }
 
     public override void Charging()
@@ -47,7 +52,12 @@ public class Bow : ChargingWeapon
     public override void Fire()
     {
         StopCoroutine(chargingCoroutine);
+        Shoot(chargingPower);
+        chargingPower = 0;
+    }
 
-        Shot(chargingPower);
+    public float BowPower()
+    {
+        return chargingPower + normalPower;
     }
 }

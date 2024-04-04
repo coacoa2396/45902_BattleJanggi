@@ -87,7 +87,9 @@ public class FPSPiece : MonoBehaviour
     {
         ChargingWeapon charge;
         if (!weapon.TryGetComponent(out charge))
+        {
             charge = null;
+        }
 
         if (value.isPressed)
         {

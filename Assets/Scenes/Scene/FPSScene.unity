@@ -131,14 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 495678285330788294, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2503432379258821709, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2676398880196730207, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -179,29 +171,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3676111239735331224, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586273495853963045, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6628353771314542527, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
       propertyPath: m_Name
       value: JanggiBoard
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628353771314542527, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7360645259642568629, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044815578677316396, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 24.89
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -895,6 +867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1a2913e9d96844fa473179652ba3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 6739473780418308598, guid: e06fd6695604dfe4186a3721e43f4fd6, type: 3}
 --- !u!4 &2102985519
 Transform:
   m_ObjectHideFlags: 0
@@ -918,21 +892,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1966230361527614061, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 4935311212739296441, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_Name
       value: FPSDog
-      objectReference: {fileID: 0}
-    - target: {fileID: 5343113599113048077, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
-      propertyPath: m_Center.y
-      value: 0.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 5343113599113048077, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8980925058027238599, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_LocalPosition.x

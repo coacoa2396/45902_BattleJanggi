@@ -27,9 +27,9 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float breakPower;
 
-    bool isGround;  // 플레이어의 땅 위 여부
-    bool isWalking; // 플레이어의 걷기 여부
-    bool isJumping; // 플레이어의 점프 여부
+    [SerializeField] bool isGround;  // 플레이어의 땅 위 여부
+    [SerializeField] bool isWalking; // 플레이어의 걷기 여부
+    [SerializeField] bool isJumping; // 플레이어의 점프 여부
     
     private Vector3 moveDir;      
 

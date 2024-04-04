@@ -31,8 +31,14 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] bool isWalking; // 플레이어의 걷기 여부
     [SerializeField] bool isJumping; // 플레이어의 점프 여부
 
-    private Vector3 moveDir;
+    List<Collider> groundList = new List<Collider>();
 
+    private Vector3 moveDir;      
+
+    void Awake()
+    {
+        groundList = new List<Collider>();
+    }
     private void FixedUpdate()
     {
         Move();
@@ -89,7 +95,9 @@ public class FPSPiece : MonoBehaviour
 
         ChargingWeapon charge;
         if (!weapon.TryGetComponent(out charge))
+        {
             charge = null;
+        }
 
         if (value.isPressed)
         {
@@ -148,23 +156,27 @@ public class FPSPiece : MonoBehaviour
     void Die()
     {
 
-    }
 
-    private void OnCollisionEnter(Collision collision)
+    }   
+    
+    private void OnTriggerEnter(Collider other)
     {
-        if (groundCheck.Contain(collision.gameObject.layer))    // 플레이어가 땅 위에 있을 경우
+        if (groundCheck.Contain(other.gameObject.layer))    // 플레이어가 땅 위에 있을 경우
         {
+            groundList.Add(other);
             isGround = true;
-
             isJumping = false;
         }
     }
-
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (groundCheck.Contain(collision.gameObject.layer))    // 플레이어가 땅 위에 없을 경우
+        if (groundCheck.Contain(other.gameObject.layer))    // 플레이어가 땅 위에 없을 경우
         {
-            isGround = false;
+            groundList.Remove(other);
+            if (groundList.Count == 0)
+            {
+                isGround = false;
+            }
         }
     }
 

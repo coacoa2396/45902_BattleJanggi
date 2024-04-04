@@ -131,14 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 495678285330788294, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2503432379258821709, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2676398880196730207, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -179,25 +171,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3676111239735331224, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586273495853963045, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6628353771314542527, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
       propertyPath: m_Name
       value: JanggiBoard
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628353771314542527, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7360645259642568629, guid: e5caad5d0a10b024a9bd83f154cea6de, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -821,8 +797,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678958452}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.05673965, y: 0.079786584, z: 0.008679249, w: 0.995158}
-  m_LocalPosition: {x: -13.894009, y: -2.6706185, z: 22.18541}
+  m_LocalRotation: {x: 0.016037246, y: -0.9833985, z: 0.14349823, w: 0.10990224}
+  m_LocalPosition: {x: -29.624065, y: -2.6885571, z: -0.07999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -891,6 +867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1a2913e9d96844fa473179652ba3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 6739473780418308598, guid: e06fd6695604dfe4186a3721e43f4fd6, type: 3}
 --- !u!4 &2102985519
 Transform:
   m_ObjectHideFlags: 0
@@ -918,10 +896,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSDog
       objectReference: {fileID: 0}
-    - target: {fileID: 4935311212739296441, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8980925058027238599, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.904055
@@ -932,7 +906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980925058027238599, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.712036
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 8980925058027238599, guid: 6847c8d42204ff545902739dd46e307c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1100,6 +1074,10 @@ PrefabInstance:
     - target: {fileID: 3654009547200630817, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
       propertyPath: m_Name
       value: FPSLion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3654009547200630817, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6318484153471003985, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
       propertyPath: m_LocalPosition.x

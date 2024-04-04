@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Bullet : MonoBehaviour
+/// <summary>
+/// 제작 : ChanGyu
+/// 총에서 나가는 탄환의 기본 베이스
+/// </summary>
+public class Bullet : PooledObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Component")]
+    [SerializeField] Weapon weapon;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Spec")]
+    [SerializeField] float damage;
+    [SerializeField] float speed;
+
+    public float Damage { get { return damage; } set {  damage = value; } }
+    public float Speed { get { return speed; } set { speed = value; } }
 }

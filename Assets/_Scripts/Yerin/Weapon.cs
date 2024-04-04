@@ -4,13 +4,13 @@ using UnityEngine;
 
 
 /// <summary>
-/// Yerin
+/// 개발자: Yerin
 /// 
 /// Weapon 공통 내용
 /// </summary>
 public class Weapon : MonoBehaviour
 {
-    [Header("Componemt")]
+    [Header("Component")]
     [SerializeField] Animator animator;
 
     [Header("Property")]

@@ -861,21 +861,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4776016609791140511, guid: 906a55d94bf449349b0e4906669fdae6, type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7551988053270159378, guid: 906a55d94bf449349b0e4906669fdae6, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552299945176833464, guid: 906a55d94bf449349b0e4906669fdae6, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 7996843082193188837, guid: 906a55d94bf449349b0e4906669fdae6, type: 3}
       propertyPath: m_Name
       value: FPSTiger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996843082193188837, guid: 906a55d94bf449349b0e4906669fdae6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

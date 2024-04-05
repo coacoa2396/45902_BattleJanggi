@@ -15,8 +15,6 @@ public class Bullet : PooledObject
     [SerializeField] float speed;
     float damage;
 
-    float damage;
-
     public Weapon Weapon { get { return weapon; } set { weapon = value; } }
     public Rigidbody Rigid { get { return rigid; } }
     public float Damage { get { return damage; } set { damage = value; } }

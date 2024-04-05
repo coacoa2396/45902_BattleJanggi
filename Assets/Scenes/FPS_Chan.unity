@@ -675,6 +675,7 @@ MonoBehaviour:
   bullet: {fileID: 1147693374370331515, guid: 737be16f66b3f994b98f210125944c67, type: 3}
   muzzlePoint: {fileID: 1207160842}
   muzzleFlash: {fileID: 19819752, guid: 273be63206a667446a1847f356cdd8ad, type: 3}
+  rate: 0.2
 --- !u!1 &1303786306
 GameObject:
   m_ObjectHideFlags: 0

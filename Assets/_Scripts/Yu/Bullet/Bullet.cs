@@ -12,8 +12,8 @@ public class Bullet : PooledObject
     [SerializeField] Rigidbody rigid;
 
     [Header("Spec")]
-    [SerializeField] float damage;
     [SerializeField] float speed;
+    float damage;
 
     public Weapon Weapon { get { return weapon; } set { weapon = value; } }
     public Rigidbody Rigid { get { return rigid; } }

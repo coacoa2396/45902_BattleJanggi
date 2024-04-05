@@ -13,7 +13,6 @@ public class Bullet : PooledObject
 
     [Header("Spec")]
     [SerializeField] float speed;
-    float damage;
 
     float damage;
 

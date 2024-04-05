@@ -8,7 +8,7 @@ public class ChaLazer : Weapon
     [SerializeField] float maxDistance;
     [SerializeField] LayerMask layerMask;
     [SerializeField] ParticleSystem muzzleFlash;
-    [SerializeField] ParticleSystem hitEffect;
+    [SerializeField] LazerGunImpact hitEffect;
     [SerializeField] LineRenderer lineRenderer;
 
     [SerializeField] Transform hitPoint;
@@ -27,11 +27,13 @@ public class ChaLazer : Weapon
             lineRenderer.gameObject.SetActive(true);
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, hitInfo.point);
-            // Camera.main.transform
+
             // 맞는 위치에 총자국 이펙트
-            ParticleSystem partcl = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
-            partcl.transform.position = hitInfo.point;
-            Destroy(partcl, 1.5f);
+            Manager.Pool.GetPool(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+
+            //ParticleSystem partcl = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            //partcl.transform.position = hitInfo.point;
+            //Destroy(partcl, 1.5f);
 
             // 맞았을 때 물리력 구현
             //Rigidbody rigid = hitInfo.collider.GetComponent<Rigidbody>();

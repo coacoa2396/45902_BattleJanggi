@@ -7,15 +7,26 @@ using UnityEngine;
 /// </summary>
 public class ARBullet : Bullet
 {
-    [SerializeField] 
+    [SerializeField] ARImpact explodeEffect;        // ÅºÈ¯ÀÌ ´ê¾ÒÀ» ¶§ ³ª¿À´Â ÀÌÆÑÆ®
 
     private void OnEnable()
     {
         Rigid.velocity = transform.forward * Speed;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
-        
+        FPSPiece target;
+        collision.gameObject.TryGetComponent<FPSPiece>(out target);
+
+        target?.TakeDamage(Damage);
+        Manager.Pool.GetPool(explodeEffect, transform.position, Quaternion.LookRotation(collision.contacts[0].normal));
+
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        Rigid.velocity = Vector3.zero;
     }
 }

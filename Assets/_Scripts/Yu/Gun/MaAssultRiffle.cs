@@ -10,6 +10,8 @@ public class MaAssultRiffle : Gun
     [SerializeField] Transform muzzlePoint;
     [SerializeField] ParticleSystem muzzleFlash;
 
+    [SerializeField] float rate;        // 연사속도
+
     Coroutine coroutine;
 
     public override void Fire()
@@ -22,12 +24,16 @@ public class MaAssultRiffle : Gun
         initBullet.Weapon = GetComponent<Weapon>();
     }
 
+    /// <summary>
+    /// 연사속도를 체크해서 쏘는 방식
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Firing()
     {
         while (true)
         {
             Fire();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(rate);
         }
     }
 

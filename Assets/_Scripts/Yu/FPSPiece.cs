@@ -161,10 +161,11 @@ public class FPSPiece : MonoBehaviour
     /// </summary>
     void Die()
     {
-
-
-    }
-
+        Debug.Log("Die");
+  
+        Destroy(gameObject);
+    }   
+    
     private void OnTriggerEnter(Collider other)
     {
         if (groundCheck.Contain(other.gameObject.layer))    // 플레이어가 땅 위에 있을 경우

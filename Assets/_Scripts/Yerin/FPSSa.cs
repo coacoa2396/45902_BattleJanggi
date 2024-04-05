@@ -10,6 +10,8 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class FPSSa : FPSPiece
 {
+    [SerializeField] GameObject cat;
+
     Coroutine skill;
 
     bool canUseSkill = true;
@@ -18,7 +20,7 @@ public class FPSSa : FPSPiece
     {
         yield return new WaitForSeconds(5f);
 
-        gameObject.layer = LayerMask.NameToLayer("Default");
+        cat.layer = LayerMask.NameToLayer("Default");
         canUseSkill = true;
     }
 
@@ -26,7 +28,7 @@ public class FPSSa : FPSPiece
     {
         if (canUseSkill)
         {
-            gameObject.layer = LayerMask.NameToLayer("Invisible");
+            cat.layer = LayerMask.NameToLayer("Invisible");
             skill = StartCoroutine(Skill());
 
             canUseSkill = false;

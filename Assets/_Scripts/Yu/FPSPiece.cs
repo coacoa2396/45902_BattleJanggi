@@ -155,8 +155,9 @@ public class FPSPiece : MonoBehaviour
     /// </summary>
     void Die()
     {
+        Debug.Log("Die");
 
-
+        Destroy(gameObject);
     }   
     
     private void OnTriggerEnter(Collider other)

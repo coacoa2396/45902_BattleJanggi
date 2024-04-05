@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>
 /// 개발자: Yerin
 /// 
-/// 졸이 사용할 활 클래스
+/// 사가 사용할 수리검 클래스
 /// </summary>
-public class Bow : ChargingWeapon
+public class ShurikenInit : ChargingWeapon
 {
-    [SerializeField] Bullet arrow;
+    [SerializeField] Bullet shuriken;
     protected override void Shoot(float chargingPower)
     {
-        PooledObject PO = Manager.Pool.GetPool(arrow, transform.position, transform.rotation);
+        PooledObject PO = Manager.Pool.GetPool(shuriken, transform.position, transform.rotation);
         Bullet initBullet = PO.GetComponent<Bullet>();
 
         initBullet.Damage = Damage;
         initBullet.Weapon = GetComponent<Weapon>();
-        PO.GetComponent<Arrow>()?.Shoot(transform.forward);
+        PO.GetComponent<Shuriken>()?.Shoot(transform.forward);
     }
 }

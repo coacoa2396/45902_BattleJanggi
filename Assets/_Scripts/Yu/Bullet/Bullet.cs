@@ -12,11 +12,22 @@ public class Bullet : PooledObject
     [SerializeField] Rigidbody rigid;
 
     [Header("Spec")]
-    [SerializeField] float damage;
     [SerializeField] float speed;
+
+    float damage;
 
     public Weapon Weapon { get { return weapon; } set { weapon = value; } }
     public Rigidbody Rigid { get { return rigid; } }
     public float Damage { get { return damage; } set {  damage = value; } }
     public float Speed { get { return speed; } set { speed = value; } }
+
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        FPSPiece target;
+        collision.gameObject.TryGetComponent<FPSPiece>(out target);
+
+        target?.TakeDamage(damage);
+
+        gameObject.SetActive(false);
+    }
 }

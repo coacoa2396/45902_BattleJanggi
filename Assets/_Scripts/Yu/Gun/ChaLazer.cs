@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChaLazer : Weapon
 {
-    [SerializeField] Transform muzzlePoint;    
+    [SerializeField] Transform muzzlePoint;
     [SerializeField] float maxDistance;
     [SerializeField] LayerMask layerMask;
     [SerializeField] ParticleSystem muzzleFlash;
@@ -16,13 +16,17 @@ public class ChaLazer : Weapon
     public override void Fire()
     {
         muzzleFlash.Play();
-        lineRenderer.SetPosition(0, transform.position);
-        if (Physics.Raycast(muzzlePoint.position, muzzlePoint.forward, out RaycastHit hitInfo, maxDistance))
+
+        Ray ray = new Ray(muzzlePoint.position, muzzlePoint.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance))
         {
 
             // 레이캐스트 보이게 하기
             Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * hitInfo.distance, Color.red, 0.5f);
-            lineRenderer.SetPosition(1, hitInfo.transform.position);
+            lineRenderer.gameObject.SetActive(true);
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, hitInfo.point);
             // Camera.main.transform
             // 맞는 위치에 총자국 이펙트
             ParticleSystem partcl = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
@@ -30,11 +34,11 @@ public class ChaLazer : Weapon
             Destroy(partcl, 1.5f);
 
             // 맞았을 때 물리력 구현
-            Rigidbody rigid = hitInfo.collider.GetComponent<Rigidbody>();
-            if (rigid != null)
-            {
-                rigid.AddForceAtPosition(-hitInfo.normal * 10f, hitInfo.point, ForceMode.Impulse);
-            }
+            //Rigidbody rigid = hitInfo.collider.GetComponent<Rigidbody>();
+            //if (rigid != null)
+            //{
+            //    rigid.AddForceAtPosition(-hitInfo.normal * 10f, hitInfo.point, ForceMode.Impulse);
+            //}
 
             // 맞는 로그
             Debug.Log("맞았다!");
@@ -43,7 +47,7 @@ public class ChaLazer : Weapon
             FPSPiece target = hitInfo.collider.GetComponent<FPSPiece>();
 
             target?.TakeDamage(Damage);
-            
+
             // 레이캐스트 디버깅 방법
             /*
             Debug.Log(hitInfo.collider.gameObject.name);
@@ -54,6 +58,9 @@ public class ChaLazer : Weapon
         else
         {
             Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * maxDistance, Color.red, 0.5f);
+            lineRenderer.gameObject.SetActive(true);
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1,hitInfo.point + ray.direction * maxDistance);
             Debug.Log("안맞았다!");
         }
 

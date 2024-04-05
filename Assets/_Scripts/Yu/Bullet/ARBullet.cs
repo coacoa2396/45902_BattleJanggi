@@ -7,13 +7,15 @@ using UnityEngine;
 /// </summary>
 public class ARBullet : Bullet
 {
-    private void Start()
-    {
-        Speed = 30f;
-    }
+    [SerializeField] 
 
     private void OnEnable()
     {
-        Rigid.AddForce(Vector3.forward * Speed);
+        Rigid.velocity = transform.forward * Speed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }

@@ -33,7 +33,7 @@ public class FPSPiece : MonoBehaviour
 
     List<Collider> groundList = new List<Collider>();
 
-    private Vector3 moveDir;      
+    private Vector3 moveDir;
 
     void Awake()
     {
@@ -87,11 +87,7 @@ public class FPSPiece : MonoBehaviour
     void OnFire(InputValue value)
     {
         MaAssultRiffle assultRiffle;
-        if (weapon.TryGetComponent(out assultRiffle))
-        {
-            weapon.Fire();
-            return;
-        }
+        weapon.TryGetComponent(out assultRiffle);
 
         ChargingWeapon charge;
         if (!weapon.TryGetComponent(out charge))
@@ -99,11 +95,16 @@ public class FPSPiece : MonoBehaviour
             charge = null;
         }
 
+
         if (value.isPressed)
         {
             if (charge != null)
             {
                 charge.Charging();
+            }
+            else if (assultRiffle != null)
+            {
+                assultRiffle.StartFiring();
             }
             else
             {
@@ -116,7 +117,12 @@ public class FPSPiece : MonoBehaviour
             {
                 charge.Fire();
             }
+            else if (assultRiffle != null)
+            {
+                assultRiffle.StopFiring();
+            }
         }
+
     }
 
     // 인풋액션에서 받아오는 정보
@@ -156,7 +162,7 @@ public class FPSPiece : MonoBehaviour
     void Die()
     {
         Debug.Log("Die");
-
+  
         Destroy(gameObject);
     }   
     

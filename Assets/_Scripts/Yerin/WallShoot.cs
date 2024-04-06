@@ -13,12 +13,13 @@ public class WallShoot : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float power;
 
+
     GameObject arrowCopy;
     Coroutine arrowDestroy;
 
     IEnumerator DestroyArrow()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.02f);
 
         Destroy(arrowCopy);
     }

@@ -82,6 +82,7 @@ public class FPSPiece : MonoBehaviour
     /// ChanGyu
     /// 마우스 클릭을 했을 시 발사하는 함수
     /// 차징무기를 위한 로직을 따로 구현한 상태
+    /// 어썰트라이플을 위한 로직도 따로 구현
     /// </summary>
     /// <param name="value"></param>
     void OnFire(InputValue value)

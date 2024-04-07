@@ -9,8 +9,9 @@ public class DMRBullet : Bullet
 {
     [SerializeField] DMRImpact explodeEffect;        // ÅºÈ¯ÀÌ ´ê¾ÒÀ» ¶§ ³ª¿À´Â ÀÌÆÑÆ®
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         Rigid.velocity = transform.forward * Speed;
     }
 

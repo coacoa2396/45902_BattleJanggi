@@ -20,6 +20,11 @@ public class Bullet : PooledObject
     public float Damage { get { return damage; } set { damage = value; } }
     public float Speed { get { return speed; } set { speed = value; } }
 
+    protected virtual void OnEnable()
+    {
+        StartCoroutine(SetOff());
+    }
+
     protected virtual void OnCollisionEnter(Collision collision)
     {
         FPSPiece target;
@@ -28,5 +33,11 @@ public class Bullet : PooledObject
         target?.TakeDamage(damage);
 
         gameObject.SetActive(false);
+    }
+
+    IEnumerator SetOff()
+    {
+        yield return new WaitForSeconds(7f);
+        gameObject?.SetActive(false);
     }
 }

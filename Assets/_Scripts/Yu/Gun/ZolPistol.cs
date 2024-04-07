@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ZolPistol : MonoBehaviour
+/// <summary>
+/// 제작자 : ChanGyu
+/// 장기말 (졸)의 기본무기
+/// </summary>
+public class ZolPistol : Gun
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Transform muzzlePoint;
+    [SerializeField] ParticleSystem muzzleFlash;
+
+    public override void Fire()
     {
-        
+        muzzleFlash.Play();
+        PooledObject PO = Manager.Pool.GetPool(Bullet, muzzlePoint.position, muzzlePoint.rotation);
+        Bullet initBullet = PO.GetComponent<Bullet>();
+
+        initBullet.Damage = Damage;
+        initBullet.Weapon = GetComponent<Weapon>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

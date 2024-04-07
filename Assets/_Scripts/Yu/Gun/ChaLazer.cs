@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 제작자 : ChanGyu
+/// 장기말(차)의 레이저건
+/// </summary>
 public class ChaLazer : Weapon
 {
     [SerializeField] Transform muzzlePoint;
@@ -65,6 +68,5 @@ public class ChaLazer : Weapon
             lineRenderer.SetPosition(1,hitInfo.point + ray.direction * maxDistance);
             Debug.Log("안맞았다!");
         }
-
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// 제작자 : ChanGyu
-/// AR 피탄시 나오는 이펙트
+/// DMR 피탄 시 나오는 이펙트
 /// </summary>
-public class ARImpact : Impact
+public class DMRImpact : Impact
 {
     private void OnEnable()
     {

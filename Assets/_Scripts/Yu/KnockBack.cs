@@ -25,7 +25,7 @@ public class KnockBack : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (knockBackCheck.Contain(collision.gameObject.layer))
+        if (knockBackCheck.Contain(collision.gameObject.layer) || collision.gameObject.TryGetComponent(out WallSting sting))
         {
             Debug.Log($"{collision.transform.gameObject.name}¶û ºÎµúÈû");
             if (isKnockbacking == false)

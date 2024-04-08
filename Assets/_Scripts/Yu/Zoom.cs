@@ -4,18 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-
+/// <summary>
+/// 제작 : ChanGyu
+/// CinemachineVirtualCamera의 FOV를 이용한 줌 기능 구현
+/// </summary>
 public class Zoom : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera FPSCamera;
-    [SerializeField] CinemachineVirtualCamera ZoomCamera;
-    [SerializeField] Image scope;
+    [SerializeField] Image normalScope;
+    [SerializeField] Image zoomScope;
 
-    CinemachineVirtualCamera curCamera;
+    [SerializeField] float normalFOV = 60;
+    [SerializeField] float zoomFOV = 20;
+    [SerializeField] float lerpFOV;
+    [SerializeField] float zoomSpeed;
+
+    State curState;
+
+    bool zooming;
 
     private void Start()
     {
-        curCamera = FPSCamera;
+        curState = State.NormalCam;
+        zooming = false;
     }
 
     /// <summary>
@@ -24,17 +35,62 @@ public class Zoom : MonoBehaviour
     /// <param name="value"></param>
     void OnZoom(InputValue value)
     {
-        if (curCamera == FPSCamera)
+        if (!zooming)
         {
-            curCamera = ZoomCamera;
-            ZoomCamera.Priority = 11;
-            scope.gameObject.SetActive(true);
-        }
-        else
-        {
-            curCamera = FPSCamera;
-            ZoomCamera.Priority = 1;
-            scope.gameObject.SetActive(false);
+            if (curState == State.NormalCam)
+            {
+                zooming = true;
+                curState = State.ZoomCam;
+                StartCoroutine(NorToZoom());
+                normalScope.gameObject.SetActive(false);
+                zoomScope.gameObject.SetActive(true);
+            }
+            else
+            {
+                zooming = true;
+                curState = State.NormalCam;
+                StartCoroutine(ZoomToNor());
+                normalScope.gameObject.SetActive(true);
+                zoomScope.gameObject.SetActive(false);
+            }
         }
     }
+
+    IEnumerator NorToZoom()
+    {
+        lerpFOV = normalFOV;
+        while (true)
+        {
+            lerpFOV = Mathf.Lerp(lerpFOV, zoomFOV, zoomSpeed * Time.fixedDeltaTime);
+            FPSCamera.gameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = lerpFOV;
+
+            if (Mathf.Abs(lerpFOV - zoomFOV) < 0.1f)
+            {
+                FPSCamera.gameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = zoomFOV;
+                zooming = false;
+                break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator ZoomToNor()
+    {
+        lerpFOV = zoomFOV;
+        while (true)
+        {
+            lerpFOV = Mathf.Lerp(lerpFOV, normalFOV, zoomSpeed * Time.fixedDeltaTime);
+            FPSCamera.gameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = lerpFOV;
+
+            if (Mathf.Abs(lerpFOV - normalFOV) < 0.1f)
+            {
+                FPSCamera.gameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = normalFOV;
+                zooming = false;
+                break;
+            }
+            yield return null;
+        }
+    }
+
+    enum State { NormalCam, ZoomCam }
 }

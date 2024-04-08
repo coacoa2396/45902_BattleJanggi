@@ -37,7 +37,5 @@ public class WaterCannonImpact : Impact
         collision.gameObject.TryGetComponent<FPSPiece>(out target);
 
         target?.TakeDamage(damage);
-
-        gameObject.SetActive(false);
     }
 }

@@ -1,14 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 제작자 : Changyu
+/// 장기 말(마)의 벽 형태.
+/// 진입시 플레이어에게 가속을 주는 형식으로 구현
+/// </summary>
 public class WallAccelerate : Wall
 {
-    // 진입시 플레이어에게 가속'버프'를 주는 형식으로 구현
+    [SerializeField] LayerMask checkPlayer;
+
+    float baseSpeed = 10f;
 
     // TriggerEnter로 버프체크하고
+    private void OnTriggerEnter(Collider other)
+    {
+        if (checkPlayer.Contain(other.gameObject.layer))
+        {
+            other.gameObject.GetComponent<FPSPiece>().MoveSpeed += baseSpeed * 0.05f;
+        }
+    }
 
-    // 진입시에는 버프의 지속시간을 어마어마하게 크게 준 다음에
-
-    // TriggerExit으로 버프의 시간을 지속시간 만큼으로 줄여준다    
+    private void OnTriggerExit(Collider other)
+    {
+        if (checkPlayer.Contain(other.gameObject.layer))
+        {
+            other.gameObject.GetComponent<FPSPiece>().MoveSpeed -= baseSpeed * 0.05f;
+        }
+    }
 }

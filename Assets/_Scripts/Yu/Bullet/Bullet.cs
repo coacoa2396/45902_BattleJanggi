@@ -37,7 +37,7 @@ public class Bullet : PooledObject
 
     IEnumerator SetOff()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(5f);
         gameObject?.SetActive(false);
     }
 }

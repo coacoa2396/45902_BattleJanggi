@@ -16,6 +16,8 @@ public class WallShooting : Wall
     [SerializeField] PoAttackRange attackRange;
     [SerializeField] PoAttackRange nonAttackRange;
 
+    [SerializeField] GameObject bow;
+
     [SerializeField] float rotSpeed;
 
     GameObject target;
@@ -74,20 +76,21 @@ public class WallShooting : Wall
     {
         if (playerCheck.Contain(other.gameObject.layer)) 
         {
-            Vector3 dir = other.transform.position - transform.position;
-            Quaternion currentPos = gameObject.transform.rotation;
+            Vector3 dir = other.transform.position - bow.transform.position;
+            Quaternion currentPos = bow.transform.rotation;
 
             float time = 0;
 
             while (time <= 1) //노말 값이 1이 아니면 반복한다.
             {
+                float rotDeltaSpeed =  Time.deltaTime * rotSpeed;
+                time += rotDeltaSpeed;
                 //타겟 방향과 현재 바라 보고 있는 방향의 선형 비율을 가지고 노말 값을 통해 해당 지점의 변화량을 가져온다.
-                Quaternion rot = Quaternion.Lerp(currentPos, Quaternion.LookRotation(dir), time);
-                time += Time.deltaTime * rotSpeed; //노말 값을 증가시킨다.
-                transform.rotation = rot; //가져온 변화량을 대입시킨다.
+                Quaternion rot = Quaternion.Lerp(currentPos, Quaternion.LookRotation(dir), rotDeltaSpeed);
+                bow.transform.rotation = rot; //가져온 변화량을 대입시킨다.
             }
 
-            transform.rotation = Quaternion.LookRotation(dir);
+            bow.transform.rotation = Quaternion.LookRotation(dir);
         }
     }
 }

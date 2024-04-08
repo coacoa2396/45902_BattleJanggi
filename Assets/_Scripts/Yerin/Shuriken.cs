@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 개발자: Yerin
+/// 
+/// 장기말 사 수리검 관련 클래스
+/// 수리검 발사 관련
+/// </summary>
 public class Shuriken : Bullet
 {
     Coroutine destroy;
@@ -17,11 +23,6 @@ public class Shuriken : Bullet
         yield return new WaitForSeconds(3f);
 
         gameObject.SetActive(false);
-    }
-
-    private void OnEnable()
-    {
-        destroy = StartCoroutine(arrowDestroy());
     }
 
     protected override void OnCollisionEnter(Collision collision)

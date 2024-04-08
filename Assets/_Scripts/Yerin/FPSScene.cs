@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 개발자: Yerin
+/// 
+/// 장기씬에서 FPS씬 전환 관련 클래스
+/// </summary>
 public class FPSScene : BaseScene
 {
     [SerializeField] Bullet[] bullets;

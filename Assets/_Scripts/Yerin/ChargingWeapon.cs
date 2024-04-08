@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// 개발자: Yerin
+/// 
 /// 차징하는 무기들의 중분류 : 활, 수리검
 /// </summary>
 public class ChargingWeapon : Weapon

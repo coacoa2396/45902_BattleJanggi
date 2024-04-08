@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 개발자: Yerin
+/// 
+/// FPS씬에서 장기씬으로 전환
+/// </summary>
 public class JanggiScene : BaseScene
 {
     public override IEnumerator LoadingRoutine()

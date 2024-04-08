@@ -13,7 +13,6 @@ public class WallShoot : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float power;
 
-
     GameObject arrowCopy;
     Coroutine arrowDestroy;
 

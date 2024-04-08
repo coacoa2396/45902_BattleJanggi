@@ -10,13 +10,18 @@ using UnityEngine;
 public class WallArrow : MonoBehaviour
 {
     [SerializeField] float damage;
+    [SerializeField] LayerMask playerCheck;
+
     private void OnCollisionEnter(Collision collision)
     {
-        FPSPiece target;
-        collision.gameObject.TryGetComponent<FPSPiece>(out target);
+        if (playerCheck.Contain(collision.gameObject.layer))
+        {
+            FPSPiece target;
+            collision.gameObject.TryGetComponent<FPSPiece>(out target);
 
-        target?.TakeDamage(damage);
+            target?.TakeDamage(damage);
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

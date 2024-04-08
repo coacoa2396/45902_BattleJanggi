@@ -13,8 +13,14 @@ public class WallShooting : Wall
     [SerializeField] LayerMask playerCheck;
     [SerializeField] Animator animator;
 
+    [SerializeField] PoAttackRange attackRange;
+    [SerializeField] PoAttackRange nonAttackRange;
+
+    [SerializeField] float rotSpeed;
+
     GameObject target;
     bool isTargeting;
+
     private void FixedUpdate()
     {
         if(isTargeting && target == null)
@@ -28,19 +34,61 @@ public class WallShooting : Wall
     {
         if (playerCheck.Contain(other.gameObject.layer))
         {
-            animator.enabled = true;
-            isTargeting = true;
-            target = other.gameObject;
+            if (attackRange.IsInTrigger)
+            {
+                if (nonAttackRange.IsInTrigger)
+                {
+                    SetData();
+                }
+                else
+                {
+                    SetData(other.gameObject);
+                }
+            }
         }
     }
-
+   
     private void OnTriggerExit(Collider other)
     {
         if (playerCheck.Contain(other.gameObject.layer))
         {
-            animator.enabled = false;
-            isTargeting = false;
-            target = null;
+            if (!attackRange.IsInTrigger)
+            {
+                SetData();
+            }
+            else
+            {
+                SetData(other.gameObject);
+            }
+        }
+    }
+    void SetData(GameObject collider = null)
+    {
+        bool state = collider != null ? true : false;
+        animator.enabled = state;
+        isTargeting = state;
+        target = collider;
+    }
+
+    private void OnTriggerStay(Collider other)  // Trigger 안에 있는 동안 캐릭터 바라보게 하기
+    {
+        if (playerCheck.Contain(other.gameObject.layer)) 
+        {
+            Vector3 dir = other.transform.position - transform.position;
+            Quaternion currentPos = gameObject.transform.rotation;
+
+            float time = 0;
+
+            while (time <= 1) //노말 값이 1이 아니면 반복한다.
+            {
+                //타겟 방향과 현재 바라 보고 있는 방향의 선형 비율을 가지고 노말 값을 통해 해당 지점의 변화량을 가져온다.
+                Quaternion rot = Quaternion.Lerp(currentPos, Quaternion.LookRotation(dir), time);
+                time += Time.deltaTime * rotSpeed; //노말 값을 증가시킨다.
+                transform.rotation = rot; //가져온 변화량을 대입시킨다.
+            }
+
+            transform.rotation = Quaternion.LookRotation(dir);
         }
     }
 }
+

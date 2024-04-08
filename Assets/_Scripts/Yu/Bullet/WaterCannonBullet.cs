@@ -31,7 +31,5 @@ public class WaterCannonBullet : Bullet
     private void OnDisable()
     {
         Rigid.velocity = Vector3.zero;
-    }
-
-    
+    }    
 }

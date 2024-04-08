@@ -8,6 +8,7 @@ using UnityEngine;
 public class WaterCannonBullet : Bullet
 {
     [SerializeField] WaterCannonImpact explodeEffect;        // ÅºÈ¯ÀÌ ´ê¾ÒÀ» ¶§ ³ª¿À´Â ÀÌÆÑÆ®
+    float id;
 
     protected override void OnEnable()
     {
@@ -21,6 +22,7 @@ public class WaterCannonBullet : Bullet
         collision.gameObject.TryGetComponent<FPSPiece>(out target);
 
         target?.TakeDamage(Damage);
+
         Manager.Pool.GetPool(explodeEffect, transform.position, Quaternion.LookRotation(collision.contacts[0].normal));
 
         gameObject.SetActive(false);
@@ -30,4 +32,6 @@ public class WaterCannonBullet : Bullet
     {
         Rigid.velocity = Vector3.zero;
     }
+
+    
 }

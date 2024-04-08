@@ -13,12 +13,14 @@ public class ChaLazer : Weapon
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] LazerGunImpact hitEffect;
     [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] AudioSource sound;
 
     [SerializeField] Transform hitPoint;
 
     public override void Fire()
     {
         muzzleFlash.Play();
+        sound.Play();
 
         Ray ray = new Ray(muzzlePoint.position, muzzlePoint.forward);
 

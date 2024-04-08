@@ -25,7 +25,7 @@ public class KnockBack : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (knockBackCheck.Contain(10))
+        if (knockBackCheck.Contain(collision.gameObject.layer))
         {
             Debug.Log($"{collision.transform.gameObject.name}¶û ºÎµúÈû");
             if (isKnockbacking == false)

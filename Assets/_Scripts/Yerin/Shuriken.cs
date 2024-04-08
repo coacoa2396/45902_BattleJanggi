@@ -19,11 +19,6 @@ public class Shuriken : Bullet
         gameObject.SetActive(false);
     }
 
-    private void OnEnable()
-    {
-        destroy = StartCoroutine(arrowDestroy());
-    }
-
     protected override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);

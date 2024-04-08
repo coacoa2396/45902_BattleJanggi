@@ -31,6 +31,8 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] bool isWalking; // 플레이어의 걷기 여부
     [SerializeField] bool isJumping; // 플레이어의 점프 여부
 
+    public float MoveSpeed { get { return moveSpeed; } set {  moveSpeed = value; } }
+
     List<Collider> groundList = new List<Collider>();
 
     private Vector3 moveDir;

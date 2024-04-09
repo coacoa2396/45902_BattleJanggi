@@ -48,7 +48,6 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         {
             if (underSpot.InList)
             {
-                Debug.Log("In");
                 // 여기서 FPS씬으로 이동
                 TransFPS(underSpot.ListPiece, this);
                 underSpot.ClickMove();    // 움직이는건 승리를 했을 경우에 실행

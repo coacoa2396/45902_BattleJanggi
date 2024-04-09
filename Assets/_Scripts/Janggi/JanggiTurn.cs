@@ -71,8 +71,6 @@ public class JanggiTurn : Singleton<JanggiTurn>
             return;
         }
 
-        Debug.Log(currentTurn);
-
         timeLimit = StartCoroutine(CountTime());
     }
 

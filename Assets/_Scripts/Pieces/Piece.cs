@@ -57,6 +57,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
             isClicked = false;
 
             DeleteList();
+            Manager.JanggiCamera.CameraMoveLow();
 
             return;
         }
@@ -82,6 +83,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         pieceMaterial.color = Color.red;
         isClicked = true;
 
+        Manager.JanggiCamera.CameraMoveHigh();
         FindCanGo();
     }
     /// <summary>
@@ -135,6 +137,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
         DeleteList();
         Manager.JanggiTurn.OnTurn();
+        Manager.JanggiCamera.CameraMoveLow();
     }
 
     /// <summary>

@@ -96,6 +96,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
             Manager.JanggiCamera.CameraMoveHigh();
             FindCanGo();
+        }
     }
     /// <summary>
     /// 플레이어가 해당 장기말 위에 마우스를 올릴 시 오브젝트의 색을 노란색으로 변경

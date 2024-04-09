@@ -16,7 +16,7 @@ public class FPSPiece : MonoBehaviour
     [Header("Spec")]
     [SerializeField] float hp;
 
-    [Header("Componemt")]
+    [Header("Component")]
     [SerializeField] CharacterController controller;
     [SerializeField] Rigidbody rigid;
     [SerializeField] Weapon weapon;
@@ -31,7 +31,12 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] bool isWalking; // 플레이어의 걷기 여부
     [SerializeField] bool isJumping; // 플레이어의 점프 여부
 
+    bool canUseSkill = true;
+
+    Coroutine coolTime;
+
     public float MoveSpeed { get { return moveSpeed; } set {  moveSpeed = value; } }
+    public bool CanUseSkill { get { return canUseSkill; } set { canUseSkill = value; } }
 
     List<Collider> groundList = new List<Collider>();
 
@@ -193,5 +198,17 @@ public class FPSPiece : MonoBehaviour
     public void makeIsJumpingFalse()
     {
         isJumping = false;
+    }
+
+    IEnumerator SkillCoolTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        canUseSkill = true;
+    }
+
+    public void CoolTime(float time)
+    {
+        coolTime = StartCoroutine(SkillCoolTime(time));
     }
 }

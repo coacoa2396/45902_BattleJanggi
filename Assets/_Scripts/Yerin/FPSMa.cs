@@ -1,25 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
 /// 개발자: Yerin
 /// 
-/// 장기말(사) 관련 클래스 
-/// 장기말의 기능은 부모 클래스에, 여긴 사의 스킬
+/// 장기말(마) 관련 클래스 
+/// 장기말의 기능은 부모 클래스에, 여긴 마의 스킬
 /// </summary>
-public class FPSSa : FPSPiece
+public class FPSMa : FPSPiece
 {
-    [SerializeField] GameObject cat;
-
     Coroutine skill;
 
     IEnumerator Skill()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(7f);
 
-        cat.layer = LayerMask.NameToLayer("Player");
+        MoveSpeed = MoveSpeed / 1.3f;
         CanUseSkill = true;
     }
 
@@ -27,7 +26,8 @@ public class FPSSa : FPSPiece
     {
         if (CanUseSkill)
         {
-            cat.layer = LayerMask.NameToLayer("Invisible");
+            MoveSpeed = MoveSpeed * 1.3f;
+
             skill = StartCoroutine(Skill());
 
             CanUseSkill = false;

@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 /// <summary>
 /// 개발자: Yerin
@@ -12,8 +13,6 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] LayerMask playerCheck;
-
     protected Spot[,] JanggiSituation;    // 현재 장기판 위 말의 상황을 받아 올 배열
 
     Material pieceMaterial; // 해당 장기말의 Material을 받을 변수
@@ -22,6 +21,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     protected string pieceName; // 장기말의 종류
     bool isClicked;  // 해당 말이 클릭됐는지 아닌지 판단하는 변수
 
+    [SerializeField] Image GetImage;
     [SerializeField] string whosPiece;
 
     public Material PieceMaterial { get { return pieceMaterial; } }
@@ -51,7 +51,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
             // 여기서 FPS씬으로 이동
             TransFPS(underSpot.ListPiece, this);
-            //underSpot.ClickMove();    // 움직이는건 승리를 했을 경우에 실행
+            underSpot.ClickMove();    // 움직이는건 승리를 했을 경우에 실행
         }
         else
         {
@@ -205,6 +205,9 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         // 씬 매니저를 사용하여 로드
         // FPS씬에 Player1은 gameObject의 FPSPrefab
         // Player2는 collision.gameObject의 FPSPrefab으로 설정한다
+
+        // 장기씬 테스트용
+        Die();
     }
     /// <summary>
     /// 제작 : 찬규
@@ -215,5 +218,11 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     public void SetUnderSpot(Spot spot)
     {
         underSpot = spot;
+    }
+
+    public void Die()
+    {
+        GetImage.color = Color.HSVToRGB(0, 0, 1);
+        Destroy(gameObject);
     }
 }

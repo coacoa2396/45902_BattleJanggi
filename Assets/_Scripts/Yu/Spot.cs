@@ -100,5 +100,7 @@ public class Spot : MonoBehaviour, IPointerClickHandler
             return;
 
         listPiece.MovePiece(this);
+
+        listPiece = null;
     }
 }

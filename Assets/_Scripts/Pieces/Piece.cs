@@ -44,59 +44,56 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!Manager.JanggiTurn.CheckWhosTurn(WhosPiece))
+        if (!CheckMyTurn())
         {
-            if (!underSpot.InList)
+            if (underSpot.InList)
+            {
+                // 여기서 FPS씬으로 이동
+                TransFPS(underSpot.ListPiece, this);
+                underSpot.ClickMove();    // 움직이는건 승리를 했을 경우에 실행
+            }
+            else
+            {
                 return;
-
-            // 여기서 FPS씬으로 이동
-            TransFPS(underSpot.ListPiece, this);
-            underSpot.ClickMove();    // 움직이는건 승리를 했을 경우에 실행
+            }
         }
-        else
+
+        if (isClicked)
         {
-            if (!CheckMyTurn())
-            {
-                return;
-            }
-
-            if (isClicked)
-            {
-                JanggiLogic.Instance.ClickedPieceExist = false;
+            JanggiLogic.Instance.ClickedPieceExist = false;
 
 
-                pieceMaterial.color = Color.white;
-                isClicked = false;
+            pieceMaterial.color = Color.white;
+            isClicked = false;
 
-                DeleteList();
-                Manager.JanggiCamera.CameraMoveLow();
-                return;
-            }
-
-            JanggiSituation = Manager.JanggiLogic.JanggiLogicSituation;
-
-            if (JanggiSituation == null)
-            {
-                Debug.Log("Get JanggiLogic Fail");
-            }
-
-            if (JanggiLogic.Instance.ClickedPieceExist)  // 장기판에 다른 말이 이미 선택되어 있을 경우
-            {
-                JanggiLogic.Instance.ClickedPiece.pieceMaterial.color = Color.white;
-                JanggiLogic.Instance.ClickedPiece.IsClicked = false;
-
-                JanggiLogic.Instance.ClickedPiece.DeleteList();
-            }
-
-            JanggiLogic.Instance.ClickedPieceExist = true;
-            JanggiLogic.Instance.ClickedPiece = this;
-
-            pieceMaterial.color = Color.red;
-            isClicked = true;
-
-            Manager.JanggiCamera.CameraMoveHigh();
-            FindCanGo();
+            DeleteList();
+            Manager.JanggiCamera.CameraMoveLow();
+            return;
         }
+
+        JanggiSituation = Manager.JanggiLogic.JanggiLogicSituation;
+
+        if (JanggiSituation == null)
+        {
+            Debug.Log("Get JanggiLogic Fail");
+        }
+
+        if (JanggiLogic.Instance.ClickedPieceExist)  // 장기판에 다른 말이 이미 선택되어 있을 경우
+        {
+            JanggiLogic.Instance.ClickedPiece.pieceMaterial.color = Color.white;
+            JanggiLogic.Instance.ClickedPiece.IsClicked = false;
+
+            JanggiLogic.Instance.ClickedPiece.DeleteList();
+        }
+
+        JanggiLogic.Instance.ClickedPieceExist = true;
+        JanggiLogic.Instance.ClickedPiece = this;
+
+        pieceMaterial.color = Color.red;
+        isClicked = true;
+
+        Manager.JanggiCamera.CameraMoveHigh();
+        FindCanGo();
     }
     /// <summary>
     /// 플레이어가 해당 장기말 위에 마우스를 올릴 시 오브젝트의 색을 노란색으로 변경
@@ -175,6 +172,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
             Color color = new Color(0, 0, 0, 0);
 
             spot.gameObject.GetComponent<Renderer>().material.color = color;
+            spot.InList = false;
         }
 
         CanGoSpots.Clear();

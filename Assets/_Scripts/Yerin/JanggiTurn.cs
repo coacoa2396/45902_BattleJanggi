@@ -19,6 +19,8 @@ public class JanggiTurn : Singleton<JanggiTurn>
 
     Coroutine timeLimit;
 
+    public string CurrentTurn { get { return currentTurn; } }
+
     private void Start()
     {
         currentTurn = Han;
@@ -89,6 +91,7 @@ public class JanggiTurn : Singleton<JanggiTurn>
         }
 
         OnTurn();
+        Manager.JanggiCamera.CameraMoveLow();
     }
 }
 

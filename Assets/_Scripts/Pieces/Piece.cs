@@ -64,11 +64,12 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
             {
                 JanggiLogic.Instance.ClickedPieceExist = false;
 
+
                 pieceMaterial.color = Color.white;
                 isClicked = false;
 
                 DeleteList();
-
+                Manager.JanggiCamera.CameraMoveLow();
                 return;
             }
 
@@ -93,8 +94,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
             pieceMaterial.color = Color.red;
             isClicked = true;
 
+            Manager.JanggiCamera.CameraMoveHigh();
             FindCanGo();
-        }
     }
     /// <summary>
     /// 플레이어가 해당 장기말 위에 마우스를 올릴 시 오브젝트의 색을 노란색으로 변경
@@ -147,6 +148,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
         DeleteList();
         Manager.JanggiTurn.OnTurn();
+        Manager.JanggiCamera.CameraMoveLow();
     }
 
     /// <summary>

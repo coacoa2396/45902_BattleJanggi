@@ -28,6 +28,7 @@ public class Spot : MonoBehaviour, IPointerClickHandler
     public bool InList { get { return inList; } set { inList = value; } }
     public bool OnPiece { get { return onPiece; } }
     public bool CheckCanGo { get { return checkCanGo; } set { checkCanGo = value; } }
+    public Piece ListPiece { get { return listPiece; } }
     public Dictionary<char, int> ThisPos { get { return thisPos; } }
 
     private void Start()
@@ -91,5 +92,13 @@ public class Spot : MonoBehaviour, IPointerClickHandler
     public void SetList(Piece listPiece)
     {
         this.listPiece = listPiece;
+    }
+
+    public void ClickMove()
+    {
+        if (!checkCanGo)
+            return;
+
+        listPiece.MovePiece(this);
     }
 }

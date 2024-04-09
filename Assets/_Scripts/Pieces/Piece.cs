@@ -25,7 +25,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     [SerializeField] string whosPiece;
 
     public Material PieceMaterial { get { return pieceMaterial; } }
-    public string PieceName { get { return pieceName; }}
+    public string PieceName { get { return pieceName; } }
     public string WhosPiece { get { return whosPiece; } }
     public bool IsClicked { set { isClicked = value; } }
 
@@ -44,45 +44,57 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!CheckMyTurn())
+        if (!Manager.JanggiTurn.CheckWhosTurn(WhosPiece))
         {
-            return;
-        }
+            if (!underSpot.InList)
+                return;
 
-        if (isClicked)
+            // 여기서 FPS씬으로 이동
+            TransFPS(underSpot.ListPiece, this);
+            //underSpot.ClickMove();    // 움직이는건 승리를 했을 경우에 실행
+        }
+        else
         {
-            JanggiLogic.Instance.ClickedPieceExist = false;
+            if (!CheckMyTurn())
+            {
+                return;
+            }
 
-            pieceMaterial.color = Color.white;
-            isClicked = false;
+            if (isClicked)
+            {
+                JanggiLogic.Instance.ClickedPieceExist = false;
 
-            DeleteList();
+                pieceMaterial.color = Color.white;
+                isClicked = false;
 
-            return;
+                DeleteList();
+
+                return;
+            }
+
+            JanggiSituation = Manager.JanggiLogic.JanggiLogicSituation;
+
+            if (JanggiSituation == null)
+            {
+                Debug.Log("Get JanggiLogic Fail");
+            }
+
+            if (JanggiLogic.Instance.ClickedPieceExist)  // 장기판에 다른 말이 이미 선택되어 있을 경우
+            {
+                JanggiLogic.Instance.ClickedPiece.pieceMaterial.color = Color.white;
+                JanggiLogic.Instance.ClickedPiece.IsClicked = false;
+
+                JanggiLogic.Instance.ClickedPiece.DeleteList();
+            }
+
+            JanggiLogic.Instance.ClickedPieceExist = true;
+            JanggiLogic.Instance.ClickedPiece = this;
+
+            pieceMaterial.color = Color.red;
+            isClicked = true;
+
+            FindCanGo();
         }
-
-        JanggiSituation = Manager.JanggiLogic.JanggiLogicSituation;
-
-        if (JanggiSituation == null)
-        {
-            Debug.Log("Get JanggiLogic Fail");
-        }
-
-        if (JanggiLogic.Instance.ClickedPieceExist)  // 장기판에 다른 말이 이미 선택되어 있을 경우
-        {
-            JanggiLogic.Instance.ClickedPiece.pieceMaterial.color = Color.white;
-            JanggiLogic.Instance.ClickedPiece.IsClicked = false;
-
-            JanggiLogic.Instance.ClickedPiece.DeleteList();
-        }
-
-        JanggiLogic.Instance.ClickedPieceExist = true;
-        JanggiLogic.Instance.ClickedPiece = this;
-
-        pieceMaterial.color = Color.red;
-        isClicked = true;
-
-        FindCanGo();
     }
     /// <summary>
     /// 플레이어가 해당 장기말 위에 마우스를 올릴 시 오브젝트의 색을 노란색으로 변경
@@ -179,27 +191,24 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
         return true;
     }
-
     /// <summary>
     /// 제작 : 찬규
-    /// 충돌 시에 FPS씬으로 전환하는 기능 구현
+    /// FPS씬으로 이동하게 하는 함수
     /// </summary>
-    /// <param name="collision"></param>
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (playerCheck.Contain(collision.gameObject.layer))
-        {
-            TransFPS(this, collision.gameObject.GetComponent<Piece>());
-        }
-    }
-
+    /// <param name="player1"></param>
+    /// <param name="player2"></param>
     public void TransFPS(Piece player1, Piece player2)
     {
         // 씬 매니저를 사용하여 로드
         // FPS씬에 Player1은 gameObject의 FPSPrefab
         // Player2는 collision.gameObject의 FPSPrefab으로 설정한다
     }
-
+    /// <summary>
+    /// 제작 : 찬규
+    /// 발 밑의 spot을 받아옴
+    /// 상대방의 이동 때 사용
+    /// </summary>
+    /// <param name="spot"></param>
     public void SetUnderSpot(Spot spot)
     {
         underSpot = spot;

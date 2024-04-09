@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// 개발자: Yerin
 /// 
-/// 화살 관련 클래스
+/// 장기말(포) 벽이 쏘는 화살 관련 클래스
 /// </summary>
 public class Arrow : Bullet
 {

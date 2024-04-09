@@ -24,6 +24,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     [SerializeField] string whosPiece;
 
+    public Material PieceMaterial { get { return pieceMaterial; } }
     public string PieceName { get { return pieceName; }}
     public string WhosPiece { get { return whosPiece; } }
     public bool IsClicked { set { isClicked = value; } }
@@ -43,6 +44,11 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (!CheckMyTurn())
+        {
+            return;
+        }
+
         if (isClicked)
         {
             JanggiLogic.Instance.ClickedPieceExist = false;
@@ -86,6 +92,11 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (!CheckMyTurn())
+        {
+            return;
+        }
+
         if (isClicked)
         {
             return;
@@ -123,6 +134,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         isClicked = false;
 
         DeleteList();
+        Manager.JanggiTurn.OnTurn();
     }
 
     /// <summary>
@@ -156,6 +168,16 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     public virtual void FindCanGo()
     {
 
+    }
+
+    private bool CheckMyTurn()
+    {
+        if (!Manager.JanggiTurn.CheckWhosTurn(whosPiece))
+        {
+            return false;
+        }
+
+        return true;
     }
 
     /// <summary>

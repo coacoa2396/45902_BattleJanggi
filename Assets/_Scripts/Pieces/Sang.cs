@@ -21,7 +21,6 @@ public class Sang : Piece
         {
             curSpot = other.GetComponent<Spot>();
         }
-        Debug.Log($"{curSpot.ThisPos['z']},{curSpot.ThisPos['x']}");
     }
 
     public override void FindCanGo()

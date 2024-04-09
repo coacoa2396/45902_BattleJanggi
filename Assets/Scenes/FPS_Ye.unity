@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -364,11 +364,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9a22323ed4122479cdc6d2033179ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction: {fileID: -944628639613478452, guid: d50dddbaa28d8254a8f6d509a7ed10b3, type: 3}
+  hp: 0
+  controller: {fileID: 0}
   rigid: {fileID: 291773472}
-  movePower: 10
-  maxMoveSpeed: 5
-  jumpPower: 0
+  weapon: {fileID: 0}
+  animator: {fileID: 0}
+  groundCheck:
+    serializedVersion: 2
+    m_Bits: 0
+  moveSpeed: 0
+  breakPower: 0
+  isGround: 0
+  isWalking: 0
+  isJumping: 0
+  cat: {fileID: 0}
 --- !u!23 &291773476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -752,11 +761,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4852907621740d42af26119b9ffb4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction: {fileID: -944628639613478452, guid: d50dddbaa28d8254a8f6d509a7ed10b3, type: 3}
+  hp: 0
+  controller: {fileID: 0}
   rigid: {fileID: 1164482232}
-  movePower: 10
-  maxMoveSpeed: 5
-  jumpPower: 0
+  weapon: {fileID: 0}
+  animator: {fileID: 0}
+  groundCheck:
+    serializedVersion: 2
+    m_Bits: 0
+  moveSpeed: 0
+  breakPower: 0
+  isGround: 0
+  isWalking: 0
+  isJumping: 0
 --- !u!54 &1164482232
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public static class Manager
     public static UIManager UI { get { return UIManager.Instance; } }
     public static JanggiLogic JanggiLogic { get {  return JanggiLogic.Instance; } }
     public static JanggiTurn JanggiTurn { get { return JanggiTurn.Instance; } }
+    public static JanggiCamera JanggiCamera { get { return JanggiCamera.Instance; } }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()

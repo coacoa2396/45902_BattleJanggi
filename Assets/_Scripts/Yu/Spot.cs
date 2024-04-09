@@ -7,25 +7,27 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Spot : MonoBehaviour, IPointerClickHandler
 {
-
     // 현재 위에 기물이 있는지 없는지?
     // 기물이 있다면
     // 기물의 레이어를 받아온다
 
     [SerializeField] LayerMask playerCheck;
 
-    Piece whatPiece;
+    Piece whatPiece;        // 현재 위에 있는 기물
     Dictionary<char, int> thisPos;
     Piece listPiece;
 
+    [SerializeField] bool inList;
     [SerializeField] bool onPiece;
     [SerializeField] bool checkCanGo;           // 갈수있는 체크리스트에 포함이 되었는지 체크
-    string whosPiece;   // tag = cho, han 초나라 한나라
 
-    public Piece WhatPiece {  get { return whatPiece; } }
-    public string WhosePiece { get { return whosPiece;} set { whosPiece = value; } }
+    string whosPiece;   // Cho, Han 초나라 한나라
+
+    public Piece WhatPiece { get { return whatPiece; } }
+    public string WhosePiece { get { return whosPiece; } set { whosPiece = value; } }
+    public bool InList { get { return inList; } set { inList = value; } }
     public bool OnPiece { get { return onPiece; } }
-    public bool ChaeckCanGo { get { return checkCanGo; } set { checkCanGo = value; } }
+    public bool CheckCanGo { get { return checkCanGo; } set { checkCanGo = value; } }
     public Dictionary<char, int> ThisPos { get { return thisPos; } }
 
     private void Start()
@@ -34,6 +36,8 @@ public class Spot : MonoBehaviour, IPointerClickHandler
 
         thisPos.Add('z', 0);
         thisPos.Add('x', 0);
+
+        inList = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,6 +50,8 @@ public class Spot : MonoBehaviour, IPointerClickHandler
             whosPiece = other.gameObject.GetComponent<Piece>().WhosPiece;
             // 어떤 기물인지 받아오기
             whatPiece = other.GetComponent<Piece>();
+            // 내 위에 기물에 현재spot 세팅하기
+            other.gameObject.GetComponent<Piece>().SetUnderSpot(this);
         }
     }
 

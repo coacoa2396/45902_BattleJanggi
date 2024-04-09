@@ -12,9 +12,12 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] LayerMask playerCheck;
+
     protected Spot[,] JanggiSituation;    // 현재 장기판 위 말의 상황을 받아 올 배열
 
     Material pieceMaterial; // 해당 장기말의 Material을 받을 변수
+    Spot underSpot;
 
     protected string pieceName; // 장기말의 종류
     bool isClicked;  // 해당 말이 클릭됐는지 아닌지 판단하는 변수
@@ -111,6 +114,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="selectSpot"></param>
     public void MovePiece(Spot selectSpot)
     {
+        underSpot.CheckCanGo = false;
         transform.position = new Vector3(selectSpot.transform.position.x, transform.position.y, selectSpot.transform.position.z);
 
         JanggiLogic.Instance.ClickedPieceExist = false;
@@ -128,7 +132,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     public void AddList(Spot destSpot)
     {
         destSpot.GetComponent<Renderer>().material.color = Color.red;
-        destSpot.ChaeckCanGo = true;
+        destSpot.CheckCanGo = true;
+        destSpot.InList = true;
         destSpot.SetList(this);
         CanGoSpots.Add(destSpot);
     }
@@ -153,4 +158,28 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     }
 
+    /// <summary>
+    /// 제작 : 찬규
+    /// 충돌 시에 FPS씬으로 전환하는 기능 구현
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (playerCheck.Contain(collision.gameObject.layer))
+        {
+            TransFPS(this, collision.gameObject.GetComponent<Piece>());
+        }
+    }
+
+    public void TransFPS(Piece player1, Piece player2)
+    {
+        // 씬 매니저를 사용하여 로드
+        // FPS씬에 Player1은 gameObject의 FPSPrefab
+        // Player2는 collision.gameObject의 FPSPrefab으로 설정한다
+    }
+
+    public void SetUnderSpot(Spot spot)
+    {
+        underSpot = spot;
+    }
 }

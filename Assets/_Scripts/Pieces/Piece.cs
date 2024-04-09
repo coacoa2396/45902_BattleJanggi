@@ -96,88 +96,89 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
             Manager.JanggiCamera.CameraMoveHigh();
             FindCanGo();
+        }
     }
-    /// <summary>
-    /// 플레이어가 해당 장기말 위에 마우스를 올릴 시 오브젝트의 색을 노란색으로 변경
-    /// 선택할 수 있음을 알려주기 위해
-    /// </summary>
-    /// <param name="eventData"></param>
+        /// <summary>
+        /// 플레이어가 해당 장기말 위에 마우스를 올릴 시 오브젝트의 색을 노란색으로 변경
+        /// 선택할 수 있음을 알려주기 위해
+        /// </summary>
+        /// <param name="eventData"></param>
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (!CheckMyTurn())
+        public void OnPointerEnter(PointerEventData eventData)
         {
-            return;
+            if (!CheckMyTurn())
+            {
+                return;
+            }
+
+            if (isClicked)
+            {
+                return;
+            }
+
+            pieceMaterial.color = Color.yellow;
         }
 
-        if (isClicked)
+        /// <summary>
+        /// 플레이어가 해당 장기말을 선택하지 않고 나왔을 시 오브젝트의 색을 원래대로 변경
+        /// </summary>
+        /// <param name="eventData"></param>
+        public void OnPointerExit(PointerEventData eventData)
         {
-            return;
+            if (isClicked)
+            {
+                return;
+            }
+
+            pieceMaterial.color = Color.white;
         }
 
-        pieceMaterial.color = Color.yellow;
-    }
-
-    /// <summary>
-    /// 플레이어가 해당 장기말을 선택하지 않고 나왔을 시 오브젝트의 색을 원래대로 변경
-    /// </summary>
-    /// <param name="eventData"></param>
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (isClicked)
+        /// <summary>
+        /// 기물을 해당 spot의 위치로 옮기는 함수
+        /// </summary>
+        /// <param name="selectSpot"></param>
+        public void MovePiece(Spot selectSpot)
         {
-            return;
+            underSpot.CheckCanGo = false;
+            transform.position = new Vector3(selectSpot.transform.position.x, transform.position.y, selectSpot.transform.position.z);
+
+            JanggiLogic.Instance.ClickedPieceExist = false;
+
+            pieceMaterial.color = Color.white;
+            isClicked = false;
+
+            DeleteList();
+            Manager.JanggiTurn.OnTurn();
+            Manager.JanggiCamera.CameraMoveLow();
         }
 
-        pieceMaterial.color = Color.white;
-    }
-
-    /// <summary>
-    /// 기물을 해당 spot의 위치로 옮기는 함수
-    /// </summary>
-    /// <param name="selectSpot"></param>
-    public void MovePiece(Spot selectSpot)
-    {
-        underSpot.CheckCanGo = false;
-        transform.position = new Vector3(selectSpot.transform.position.x, transform.position.y, selectSpot.transform.position.z);
-
-        JanggiLogic.Instance.ClickedPieceExist = false;
-
-        pieceMaterial.color = Color.white;
-        isClicked = false;
-
-        DeleteList();
-        Manager.JanggiTurn.OnTurn();
-        Manager.JanggiCamera.CameraMoveLow();
-    }
-
-    /// <summary>
-    /// 갈 수있는 spot을 리스트에 넣고 빨간색으로 표시해준다
-    /// </summary>
-    /// <param name="destSpot"></param>
-    public void AddList(Spot destSpot)
-    {
-        destSpot.GetComponent<Renderer>().material.color = Color.red;
-        destSpot.CheckCanGo = true;
-        destSpot.InList = true;
-        destSpot.SetList(this);
-        CanGoSpots.Add(destSpot);
-    }
-
-    /// <summary>
-    /// 갈 수 있는 Spot을 저장한 리스트 전체 삭제
-    /// </summary>
-    public void DeleteList()
-    {
-        foreach (Spot spot in CanGoSpots)
+        /// <summary>
+        /// 갈 수있는 spot을 리스트에 넣고 빨간색으로 표시해준다
+        /// </summary>
+        /// <param name="destSpot"></param>
+        public void AddList(Spot destSpot)
         {
-            Color color = new Color(0, 0, 0, 0);
-
-            spot.gameObject.GetComponent<Renderer>().material.color = color;
+            destSpot.GetComponent<Renderer>().material.color = Color.red;
+            destSpot.CheckCanGo = true;
+            destSpot.InList = true;
+            destSpot.SetList(this);
+            CanGoSpots.Add(destSpot);
         }
 
-        CanGoSpots.Clear();
-    }
+        /// <summary>
+        /// 갈 수 있는 Spot을 저장한 리스트 전체 삭제
+        /// </summary>
+        public void DeleteList()
+        {
+            foreach (Spot spot in CanGoSpots)
+            {
+                Color color = new Color(0, 0, 0, 0);
+
+                spot.gameObject.GetComponent<Renderer>().material.color = color;
+            }
+
+            CanGoSpots.Clear();
+        }
 
     public virtual void FindCanGo()
     {

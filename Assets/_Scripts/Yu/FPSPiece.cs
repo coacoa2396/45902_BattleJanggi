@@ -35,7 +35,7 @@ public class FPSPiece : MonoBehaviour
 
     Coroutine coolTime;
 
-    public float MoveSpeed { get { return moveSpeed; } set {  moveSpeed = value; } }
+    public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
     public bool CanUseSkill { get { return canUseSkill; } set { canUseSkill = value; } }
 
     List<Collider> groundList = new List<Collider>();
@@ -170,10 +170,10 @@ public class FPSPiece : MonoBehaviour
     void Die()
     {
         Debug.Log("Die");
-  
+
         Destroy(gameObject);
-    }   
-    
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (groundCheck.Contain(other.gameObject.layer))    // 플레이어가 땅 위에 있을 경우

@@ -50,7 +50,7 @@ public class ChaLazer : Weapon
             // 맞는 로그
             Debug.Log("맞았다!");
 
-            // 인터페이스를 찾아서 데미지 넣기
+            // Player를 찾아서 데미지 넣기
             FPSPiece target = hitInfo.collider.GetComponent<FPSPiece>();
 
             target?.TakeDamage(Damage);

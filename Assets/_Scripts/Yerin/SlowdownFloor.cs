@@ -4,23 +4,60 @@ using UnityEngine;
 
 public class SlowdownFloor : MonoBehaviour
 {
-    [SerializeField] LayerMask playerCheak;
+    [SerializeField] LayerMask playerCheck;
 
-    IEnumerator SlowDown(GameObject player)
+    GameObject inPlayer;
+
+    float playerSpeed;
+
+    private void Start()
     {
-        player.GetComponent<FPSPiece>().MoveSpeed = player.GetComponent<FPSPiece>().MoveSpeed * 0.5f;
+        StartCoroutine(WaitDestroy());
+    }
 
+    IEnumerator WaitDestroy()
+    {
         yield return new WaitForSeconds(5f);
 
-        player.GetComponent<FPSPiece>().MoveSpeed = player.GetComponent<FPSPiece>().MoveSpeed * 2f;
+        if (inPlayer != null ) 
+        {
+            inPlayer.GetComponent<FPSPiece>().MoveSpeed = playerSpeed;
+            playerSpeed = 0;
+        }
+
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (playerCheak.Contain(other.gameObject.layer))
+        if (playerCheck.Contain(other.gameObject.layer))
         {
-            StartCoroutine(SlowDown(other.gameObject));
+            if (playerSpeed / 2 == other.GetComponent<FPSPiece>().MoveSpeed)
+            {
+                return;
+            }
+
+            playerSpeed = other.GetComponent<FPSPiece>().MoveSpeed;
+
+            other.GetComponent<FPSPiece>().MoveSpeed = playerSpeed / 2;
+
+            inPlayer = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (playerCheck.Contain(other.gameObject.layer))
+        {
+            if (other.GetComponent<FPSPiece>().MoveSpeed == playerSpeed)
+            {
+                return;
+            }
+
+            other.GetComponent<FPSPiece>().MoveSpeed = playerSpeed;
+
+            inPlayer = null;
+            playerSpeed = 0f;
         }
     }
 }

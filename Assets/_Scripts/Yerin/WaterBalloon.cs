@@ -29,8 +29,9 @@ public class WaterBalloon : Bullet
     {
         if (groundCheck.Contain(collision.gameObject.layer))
         {
-            //Coroutine slowdown = StartCoroutine(SlowDownFloor());
-            GameObject floor = Instantiate(slowdownFloor, transform.position, Quaternion.identity);
+            Instantiate(slowdownFloor, transform.position, Quaternion.identity);
+
+            gameObject.SetActive(false);
         }
     }
 }

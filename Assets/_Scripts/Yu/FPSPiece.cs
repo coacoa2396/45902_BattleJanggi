@@ -1,11 +1,7 @@
-using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
 
 
 /// <summary>
@@ -103,7 +99,6 @@ public class FPSPiece : MonoBehaviour
             charge = null;
         }
 
-
         if (value.isPressed)
         {
             if (charge != null)
@@ -130,7 +125,6 @@ public class FPSPiece : MonoBehaviour
                 assultRiffle.StopFiring();
             }
         }
-
     }
 
     // 인풋액션에서 받아오는 정보

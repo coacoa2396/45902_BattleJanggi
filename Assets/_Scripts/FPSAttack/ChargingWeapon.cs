@@ -19,8 +19,9 @@ public class ChargingWeapon : Weapon
     public float ChargingPower { get { return chargingPower; } set { chargingPower = value; } }
     public Coroutine ChargingCoroutine { get { return chargingCoroutine; } }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         chargingPower = 0;
     }
 

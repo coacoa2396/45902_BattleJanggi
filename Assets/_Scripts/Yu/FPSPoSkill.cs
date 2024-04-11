@@ -20,6 +20,7 @@ public class FPSPoSkill : MonoBehaviour
     [SerializeField] Transform muzzlePoint;
 
     [SerializeField] float speed;
+    [SerializeField] float damage;
 
     Vector3 moveDir;
 
@@ -60,10 +61,13 @@ public class FPSPoSkill : MonoBehaviour
             else
             {
                 Ray ray = new Ray(muzzlePoint.position, muzzlePoint.forward);
-                if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance))
+                int layerMask = 1 << LayerMask.NameToLayer("Ground");
+                if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance, layerMask))
                 {
                     Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * hitInfo.distance, Color.red, 0.5f);
                     Instantiate(atomicBomb, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                    Debug.Log("damageSetting");
+                    atomicBomb.GetComponent<PoSkillImpact>().SetDamage(damage);
                 }
                 else
                 {

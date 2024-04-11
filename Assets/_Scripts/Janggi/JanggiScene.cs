@@ -18,10 +18,5 @@ public class JanggiScene : BaseScene
     public void SceneChange(string sceneName)
     {
         Manager.Scene.LoadScene(sceneName);
-
-        foreach (GameObject piece in Manager.JanggiLogic.CurrentPieceList)
-        {
-            piece.transform.position = Manager.JanggiLogic.CurrentPiecePosi[piece];
-        }
     }
 }

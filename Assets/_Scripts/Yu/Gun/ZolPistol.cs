@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 /// <summary>
 /// 제작자 : ChanGyu
 /// 장기말 (졸)의 기본무기
@@ -9,14 +10,58 @@ public class ZolPistol : Gun
 {
     [SerializeField] Transform muzzlePoint;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] int maxMagazine;       // 탄창이 꽉 차있는 경우 탄환의 수
+    [SerializeField] int curMagazine;       // 현재 탄창의 탄환 수
+
+    float rate = 0.75f;     // 연사속도
+    bool isfire;
+
+    protected override void Start()
+    {
+        base.Start();
+        isfire = true;
+    }
+
+    void OnReload(InputValue value)
+    {
+        StartCoroutine(Reload());
+    }
 
     public override void Fire()
     {
-        muzzleFlash.Play();
-        PooledObject PO = Manager.Pool.GetPool(Bullet, muzzlePoint.position, muzzlePoint.rotation);
-        Bullet initBullet = PO.GetComponent<Bullet>();
+        if (curMagazine > 0)
+        {
+            if (isfire)
+            {
+                muzzleFlash.Play();
+                PooledObject PO = Manager.Pool.GetPool(Bullet, muzzlePoint.position, muzzlePoint.rotation);
+                Bullet initBullet = PO.GetComponent<Bullet>();
 
-        initBullet.Damage = Damage;
-        initBullet.Weapon = GetComponent<Weapon>();
+                curMagazine--;
+
+                initBullet.Damage = Damage;
+                initBullet.Weapon = GetComponent<Weapon>();
+                StartCoroutine(CalRate());
+            }
+        }
+        else
+        {
+            StartCoroutine(Reload());
+        }
+    }
+
+    IEnumerator CalRate()
+    {
+        isfire = false;
+        yield return new WaitForSeconds(rate);
+        isfire = true;
+    }
+
+    IEnumerator Reload()
+    {
+        isfire = false;
+        yield return new WaitForSeconds(1f);
+        isfire = true;
+        curMagazine = maxMagazine;
     }
 }

@@ -28,7 +28,7 @@ public class FPSChaSkill : MonoBehaviour
 
     IEnumerator SoundSync()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.1f);
         Instantiate(chaSkillBullet, muzzlePoint.position, muzzlePoint.rotation);
     }
 

@@ -31,5 +31,6 @@ public static class Manager
         SceneManager.CreateInstance();
         SoundManager.CreateInstance();
         UIManager.CreateInstance();
+        Data.LoadData();
     }
 }

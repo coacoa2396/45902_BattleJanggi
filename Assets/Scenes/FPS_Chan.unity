@@ -641,7 +641,8 @@ GameObject:
   - component: {fileID: 956661745}
   - component: {fileID: 956661744}
   - component: {fileID: 956661748}
-  m_Layer: 0
+  - component: {fileID: 956661749}
+  m_Layer: 11
   m_Name: a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,6 +762,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &956661749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956661743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7322251097aac844ba37aa5fa28befd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1082593666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1475237603982504913, guid: e3bf19295b3a95c41a27bb31abc1403a, type: 3}
@@ -887,7 +900,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1527
+    m_Bits: 3575
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1143,7 +1156,7 @@ PrefabInstance:
       objectReference: {fileID: 1082593666}
     - target: {fileID: 1618805602456156229, guid: e3bf19295b3a95c41a27bb31abc1403a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.5
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1618805602456156229, guid: e3bf19295b3a95c41a27bb31abc1403a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1151,7 +1164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1618805602456156229, guid: e3bf19295b3a95c41a27bb31abc1403a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1618805602456156229, guid: e3bf19295b3a95c41a27bb31abc1403a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1220,6 +1233,10 @@ PrefabInstance:
     - target: {fileID: 5917293026043032881, guid: e3bf19295b3a95c41a27bb31abc1403a, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004823448856890962, guid: e3bf19295b3a95c41a27bb31abc1403a, type: 3}
+      propertyPath: hp
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004823448856890962, guid: e3bf19295b3a95c41a27bb31abc1403a, type: 3}
       propertyPath: rigid

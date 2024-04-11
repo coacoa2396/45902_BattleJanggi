@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-    
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
 }

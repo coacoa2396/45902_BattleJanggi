@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// 개발자: Yerin
 /// 
-/// 장기씬에서 FPS씬 전환 관련 클래스
+/// FPS씬에서 장기씬 전환 관련 클래스
 /// </summary>
 public class FPSScene : BaseScene
 {
@@ -37,7 +37,8 @@ public class FPSScene : BaseScene
     public void SceneChange(string sceneName)
     {
         Manager.Scene.LoadScene(sceneName);
+
+        Manager.Data.LoadData();
+        Debug.Log(Manager.Data.GameData);
     }
-
-
 }

@@ -17,9 +17,12 @@ public class JanggiTurn : Singleton<JanggiTurn>
 
     float time;
 
+    bool canGoOut;
+
     Coroutine timeLimit;
 
     public string CurrentTurn { get { return currentTurn; } }
+    public bool CanGoOut { get {  return canGoOut; } }
 
     private void Start()
     {

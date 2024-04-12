@@ -24,10 +24,13 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     [SerializeField] Image GetImage;
     [SerializeField] string whosPiece;
 
+    bool isFPSPlayer = false;
+
     public Material PieceMaterial { get { return pieceMaterial; } }
     public string PieceName { get { return pieceName; } }
     public string WhosPiece { get { return whosPiece; } }
     public bool IsClicked { set { isClicked = value; } }
+    public bool IsFPSPlayer { get {  return isFPSPlayer; } set { isFPSPlayer = value; } }
 
 
     List<Spot> CanGoSpots = new List<Spot>();
@@ -48,6 +51,9 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         {
             if (underSpot.InList)
             {
+                isFPSPlayer = true;
+                Manager.JanggiLogic.ClickedPiece.isFPSPlayer = true;
+
                 // 여기서 FPS씬으로 이동
                 TransFPS(underSpot.ListPiece, this);
                 underSpot.ClickMove();    // 움직이는건 승리를 했을 경우에 실행
@@ -59,7 +65,6 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         if (isClicked)
         {
             JanggiLogic.Instance.ClickedPieceExist = false;
-
 
             pieceMaterial.color = Color.white;
             isClicked = false;

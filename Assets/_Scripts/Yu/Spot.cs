@@ -17,9 +17,16 @@ public class Spot : MonoBehaviour, IPointerClickHandler
     Dictionary<char, int> thisPos;
     Piece listPiece;
 
-    [SerializeField] bool inList;
-    [SerializeField] bool onPiece;
-    [SerializeField] bool checkCanGo;           // 갈수있는 체크리스트에 포함이 되었는지 체크
+    bool inList;
+    bool onPiece;
+    bool checkCanGo;           // 갈수있는 체크리스트에 포함이 되었는지 체크
+
+    [SerializeField] bool isCastle; // 성에 있는 Spot인지 아닌지
+    [SerializeField] bool isCastleCenter;   // 성 가운데에 있는 Spot인지 아닌지
+    [SerializeField] bool diagonal = false; // Spot 근처 대각선 유무
+    Dictionary<char, int> diagonalPos = null;  // 대각선 Spot 배열 위치
+    [SerializeField] int diagonalX;
+    [SerializeField] int diagonalZ;
 
     string whosPiece;   // Cho, Han 초나라 한나라
 
@@ -30,7 +37,9 @@ public class Spot : MonoBehaviour, IPointerClickHandler
     public bool CheckCanGo { get { return checkCanGo; } set { checkCanGo = value; } }
     public Piece ListPiece { get { return listPiece; } }
     public Dictionary<char, int> ThisPos { get { return thisPos; } }
-
+    public bool IsCastle { get { return isCastle; } }
+    public bool ISCastleCenter { get { return isCastleCenter; } }
+    public Dictionary<char, int> DiagonalPos { get { return diagonalPos; } }
     private void Start()
     {
         thisPos = new Dictionary<char, int>();
@@ -39,6 +48,14 @@ public class Spot : MonoBehaviour, IPointerClickHandler
         thisPos.Add('x', 0);
 
         inList = false;
+
+        if (isCastle && diagonal)
+        {
+            diagonalPos = new Dictionary<char, int>();
+
+            diagonalPos.Add('x', diagonalX);
+            diagonalPos.Add('z', diagonalZ);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

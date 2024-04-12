@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// 개발자: Yerin
 /// 
-/// FPS씬에서 장기씬으로 전환
+/// 장기씬에서 FPS씬으로 전환
 /// </summary>
 public class JanggiScene : BaseScene
 {

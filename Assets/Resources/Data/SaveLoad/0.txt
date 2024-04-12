@@ -2,135 +2,230 @@
     "pieceData": {
         "pieces": [
             {
-                "id": -4220,
+                "pieceName": "Cha",
+                "whosPiece": "Cho",
                 "x": 0,
-                "z": 0
+                "z": 0,
+                "isPlayerPiece": false
             },
             {
-                "id": -4232,
+                "pieceName": "Ma",
+                "whosPiece": "Cho",
                 "x": 1,
-                "z": 0
+                "z": 0,
+                "isPlayerPiece": false
             },
             {
-                "id": -4244,
+                "pieceName": "Ma",
+                "whosPiece": "Cho",
                 "x": 2,
-                "z": 0
+                "z": 0,
+                "isPlayerPiece": false
             },
             {
-                "id": -4292,
+                "pieceName": "Sa",
+                "whosPiece": "Cho",
+                "x": 3,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sa",
+                "whosPiece": "Cho",
+                "x": 5,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Cho",
                 "x": 6,
-                "z": 0
+                "z": 0,
+                "isPlayerPiece": false
             },
             {
-                "id": -4304,
+                "pieceName": "Ma",
+                "whosPiece": "Cho",
                 "x": 7,
-                "z": 0
+                "z": 0,
+                "isPlayerPiece": false
             },
             {
-                "id": -4316,
+                "pieceName": "Cha",
+                "whosPiece": "Cho",
                 "x": 8,
-                "z": 0
+                "z": 0,
+                "isPlayerPiece": false
             },
             {
-                "id": -4448,
-                "x": 1,
-                "z": 2
-            },
-            {
-                "id": -4520,
-                "x": 7,
-                "z": 2
-            },
-            {
-                "id": -4544,
-                "x": 0,
-                "z": 3
-            },
-            {
-                "id": -4568,
-                "x": 2,
-                "z": 3
-            },
-            {
-                "id": -4592,
+                "pieceName": "Jang",
+                "whosPiece": "Cho",
                 "x": 4,
-                "z": 3
+                "z": 1,
+                "isPlayerPiece": false
             },
             {
-                "id": -4616,
-                "x": 6,
-                "z": 3
+                "pieceName": "Po",
+                "whosPiece": "Cho",
+                "x": 1,
+                "z": 2,
+                "isPlayerPiece": false
             },
             {
-                "id": -4640,
-                "x": 8,
-                "z": 3
+                "pieceName": "Po",
+                "whosPiece": "Cho",
+                "x": 7,
+                "z": 2,
+                "isPlayerPiece": false
             },
             {
-                "id": -4868,
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
                 "x": 0,
-                "z": 6
+                "z": 3,
+                "isPlayerPiece": false
             },
             {
-                "id": -4892,
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
                 "x": 2,
-                "z": 6
+                "z": 3,
+                "isPlayerPiece": false
             },
             {
-                "id": -4916,
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
                 "x": 4,
-                "z": 6
+                "z": 3,
+                "isPlayerPiece": false
             },
             {
-                "id": -4940,
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
                 "x": 6,
-                "z": 6
+                "z": 3,
+                "isPlayerPiece": false
             },
             {
-                "id": -4964,
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
                 "x": 8,
-                "z": 6
+                "z": 3,
+                "isPlayerPiece": false
             },
             {
-                "id": -4988,
-                "x": 1,
-                "z": 7
-            },
-            {
-                "id": -5060,
-                "x": 7,
-                "z": 7
-            },
-            {
-                "id": -5192,
+                "pieceName": "Jol",
+                "whosPiece": "Han",
                 "x": 0,
-                "z": 9
+                "z": 6,
+                "isPlayerPiece": false
             },
             {
-                "id": -5204,
-                "x": 1,
-                "z": 9
-            },
-            {
-                "id": -5216,
+                "pieceName": "Jol",
+                "whosPiece": "Han",
                 "x": 2,
-                "z": 9
+                "z": 6,
+                "isPlayerPiece": false
             },
             {
-                "id": -5264,
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 4,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
                 "x": 6,
-                "z": 9
+                "z": 6,
+                "isPlayerPiece": false
             },
             {
-                "id": -5276,
-                "x": 7,
-                "z": 9
-            },
-            {
-                "id": -5288,
+                "pieceName": "Jol",
+                "whosPiece": "Han",
                 "x": 8,
-                "z": 9
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Po",
+                "whosPiece": "Han",
+                "x": 1,
+                "z": 7,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Po",
+                "whosPiece": "Han",
+                "x": 7,
+                "z": 7,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jang",
+                "whosPiece": "Han",
+                "x": 4,
+                "z": 8,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Cha",
+                "whosPiece": "Han",
+                "x": 0,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Han",
+                "x": 1,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Han",
+                "x": 2,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sa",
+                "whosPiece": "Han",
+                "x": 3,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sa",
+                "whosPiece": "Han",
+                "x": 5,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Han",
+                "x": 6,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Han",
+                "x": 7,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Cha",
+                "whosPiece": "Han",
+                "x": 8,
+                "z": 9,
+                "isPlayerPiece": false
             }
         ]
-    }
+    },
+    "isSaved": true
 }

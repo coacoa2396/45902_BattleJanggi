@@ -1,68 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 /// <summary>
-/// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: Yerin
+/// °³¹ßÀÚ: Yerin
 /// 
-/// ï¿½ï¿½(ï¿½ï¿½â¸») ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
+/// Àå(Àå±â¸») °ü·Ã Å¬·¡½º
 /// </summary>
-public class Sa : Piece
+public class Jang : Piece
 {
     [SerializeField] LayerMask checkSpot;
 
-    Dictionary<char, int> currentPos;  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Spotï¿½ï¿½ ï¿½è¿­ ï¿½ï¿½Ä¡ (== ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡)
+    Dictionary<char, int> currentPos;  // ÇöÀç ÀÖ´Â SpotÀÇ ¹è¿­ À§Ä¡ (== ¸»ÀÇ ÇöÀç À§Ä¡)
 
     protected override void Start()
     {
         base.Start();
-        pieceName = "Sa";
+        pieceName = "Jang";
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (checkSpot.Contain(other.gameObject.layer))
         {
+            transform.position = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             currentPos = other.gameObject.GetComponent<Spot>().ThisPos;
         }
     }
 
     public override void FindCanGo()
     {
-        SaLogic();
+        JangLogic();
     }
 
-    private void SaLogic()
+    private void JangLogic()
     {
         if (!Manager.JanggiTurn.CanGoOut)
         {
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ¸»ÀÇ ¿ÞÂÊ È®ÀÎ
             if (JanggiSituation[currentPos['z'], currentPos['x'] - 1].IsCastle)
             {
                 checkLeft();
             }
-            
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+
+            // ¸»ÀÇ ¿À¸¥ÂÊ È®ÀÎ
 
             if (JanggiSituation[currentPos['z'], currentPos['x'] + 1].IsCastle)
             {
                 checkRight();
             }
 
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ¸»ÀÇ ¾ÕÂÊ È®ÀÎ
 
             if (currentPos['z'] != 0 && JanggiSituation[currentPos['z'] - 1, currentPos['x']].IsCastle)
             {
                 checkForward();
             }
 
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ¸»ÀÇ µÞÂÊ È®ÀÎ
 
-            if (currentPos['z'] != 9  && JanggiSituation[currentPos['z'] + 1, currentPos['x']].IsCastle)
+            if (currentPos['z'] != 9 && JanggiSituation[currentPos['z'] + 1, currentPos['x']].IsCastle)
             {
                 checkBack();
             }
 
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Spotï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµ¥ï¿½ï¿½ï¿½
+            // Áö±Ý ÀÖ´Â SpotÀÌ ¼ºÀÇ °¡¿îµ¥¶ó¸é
 
             if (JanggiSituation[currentPos['z'], currentPos['x']].ISCastleCenter)
             {
@@ -71,7 +73,7 @@ public class Sa : Piece
                 return;
             }
 
-            // ï¿½ë°¢ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ´ë°¢¼± ÀÖ´ÂÁö ¿©ºÎ È®ÀÎ
 
             if (JanggiSituation[currentPos['z'], currentPos['x']].DiagonalPos != null)
             {
@@ -80,35 +82,35 @@ public class Sa : Piece
         }
         else
         {
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ¸»ÀÇ ¿ÞÂÊ È®ÀÎ
 
             if (currentPos['x'] != 0)
             {
                 checkLeft();
             }
 
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ¸»ÀÇ ¿À¸¥ÂÊ È®ÀÎ
 
             if (currentPos['x'] != 8)
             {
                 checkRight();
             }
 
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ¸»ÀÇ ¾ÕÂÊ È®ÀÎ
 
             if (currentPos['z'] != 0)
             {
                 checkForward();
             }
-            
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+
+            // ¸»ÀÇ µÞÂÊ È®ÀÎ
 
             if (currentPos['z'] != 9)
             {
                 checkBack();
             }
 
-            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Spotï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµ¥ï¿½ï¿½ï¿½
+            // Áö±Ý ÀÖ´Â SpotÀÌ ¼ºÀÇ °¡¿îµ¥¶ó¸é
 
             if (JanggiSituation[currentPos['z'], currentPos['x']].ISCastleCenter)
             {
@@ -117,7 +119,7 @@ public class Sa : Piece
                 return;
             }
 
-            // ï¿½ë°¢ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            // ´ë°¢¼± ÀÖ´ÂÁö ¿©ºÎ È®ÀÎ
 
             if (JanggiSituation[currentPos['z'], currentPos['x']].DiagonalPos != null)
             {
@@ -204,7 +206,7 @@ public class Sa : Piece
 
     private void CheckCentersDiagonals()
     {
-        // ï¿½ï¿½ï¿½ï¿½ ï¿½ë°¢ï¿½ï¿½ ï¿½ï¿½
+        // ¿ÞÂÊ ´ë°¢¼± À§
 
         if (JanggiSituation[currentPos['z'] - 1, currentPos['x'] - 1].OnPiece)
         {
@@ -222,7 +224,7 @@ public class Sa : Piece
             AddList(JanggiSituation[currentPos['z'] - 1, currentPos['x'] - 1]);
         }
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ë°¢ï¿½ï¿½ ï¿½ï¿½
+        // ¿À¸¥ÂÊ ´ë°¢¼± À§
 
         if (JanggiSituation[currentPos['z'] - 1, currentPos['x'] + 1].OnPiece)
         {
@@ -240,7 +242,7 @@ public class Sa : Piece
             AddList(JanggiSituation[currentPos['z'] - 1, currentPos['x'] + 1]);
         }
 
-        // ï¿½ï¿½ï¿½ï¿½ ï¿½ë°¢ï¿½ï¿½ ï¿½Æ·ï¿½
+        // ¿ÞÂÊ ´ë°¢¼± ¾Æ·¡
 
         if (JanggiSituation[currentPos['z'] + 1, currentPos['x'] - 1].OnPiece)
         {
@@ -258,7 +260,7 @@ public class Sa : Piece
             AddList(JanggiSituation[currentPos['z'] + 1, currentPos['x'] - 1]);
         }
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ë°¢ï¿½ï¿½ ï¿½Æ·ï¿½
+        // ¿À¸¥ÂÊ ´ë°¢¼± ¾Æ·¡
 
         if (JanggiSituation[currentPos['z'] + 1, currentPos['x'] + 1].OnPiece)
         {

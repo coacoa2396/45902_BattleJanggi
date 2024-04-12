@@ -12,8 +12,38 @@ using UnityEngine.InputSystem;
 public class FPSGung : FPSPiece
 {
     [SerializeField] GungSkill gungSkill;
+    [SerializeField] GameObject shield;
+
+    [SerializeField] int existSa;           // 남아있는 사의 개수만큼 피격무시 방어막 생성
+
+    public int ExistSa { get { return existSa; } set { existSa = value; if (existSa == 0) shield.SetActive(false); } }
 
     Coroutine skill;
+
+    private void Start()
+    {
+        WallSa[] cats = FindObjectsOfType<WallSa>();
+        if (cats != null && cats.Length > 0)
+        {
+            ExistSa = cats.Length;
+        }
+        else
+        {
+            ExistSa = 0;
+        }
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        if (ExistSa > 0)
+        {
+            ExistSa--;
+        }
+        else
+        {
+            base.TakeDamage(damage);
+        }
+    }
 
     IEnumerator Skill()
     {

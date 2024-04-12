@@ -37,7 +37,7 @@ public struct PieceData
             pieces[i].x = lists[i].ThisPos['x'];
             pieces[i].z = lists[i].ThisPos['z'];
 
-            //pieces[i].isPlayerPiece
+            // pieces[i].isPlayerPiece
         }
     }
 }

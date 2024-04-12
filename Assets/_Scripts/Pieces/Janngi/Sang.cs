@@ -11,7 +11,7 @@ public class Sang : Piece
     protected override void Start()
     {
         base.Start();
-        pieceName = "Ma";
+        pieceName = "Sang";
     }
 
     // spot과 만났을 때 해당 스팟의 포지션을 가져와서 본인의 포지션으로 초기화

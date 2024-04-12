@@ -17,9 +17,9 @@ public class Spot : MonoBehaviour, IPointerClickHandler
     Dictionary<char, int> thisPos;
     Piece listPiece;
 
-    [SerializeField] bool inList;
-    [SerializeField] bool onPiece;
-    [SerializeField] bool checkCanGo;           // 갈수있는 체크리스트에 포함이 되었는지 체크
+    bool inList;
+    bool onPiece;
+    bool checkCanGo;           // 갈수있는 체크리스트에 포함이 되었는지 체크
 
     string whosPiece;   // Cho, Han 초나라 한나라
 

@@ -13,6 +13,8 @@ public class FPSScene : BaseScene
     [SerializeField] Bullet[] bullets;
     [SerializeField] Impact[] impacts;
 
+    [SerializeField] FPSLoadManager fPSLoadManager;
+
     private void Start()
     {
         for (int i = 0; i < bullets.Length; i++)
@@ -24,6 +26,7 @@ public class FPSScene : BaseScene
         {
             Manager.Pool.CreatePool(impacts[i], 128, 512);
         }
+        fPSLoadManager.PieceLoad();
     }
 
     public override IEnumerator LoadingRoutine()

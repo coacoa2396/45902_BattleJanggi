@@ -36,9 +36,6 @@ public class FPSScene : BaseScene
 
     public void SceneChange(string sceneName)
     {
-        Manager.Scene.LoadScene(sceneName);
-
-        Manager.Data.LoadData();
-        Debug.Log(Manager.Data.GameData);
+        Manager.Scene.LoadScene(sceneName);        
     }
 }

@@ -8,7 +8,7 @@ public class FPSLoadManager : MonoBehaviour
 
     public void PieceLoad()
     {
-        Manager.Data.LoadData();
+        Manager.Data.LoadData(1);
         PieceData data = Manager.Data.GameData.pieceData;
         foreach (PiecePosData piece in data.pieces)
         {

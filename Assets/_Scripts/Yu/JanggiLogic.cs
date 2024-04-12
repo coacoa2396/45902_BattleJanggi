@@ -54,21 +54,5 @@ public class JanggiLogic : Singleton<JanggiLogic>
                 spots[z, x].SetPos(z, x);
             }
         }
-    }
-    private void OnDestroy()
-    {
-        List<Spot> spotList = new List<Spot>();
-
-        foreach (Spot spot in spots)
-        {
-            if (spot.OnPiece)
-            {
-                spotList.Add(spot);
-            }
-        }
-
-        Manager.Data.GameData.pieceData.PieceSave(spotList);
-        Manager.Data.GameData.isSaved = true;
-        Manager.Data.SaveData();
-    }
+    }    
 }

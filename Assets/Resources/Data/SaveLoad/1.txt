@@ -1,0 +1,231 @@
+{
+    "pieceData": {
+        "pieces": [
+            {
+                "pieceName": "Sang",
+                "whosPiece": "Cho",
+                "x": 1,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Cho",
+                "x": 2,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sa",
+                "whosPiece": "Cho",
+                "x": 3,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sa",
+                "whosPiece": "Cho",
+                "x": 5,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sang",
+                "whosPiece": "Cho",
+                "x": 6,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Cho",
+                "x": 7,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Cha",
+                "whosPiece": "Cho",
+                "x": 8,
+                "z": 0,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jang",
+                "whosPiece": "Cho",
+                "x": 4,
+                "z": 1,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Cha",
+                "whosPiece": "Cho",
+                "x": 0,
+                "z": 2,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Po",
+                "whosPiece": "Cho",
+                "x": 1,
+                "z": 2,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Po",
+                "whosPiece": "Cho",
+                "x": 7,
+                "z": 2,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
+                "x": 0,
+                "z": 3,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
+                "x": 2,
+                "z": 3,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
+                "x": 4,
+                "z": 3,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
+                "x": 6,
+                "z": 3,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
+                "x": 8,
+                "z": 3,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 0,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 2,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 4,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sang",
+                "whosPiece": "Han",
+                "x": 5,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 6,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 8,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Po",
+                "whosPiece": "Han",
+                "x": 1,
+                "z": 7,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Po",
+                "whosPiece": "Han",
+                "x": 7,
+                "z": 7,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jang",
+                "whosPiece": "Han",
+                "x": 4,
+                "z": 8,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Cha",
+                "whosPiece": "Han",
+                "x": 0,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Han",
+                "x": 1,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sang",
+                "whosPiece": "Han",
+                "x": 2,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sa",
+                "whosPiece": "Han",
+                "x": 3,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Sa",
+                "whosPiece": "Han",
+                "x": 5,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Ma",
+                "whosPiece": "Han",
+                "x": 6,
+                "z": 9,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Cha",
+                "whosPiece": "Han",
+                "x": 8,
+                "z": 9,
+                "isPlayerPiece": false
+            }
+        ]
+    },
+    "isSaved": true
+}

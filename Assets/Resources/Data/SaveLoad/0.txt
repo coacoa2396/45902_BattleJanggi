@@ -170,6 +170,13 @@
                 "isPlayerPiece": false
             },
             {
+                "pieceName": "Sa",
+                "whosPiece": "Han",
+                "x": 5,
+                "z": 8,
+                "isPlayerPiece": false
+            },
+            {
                 "pieceName": "Cha",
                 "whosPiece": "Han",
                 "x": 0,
@@ -194,13 +201,6 @@
                 "pieceName": "Sa",
                 "whosPiece": "Han",
                 "x": 3,
-                "z": 9,
-                "isPlayerPiece": false
-            },
-            {
-                "pieceName": "Sa",
-                "whosPiece": "Han",
-                "x": 5,
                 "z": 9,
                 "isPlayerPiece": false
             },

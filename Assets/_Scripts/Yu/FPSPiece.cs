@@ -33,6 +33,7 @@ public class FPSPiece : MonoBehaviour
 
     public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
     public bool CanUseSkill { get { return canUseSkill; } set { canUseSkill = value; } }
+    public Weapon Weapon { get { return weapon; } }
 
     List<Collider> groundList = new List<Collider>();
 

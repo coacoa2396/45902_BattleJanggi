@@ -7,7 +7,7 @@ public class Sword : Weapon
     [SerializeField] LayerMask layerMask;
     [SerializeField] float range;
     [SerializeField, Range(0, 360)] float angle;
-    [SerializeField] int damage;
+    [SerializeField] ParticleSystem effect;
 
     private float preAngle;
     private float cosAngle;
@@ -15,8 +15,14 @@ public class Sword : Weapon
 
     Collider[] colliders = new Collider[20];
 
+    public override void Fire()
+    {
+        AttackTiming();
+    }
+
     private void AttackTiming()
     {
+        effect.Play();
         int size = Physics.OverlapSphereNonAlloc(transform.position, range, colliders, layerMask);
         for (int i = 0; i < size; i++)
         {
@@ -25,7 +31,12 @@ public class Sword : Weapon
                 continue;
 
             FPSPiece player = colliders[i].GetComponent<FPSPiece>();
-            player?.TakeDamage(damage);
+            player?.TakeDamage(Damage);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }

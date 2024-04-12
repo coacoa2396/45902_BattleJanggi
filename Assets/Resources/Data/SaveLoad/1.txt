@@ -72,6 +72,13 @@
                 "isPlayerPiece": false
             },
             {
+                "pieceName": "Po",
+                "whosPiece": "Cho",
+                "x": 7,
+                "z": 2,
+                "isPlayerPiece": false
+            },
+            {
                 "pieceName": "Jol",
                 "whosPiece": "Cho",
                 "x": 0,
@@ -95,7 +102,7 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Cho",
-                "x": 7,
+                "x": 6,
                 "z": 3,
                 "isPlayerPiece": false
             },
@@ -109,14 +116,7 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Han",
-                "x": 3,
-                "z": 5,
-                "isPlayerPiece": false
-            },
-            {
-                "pieceName": "Po",
-                "whosPiece": "Cho",
-                "x": 7,
+                "x": 4,
                 "z": 5,
                 "isPlayerPiece": false
             },

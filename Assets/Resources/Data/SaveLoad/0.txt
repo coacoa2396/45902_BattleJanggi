@@ -9,7 +9,8 @@
                 "isPlayerPiece": false
             },
             {
-                "pieceName": "Ma",
+
+                "pieceName": "Sang",
                 "whosPiece": "Cho",
                 "x": 1,
                 "z": 0,
@@ -23,21 +24,8 @@
                 "isPlayerPiece": false
             },
             {
-                "pieceName": "Sa",
-                "whosPiece": "Cho",
-                "x": 3,
-                "z": 0,
-                "isPlayerPiece": false
-            },
-            {
-                "pieceName": "Sa",
-                "whosPiece": "Cho",
-                "x": 5,
-                "z": 0,
-                "isPlayerPiece": false
-            },
-            {
-                "pieceName": "Ma",
+
+                "pieceName": "Sang",
                 "whosPiece": "Cho",
                 "x": 6,
                 "z": 0,
@@ -137,6 +125,13 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Han",
+                "x": 6,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
                 "x": 8,
                 "z": 6,
                 "isPlayerPiece": false
@@ -155,12 +150,7 @@
                 "z": 7,
                 "isPlayerPiece": false
             },
-            {
-                "pieceName": "Jang",
-                "whosPiece": "Han",
-                "x": 4,
-                "z": 8,
-                "isPlayerPiece": false
+            
             },
             {
                 "pieceName": "Cha",
@@ -177,11 +167,12 @@
                 "isPlayerPiece": false
             },
             {
-                "pieceName": "Ma",
+                "pieceName": "Sang",
                 "whosPiece": "Han",
                 "x": 2,
                 "z": 9,
                 "isPlayerPiece": false
+<
             },
             {
                 "pieceName": "Sa",
@@ -196,6 +187,7 @@
                 "x": 5,
                 "z": 9,
                 "isPlayerPiece": false
+
             },
             {
                 "pieceName": "Ma",
@@ -205,7 +197,9 @@
                 "isPlayerPiece": false
             },
             {
-                "pieceName": "Ma",
+
+                "pieceName": "Sang",
+
                 "whosPiece": "Han",
                 "x": 7,
                 "z": 9,

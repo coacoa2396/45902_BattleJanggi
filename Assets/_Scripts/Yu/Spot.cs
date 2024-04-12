@@ -7,28 +7,28 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Spot : MonoBehaviour, IPointerClickHandler
 {
-    // ÇöÀç À§¿¡ ±â¹°ÀÌ ÀÖ´ÂÁö ¾ø´ÂÁö?
-    // ±â¹°ÀÌ ÀÖ´Ù¸é
-    // ±â¹°ÀÇ ·¹ÀÌ¾î¸¦ ¹Ş¾Æ¿Â´Ù
+    // í˜„ì¬ ìœ„ì— ê¸°ë¬¼ì´ ìˆëŠ”ì§€ ì—†ëŠ”ì§€?
+    // ê¸°ë¬¼ì´ ìˆë‹¤ë©´
+    // ê¸°ë¬¼ì˜ ë ˆì´ì–´ë¥¼ ë°›ì•„ì˜¨ë‹¤
 
     [SerializeField] LayerMask playerCheck;
 
-    Piece whatPiece;        // ÇöÀç À§¿¡ ÀÖ´Â ±â¹°
+    Piece whatPiece;        // í˜„ì¬ ìœ„ì— ìˆëŠ” ê¸°ë¬¼
     Dictionary<char, int> thisPos;
     Piece listPiece;
 
     bool inList;
     bool onPiece;
-    bool checkCanGo;           // °¥¼öÀÖ´Â Ã¼Å©¸®½ºÆ®¿¡ Æ÷ÇÔÀÌ µÇ¾ú´ÂÁö Ã¼Å©
+    bool checkCanGo;           // ê°ˆìˆ˜ìˆëŠ” ì²´í¬ë¦¬ìŠ¤íŠ¸ì— í¬í•¨ì´ ë˜ì—ˆëŠ”ì§€ ì²´í¬
 
-    [SerializeField] bool isCastle; // ¼º¿¡ ÀÖ´Â SpotÀÎÁö ¾Æ´ÑÁö
-    [SerializeField] bool isCastleCenter;   // ¼º °¡¿îµ¥¿¡ ÀÖ´Â SpotÀÎÁö ¾Æ´ÑÁö
-    [SerializeField] bool diagonal = false; // Spot ±ÙÃ³ ´ë°¢¼± À¯¹«
-    Dictionary<char, int> diagonalPos = null;  // ´ë°¢¼± Spot ¹è¿­ À§Ä¡
+    [SerializeField] bool isCastle; // ì„±ì— ìˆëŠ” Spotì¸ì§€ ì•„ë‹Œì§€
+    [SerializeField] bool isCastleCenter;   // ì„± ê°€ìš´ë°ì— ìˆëŠ” Spotì¸ì§€ ì•„ë‹Œì§€
+    [SerializeField] bool diagonal = false; // Spot ê·¼ì²˜ ëŒ€ê°ì„  ìœ ë¬´
+    Dictionary<char, int> diagonalPos = null;  // ëŒ€ê°ì„  Spot ë°°ì—´ ìœ„ì¹˜
     [SerializeField] int diagonalX;
     [SerializeField] int diagonalZ;
 
-    string whosPiece;   // Cho, Han ÃÊ³ª¶ó ÇÑ³ª¶ó
+    string whosPiece;   // Cho, Han ì´ˆë‚˜ë¼ í•œë‚˜ë¼
 
     public Piece WhatPiece { get { return whatPiece; } }
     public string WhosePiece { get { return whosPiece; } set { whosPiece = value; } }
@@ -60,20 +60,20 @@ public class Spot : MonoBehaviour, IPointerClickHandler
 
     private void OnTriggerEnter(Collider other)
     {
-        if (playerCheck.Contain(other.gameObject.layer))        // ±â¹°ÀÌ ÀÖ´Ù¸é
+        if (playerCheck.Contain(other.gameObject.layer))        // ê¸°ë¬¼ì´ ìˆë‹¤ë©´
         {
-            // ±â¹°ÀÌ À§¿¡ ÀÖ´Ù´Â boolÀ» true·Î ¹Ù²ãÁØ´Ù
+            // ê¸°ë¬¼ì´ ìœ„ì— ìˆë‹¤ëŠ” boolì„ trueë¡œ ë°”ê¿”ì¤€ë‹¤
             onPiece = true;
-            // ³» À§¿¡ ±â¹°ÀÇ ÆÀÀ» °¡Á®¿È
+            // ë‚´ ìœ„ì— ê¸°ë¬¼ì˜ íŒ€ì„ ê°€ì ¸ì˜´
             whosPiece = other.gameObject.GetComponent<Piece>().WhosPiece;
-            // ¾î¶² ±â¹°ÀÎÁö ¹Ş¾Æ¿À±â
+            // ì–´ë–¤ ê¸°ë¬¼ì¸ì§€ ë°›ì•„ì˜¤ê¸°
             whatPiece = other.GetComponent<Piece>();
-            // ³» À§¿¡ ±â¹°¿¡ ÇöÀçspot ¼¼ÆÃÇÏ±â
+            // ë‚´ ìœ„ì— ê¸°ë¬¼ì— í˜„ì¬spot ì„¸íŒ…í•˜ê¸°
             other.gameObject.GetComponent<Piece>().SetUnderSpot(this);
         }
     }
 
-    private void OnTriggerExit(Collider other)              // ±â¹°ÀÌ ¾ø´Ù¸é
+    private void OnTriggerExit(Collider other)              // ê¸°ë¬¼ì´ ì—†ë‹¤ë©´
     {
         if (playerCheck.Contain(other.gameObject.layer))
         {
@@ -84,7 +84,7 @@ public class Spot : MonoBehaviour, IPointerClickHandler
     }
 
     /// <summary>
-    /// °¢ spotÀÌ ÀÚ±âÀÚ½ÅÀÇ À§Ä¡¸¦ ±â¾ïÇÏ°Ô ÇÏ´Â ÇÔ¼ö
+    /// ê° spotì´ ìê¸°ìì‹ ì˜ ìœ„ì¹˜ë¥¼ ê¸°ì–µí•˜ê²Œ í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
     /// <param name="z"></param>
     /// <param name="x"></param>
@@ -103,7 +103,7 @@ public class Spot : MonoBehaviour, IPointerClickHandler
     }
 
     /// <summary>
-    /// spotÀÌ µé¾î°¡ÀÖ´Â list¸¦ °¡Áö°í ÀÖ´Â ±â¹°À» ¼¼ÆÃ
+    /// spotì´ ë“¤ì–´ê°€ìˆëŠ” listë¥¼ ê°€ì§€ê³  ìˆëŠ” ê¸°ë¬¼ì„ ì„¸íŒ…
     /// </summary>
     /// <param name="listPiece"></param>
     public void SetList(Piece listPiece)

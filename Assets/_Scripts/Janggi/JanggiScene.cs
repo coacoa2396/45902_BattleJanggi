@@ -12,6 +12,8 @@ public class JanggiScene : BaseScene
 {
     public override IEnumerator LoadingRoutine()
     {
+        Manager.Data.LoadData(0);
+        //Manager.Data.GameData.pieceData
         yield return null;
     }
 

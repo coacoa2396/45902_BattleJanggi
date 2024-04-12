@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// °³¹ßÀÚ: Yerin, Changyu
+/// ê°œë°œì: Yerin, Changyu
 /// 
-/// ¸»ÀÇ À§Ä¡ »óÅÂ¸¦ º¹¿øÇÏ±â À§ÇÑ Å¬·¡½º
+/// ë§ì˜ ìœ„ì¹˜ ìƒíƒœë¥¼ ë³µì›í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
 /// </summary>
 public class JanggiMapData : MonoBehaviour {}
 
@@ -36,8 +36,8 @@ public struct PieceData
 
             pieces[i].x = lists[i].ThisPos['x'];
             pieces[i].z = lists[i].ThisPos['z'];
-
             pieces[i].isPlayerPiece = lists[i].WhatPiece.IsFPSPlayer;
+
         }
     }
 }

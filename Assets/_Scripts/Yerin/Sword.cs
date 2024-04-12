@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : Bullet
+public class Sword : Weapon
 {
     [SerializeField] LayerMask layerMask;
     [SerializeField] float range;

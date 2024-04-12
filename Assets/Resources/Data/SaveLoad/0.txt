@@ -2,158 +2,132 @@
     "pieceData": {
         "pieces": [
             {
-                "pieceName": "Cha",
-                "whosPiece": "Cho",
+                "id": -4220,
                 "x": 0,
                 "z": 0
             },
             {
-                "pieceName": "Ma",
-                "whosPiece": "Cho",
+                "id": -4232,
                 "x": 1,
                 "z": 0
             },
             {
-                "pieceName": "Ma",
-                "whosPiece": "Cho",
+                "id": -4244,
                 "x": 2,
                 "z": 0
             },
             {
-                "pieceName": "Ma",
-                "whosPiece": "Cho",
+                "id": -4292,
                 "x": 6,
                 "z": 0
             },
             {
-                "pieceName": "Ma",
-                "whosPiece": "Cho",
+                "id": -4304,
                 "x": 7,
                 "z": 0
             },
             {
-                "pieceName": "Cha",
-                "whosPiece": "Cho",
+                "id": -4316,
                 "x": 8,
                 "z": 0
             },
             {
-                "pieceName": "Po",
-                "whosPiece": "Cho",
+                "id": -4448,
                 "x": 1,
                 "z": 2
             },
             {
-                "pieceName": "Po",
-                "whosPiece": "Cho",
+                "id": -4520,
                 "x": 7,
                 "z": 2
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Cho",
+                "id": -4544,
                 "x": 0,
                 "z": 3
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Cho",
+                "id": -4568,
                 "x": 2,
                 "z": 3
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Cho",
+                "id": -4592,
                 "x": 4,
                 "z": 3
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Cho",
+                "id": -4616,
                 "x": 6,
                 "z": 3
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Cho",
+                "id": -4640,
                 "x": 8,
                 "z": 3
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Han",
+                "id": -4868,
                 "x": 0,
                 "z": 6
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Han",
+                "id": -4892,
                 "x": 2,
                 "z": 6
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Han",
+                "id": -4916,
                 "x": 4,
                 "z": 6
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Han",
+                "id": -4940,
                 "x": 6,
                 "z": 6
             },
             {
-                "pieceName": "Jol",
-                "whosPiece": "Han",
+                "id": -4964,
                 "x": 8,
                 "z": 6
             },
             {
-                "pieceName": "Po",
-                "whosPiece": "Han",
+                "id": -4988,
                 "x": 1,
                 "z": 7
             },
             {
-                "pieceName": "Po",
-                "whosPiece": "Han",
+                "id": -5060,
                 "x": 7,
                 "z": 7
             },
             {
-                "pieceName": "Cha",
-                "whosPiece": "Han",
+                "id": -5192,
                 "x": 0,
                 "z": 9
             },
             {
-                "pieceName": "Ma",
-                "whosPiece": "Han",
+                "id": -5204,
                 "x": 1,
                 "z": 9
             },
             {
-                "pieceName": "Ma",
-                "whosPiece": "Han",
+                "id": -5216,
                 "x": 2,
                 "z": 9
             },
             {
-                "pieceName": "Ma",
-                "whosPiece": "Han",
+                "id": -5264,
                 "x": 6,
                 "z": 9
             },
             {
-                "pieceName": "Ma",
-                "whosPiece": "Han",
+                "id": -5276,
                 "x": 7,
                 "z": 9
             },
             {
-                "pieceName": "Cha",
-                "whosPiece": "Han",
+                "id": -5288,
                 "x": 8,
                 "z": 9
             }

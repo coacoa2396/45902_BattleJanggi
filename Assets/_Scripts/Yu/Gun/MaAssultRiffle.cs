@@ -68,7 +68,8 @@ public class MaAssultRiffle : Gun
 
     public void StopFiring()
     {
-        StopCoroutine(coroutine);
+        if (coroutine != null)
+            StopCoroutine(coroutine);
     }
 
     IEnumerator Reload()

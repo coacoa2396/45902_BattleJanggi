@@ -68,6 +68,7 @@ public class JanggiLogic : Singleton<JanggiLogic>
         }
 
         Manager.Data.GameData.pieceData.PieceSave(spotList);
+        Manager.Data.GameData.isSaved = true;
         Manager.Data.SaveData();
     }
 }

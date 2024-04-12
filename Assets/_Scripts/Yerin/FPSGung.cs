@@ -11,22 +11,25 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class FPSGung : FPSPiece
 {
-    [SerializeField] GameObject sword;
+    [SerializeField] GungSkill gungSkill;
 
     Coroutine skill;
 
     IEnumerator Skill()
     {
+        gungSkill.gameObject.SetActive(true);
+
         yield return new WaitForSeconds(3f);
 
         CanUseSkill = true;
+        gungSkill.gameObject.SetActive(false);
     }
 
     private void OnSkill(InputValue value)
     {
         if (CanUseSkill)
         {
-            
+            skill = StartCoroutine(Skill());
         }
     }
 }

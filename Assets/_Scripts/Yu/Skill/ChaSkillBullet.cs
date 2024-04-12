@@ -19,14 +19,23 @@ public class ChaSkillBullet : MonoBehaviour
         rigid.velocity = transform.forward * speed;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if (railGunCheck.Contain(other.gameObject.layer))
+        RaycastHit[] hits;
+        Vector3 nextPos = transform.position + rigid.velocity * Time.fixedDeltaTime;
+        hits = Physics.RaycastAll(transform.position, nextPos);
+        if (hits.Length > 0)
         {
-            FPSPiece player = other.gameObject.GetComponent<FPSPiece>();
-            player?.TakeDamage(damage);
-            Wall wall = other.gameObject.GetComponent<Wall>();
-            wall?.DestroySelf();
+            for (int i = 0; i < hits.Length; i++)
+            {
+                if (railGunCheck.Contain(hits[i].transform.gameObject.layer))
+                {
+                    FPSPiece player = hits[i].transform.gameObject.GetComponent<FPSPiece>();
+                    player?.TakeDamage(damage);
+                    Wall wall = hits[i].transform.gameObject.GetComponent<Wall>();
+                    wall?.DestroySelf();
+                }
+            }
         }
     }
 
@@ -36,3 +45,5 @@ public class ChaSkillBullet : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+

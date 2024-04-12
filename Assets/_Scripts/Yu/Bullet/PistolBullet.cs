@@ -15,15 +15,20 @@ public class PistolBullet : Bullet
         Rigid.velocity = transform.forward * Speed;
     }
 
-    protected override void OnCollisionEnter(Collision collision)
+    private void FixedUpdate()
     {
-        FPSPiece target;
-        collision.gameObject.TryGetComponent<FPSPiece>(out target);
+        Vector3 nextPos = transform.position + Rigid.velocity * Time.fixedDeltaTime;
+        if (Physics.Linecast(transform.position, nextPos, out RaycastHit hitInfo))
+        {
+            FPSPiece target;
+            hitInfo.collider.gameObject.TryGetComponent<FPSPiece>(out target);
 
-        target?.TakeDamage(Damage);
-        Manager.Pool.GetPool(explodeEffect, transform.position, Quaternion.LookRotation(collision.contacts[0].normal));
+            target?.TakeDamage(Damage);
 
-        gameObject.SetActive(false);
+            Manager.Pool.GetPool(explodeEffect, transform.position, Quaternion.LookRotation(hitInfo.normal));
+
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnDisable()

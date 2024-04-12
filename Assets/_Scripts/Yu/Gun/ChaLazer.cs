@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 /// <summary>
 /// 제작자 : ChanGyu
 /// 장기말(차)의 레이저건
@@ -9,7 +10,6 @@ public class ChaLazer : Weapon
 {
     [SerializeField] Transform muzzlePoint;
     [SerializeField] float maxDistance;
-    [SerializeField] LayerMask layerMask;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] LazerGunImpact hitEffect;
     [SerializeField] LineRenderer lineRenderer;
@@ -17,58 +17,78 @@ public class ChaLazer : Weapon
 
     [SerializeField] Transform hitPoint;
 
+    [SerializeField] int maxMagazine;       // 탄창이 꽉 차있는 경우 탄환의 수
+    [SerializeField] int curMagazine;       // 현재 탄창의 탄환 수
+
+    float rate = 1.5f;     // 연사속도
+    bool isfire;
+
+    protected override void Start()
+    {
+        base.Start();
+        isfire = true;
+    }
+
+    void OnReload(InputValue value)
+    {
+        StartCoroutine(Reload());
+    }
+
     public override void Fire()
     {
-        muzzleFlash.Play();
-        sound.Play();
-
-        Ray ray = new Ray(muzzlePoint.position, muzzlePoint.forward);
-
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance))
+        if (curMagazine > 0)
         {
+            if (!isfire)
+                return;
 
-            // 레이캐스트 보이게 하기
-            Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * hitInfo.distance, Color.red, 0.5f);
-            lineRenderer.gameObject.SetActive(true);
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, hitInfo.point);
+            muzzleFlash.Play();
+            sound.Play();
 
-            // 맞는 위치에 총자국 이펙트
-            Manager.Pool.GetPool(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            curMagazine--;
 
-            //ParticleSystem partcl = Instantiate(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
-            //partcl.transform.position = hitInfo.point;
-            //Destroy(partcl, 1.5f);
+            Ray ray = new Ray(muzzlePoint.position, muzzlePoint.forward);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance))
+            {
+                // 레이캐스트 보이게 하기
+                Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * hitInfo.distance, Color.red, 0.5f);
+                lineRenderer.gameObject.SetActive(true);
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, hitInfo.point);
 
-            // 맞았을 때 물리력 구현
-            //Rigidbody rigid = hitInfo.collider.GetComponent<Rigidbody>();
-            //if (rigid != null)
-            //{
-            //    rigid.AddForceAtPosition(-hitInfo.normal * 10f, hitInfo.point, ForceMode.Impulse);
-            //}
+                // 맞는 위치에 총자국 이펙트
+                Manager.Pool.GetPool(hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
 
-            // 맞는 로그
-            Debug.Log("맞았다!");
-
-            // Player를 찾아서 데미지 넣기
-            FPSPiece target = hitInfo.collider.GetComponent<FPSPiece>();
-
-            target?.TakeDamage(Damage);
-
-            // 레이캐스트 디버깅 방법
-            /*
-            Debug.Log(hitInfo.collider.gameObject.name);
-            Debug.Log(hitInfo.distance);
-            hitPoint.position = hitInfo.point;
-            */
+                // Player를 찾아서 데미지 넣기
+                FPSPiece target = hitInfo.collider.GetComponent<FPSPiece>();
+                target?.TakeDamage(Damage);
+            }
+            else
+            {
+                Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * maxDistance, Color.red, 0.5f);
+                lineRenderer.gameObject.SetActive(true);
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, hitInfo.point + ray.direction * maxDistance);
+            }
+            StartCoroutine(CalRate());
         }
         else
         {
-            Debug.DrawRay(muzzlePoint.position, muzzlePoint.forward * maxDistance, Color.red, 0.5f);
-            lineRenderer.gameObject.SetActive(true);
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1,hitInfo.point + ray.direction * maxDistance);
-            Debug.Log("안맞았다!");
+            StartCoroutine(Reload());
         }
+    }
+
+    IEnumerator CalRate()
+    {
+        isfire = false;
+        yield return new WaitForSeconds(rate);
+        isfire = true;
+    }
+
+    IEnumerator Reload()
+    {
+        isfire = false;
+        yield return new WaitForSeconds(1f);
+        isfire = true;
+        curMagazine = maxMagazine;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 /// <summary>
 /// 제작자 : Changyu
 /// 장기말 (마)의 무기
@@ -10,12 +11,30 @@ public class MaAssultRiffle : Gun
     [SerializeField] Transform muzzlePoint;
     [SerializeField] ParticleSystem muzzleFlash;
 
-    [SerializeField] float rate;        // 연사속도
+    [SerializeField] int maxMagazine;       // 탄창이 꽉 차있는 경우 탄환의 수
+    [SerializeField] int curMagazine;       // 현재 탄창의 탄환 수
+
+    float rate = 0.2f;     // 연사속도
+    bool isfire;
 
     Coroutine coroutine;
 
+    protected override void Start()
+    {
+        base.Start();
+        isfire = true;
+    }
+
+    void OnReload(InputValue value)
+    {
+        StartCoroutine(Reload());
+    }
+
     public override void Fire()
     {
+        if (!isfire)
+            return;
+
         muzzleFlash.Play();
         PooledObject PO = Manager.Pool.GetPool(Bullet, muzzlePoint.position, muzzlePoint.rotation);
         Bullet initBullet = PO.GetComponent<Bullet>();
@@ -24,16 +43,21 @@ public class MaAssultRiffle : Gun
         initBullet.Weapon = GetComponent<Weapon>();
     }
 
-    /// <summary>
-    /// 연사속도를 체크해서 쏘는 방식
-    /// </summary>
-    /// <returns></returns>
     IEnumerator Firing()
     {
         while (true)
         {
-            Fire();
-            yield return new WaitForSeconds(rate);
+            if (curMagazine > 0)
+            {
+                Fire();
+                curMagazine--;
+                yield return new WaitForSeconds(rate);
+            }
+            else
+            {
+                StartCoroutine(Reload());
+                break;
+            }
         }
     }
 
@@ -44,6 +68,15 @@ public class MaAssultRiffle : Gun
 
     public void StopFiring()
     {
-        StopCoroutine(coroutine);
+        if (coroutine != null)
+            StopCoroutine(coroutine);
+    }
+
+    IEnumerator Reload()
+    {
+        isfire = false;
+        yield return new WaitForSeconds(1f);
+        isfire = true;
+        curMagazine = maxMagazine;
     }
 }

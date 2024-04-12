@@ -4,34 +4,24 @@ using UnityEngine;
 
 public class GungSkill : MonoBehaviour
 {
-    [SerializeField] LayerMask haveDamage;
     [SerializeField] ParticleSystem effect;
-
-    List<FPSPiece> players;
+    [SerializeField] FPSPiece enemy;
 
     private void Start()
     {
-        FPSPiece[] findPlayers = GetComponents<FPSPiece>();
-
-        foreach (FPSPiece p in findPlayers)
+        FPSPiece[] players = FindObjectsOfType<FPSPiece>();        
+        for (int i = 0; i < players.Length; i++)
         {
-            players.Add(p);
+            if (players[i] == GetComponentInParent<FPSPiece>())
+                continue;
+
+            enemy = players[i];
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Cast()
     {
-        if (haveDamage.Contain(other.gameObject.layer))
-        {
-            other.gameObject.SetActive(false); // °í¹Î ÇÊ¿ä
-
-            foreach (FPSPiece p in players) 
-            {
-                if (p != gameObject)
-                {
-                    p.TakeDamage(p.Weapon.Damage);
-                }
-            }
-        }
+        effect.Play();
+        
     }
 }

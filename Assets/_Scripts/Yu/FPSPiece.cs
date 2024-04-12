@@ -149,7 +149,7 @@ public class FPSPiece : MonoBehaviour
     /// 데미지를 받는 함수
     /// </summary>
     /// <param name="damage"></param>
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         hp -= damage;
 

@@ -19,7 +19,7 @@ public class DataManager : Singleton<DataManager>
     }
 
     [ContextMenu("Save")]
-    public void SaveData(int index = 0)
+    public void SaveData(int index)
     {
         if (Directory.Exists(path) == false)
         {
@@ -31,7 +31,7 @@ public class DataManager : Singleton<DataManager>
     }
 
     [ContextMenu("Load")]
-    public void LoadData(int index = 0)
+    public void LoadData(int index)
     {
         if (File.Exists($"{path}/{index}.txt") == false)
         {

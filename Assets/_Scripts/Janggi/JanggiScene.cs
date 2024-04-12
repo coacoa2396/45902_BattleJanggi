@@ -11,9 +11,14 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class JanggiScene : BaseScene
 {
+    private void Start()
+    {
+        PieceLoad();
+    }
+
     public override IEnumerator LoadingRoutine()
     {
-        Manager.Data.LoadData(0);        
+        Manager.Data.LoadData(0);
         yield return null;
     }
 
@@ -38,5 +43,19 @@ public class JanggiScene : BaseScene
         Manager.Data.GameData.pieceData.PieceSave(spotList);
         Manager.Data.GameData.isSaved = true;
         Manager.Data.SaveData(1);
+    }
+
+    public void PieceLoad()
+    {
+        Manager.Data.LoadData(1);
+        PieceData data = Manager.Data.GameData.pieceData;
+        foreach (PiecePosData piece in data.pieces)
+        {
+            // 기물의 이름을 체크
+
+            // 기물의 진형을 체크
+
+            // 해당 기물을 리소스 매니저로 찾아서 생성
+        }
     }
 }

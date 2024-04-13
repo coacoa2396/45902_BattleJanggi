@@ -20,6 +20,7 @@ public class JanggiCamera : Singleton<JanggiCamera>
     private void Start()
     {
         currentCam = hanLowCam;
+        hanLowCam.Priority = 20;
     }
 
     /// <summary>
@@ -58,9 +59,30 @@ public class JanggiCamera : Singleton<JanggiCamera>
         else if (Manager.JanggiTurn.CurrentTurn.Equals("Cho"))  // 초나라의 LowCam으로 이동해야 할 떄
         {
             choLowCam.Priority = 20;
-            currentCam.Priority= 10;
+            currentCam.Priority = 10;
 
             currentCam = choLowCam;
         }
+    }
+
+    public void FindCamare()
+    {
+        CinemachineVirtualCamera[] cameras = FindObjectsOfType<CinemachineVirtualCamera>();
+
+        hanLowCam = cameras[3];
+        hanChooseCam = cameras[2];
+        choLowCam = cameras[1];
+        choChooseCam = cameras[0];
+
+        if (Manager.JanggiTurn.CurrentTurn.Equals("Han"))
+        {
+            currentCam = hanLowCam;
+        }
+        else if (Manager.JanggiTurn.CurrentTurn.Equals("Cho"))
+        {
+            currentCam = choLowCam;
+        }
+
+        currentCam.Priority = 20;
     }
 }

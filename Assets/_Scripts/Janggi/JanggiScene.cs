@@ -5,12 +5,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// 개발자: Yerin
+/// 개발자: Yerin, 찬규
 /// 
 /// 장기씬에서 FPS씬으로 전환
+/// 장기씬에서 사용하는 각종 기능들
 /// </summary>
 public class JanggiScene : BaseScene
 {
+    [SerializeField] GameObject SoundUI;
+
+    bool isOn;
+
     public override IEnumerator LoadingRoutine()
     {
         Manager.Data.LoadData(0);        
@@ -38,5 +43,19 @@ public class JanggiScene : BaseScene
         Manager.Data.GameData.pieceData.PieceSave(spotList);
         Manager.Data.GameData.isSaved = true;
         Manager.Data.SaveData(1);
+    }
+
+    public void ClickOption()
+    {
+        if (!isOn)
+        {
+            isOn = true;
+            SoundUI.SetActive(true);
+        }
+        else
+        {
+            isOn = false;
+            SoundUI.SetActive(false);
+        }
     }
 }

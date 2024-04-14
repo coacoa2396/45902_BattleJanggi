@@ -32,7 +32,7 @@ public class JanggiTurn : Singleton<JanggiTurn>
     {
         currentTurn = Han;
 
-        timer = 0;
+        timer = baseTime;
         turn = 0;
 
         timeLimit = StartCoroutine(CountTime());

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// °³¹ßÀÚ: Yerin
@@ -11,6 +12,7 @@ public class ChargingWeapon : Weapon
 {
     [SerializeField] float normalPower;
     [SerializeField] float chargingSpeed;
+    [SerializeField] Slider ChargingBarSlider;
 
     float chargingPower;
 
@@ -18,6 +20,8 @@ public class ChargingWeapon : Weapon
 
     public float ChargingPower { get { return chargingPower; } set { chargingPower = value; } }
     public Coroutine ChargingCoroutine { get { return chargingCoroutine; } }
+
+    float maxChargingPow = 50f;
 
     protected override void Start()
     {
@@ -42,6 +46,19 @@ public class ChargingWeapon : Weapon
     public float BowPower()
     {
         return chargingPower + normalPower;
+    }
+
+    public void ChargingBar()
+    {
+        if (maxChargingPow == 0)
+        {
+            return;
+        }
+
+        if (ChargingBarSlider != null)
+        {
+            ChargingBarSlider.value = maxChargingPow / (chargingPower + normalPower);
+        }
     }
 
     protected virtual void Shoot(float chargingPower)

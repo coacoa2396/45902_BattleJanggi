@@ -8,7 +8,7 @@ using UnityEngine;
 /// 
 /// 말의 위치 상태를 복원하기 위한 클래스
 /// </summary>
-public class JanggiMapData : MonoBehaviour {}
+public class JanggiMapData : MonoBehaviour { }
 
 [Serializable]
 public struct PiecePosData
@@ -26,6 +26,7 @@ public struct PiecePosData
 public struct PieceData
 {
     public PiecePosData[] pieces;
+
     public void PieceSave(List<Spot> lists)
     {
         pieces = new PiecePosData[lists.Count];
@@ -37,7 +38,6 @@ public struct PieceData
             pieces[i].x = lists[i].ThisPos['x'];
             pieces[i].z = lists[i].ThisPos['z'];
             pieces[i].isPlayerPiece = lists[i].WhatPiece.IsFPSPlayer;
-
         }
     }
 }

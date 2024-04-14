@@ -15,7 +15,9 @@ public class JanggiTurn : Singleton<JanggiTurn>
     string Han = "Han";
     string Cho = "Cho";
 
-    float time;
+    float baseTime = 60;
+    float timer;
+    int turn;       // 턴 수 체크
 
     bool canGoOut;
 
@@ -23,14 +25,23 @@ public class JanggiTurn : Singleton<JanggiTurn>
 
     public string CurrentTurn { get { return currentTurn; } }
     public bool CanGoOut { get {  return canGoOut; } }
+    public float Timer {  get { return timer; } }
+    public int Turn { get { return turn; } set { turn = value; } }
 
     private void Start()
     {
         currentTurn = Han;
-        time = 0;
+        timer = 0;
+        turn = 0;
 
         timeLimit = StartCoroutine(CountTime());
     }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+    }
+
     /// <summary>
     /// 현재 누구의 턴인지 확인하는 함수 
     /// 자신의 턴이면 true를, 아닐 시 false를 리턴
@@ -63,10 +74,14 @@ public class JanggiTurn : Singleton<JanggiTurn>
         if (currentTurn.Equals(Han))    // 현재 플레이어가 한나라일 시
         {
             currentTurn = Cho;
+            turn++;
+            timer = baseTime;
         }
         else if (currentTurn.Equals(Cho))   // 현재 플레이어가 초나라일 시
         {
             currentTurn = Han;
+            turn++;
+            timer = baseTime;
         }
         else
         {

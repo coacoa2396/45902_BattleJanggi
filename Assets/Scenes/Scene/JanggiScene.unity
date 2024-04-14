@@ -2173,6 +2173,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7316600710921661821, guid: e40a3672ef099f14d8e3153c103e72e8, type: 3}
+      propertyPath: m_text
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316600710921661821, guid: e40a3672ef099f14d8e3153c103e72e8, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8361595494440979754, guid: e40a3672ef099f14d8e3153c103e72e8, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -4036,7 +4044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1590326822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5548,8 +5556,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982722762}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: -25.6, y: 76.6, z: -53.7}
+  m_LocalRotation: {x: 0, y: 0.8660254, z: -0.5, w: 0}
+  m_LocalPosition: {x: -24.39, y: 76.6, z: 55.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5688,10 +5696,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1156153389}
     m_Modifications:
-    - target: {fileID: 8913787889786631931, guid: 7458a43010f24a74d9730a8b60020e58, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1846695317411871816, guid: c511fd6c1db12e844ae67860880897c8, type: 3}
       propertyPath: GetImage
       value: 
@@ -5739,6 +5743,10 @@ PrefabInstance:
     - target: {fileID: 4426392299690168422, guid: c511fd6c1db12e844ae67860880897c8, type: 3}
       propertyPath: m_Name
       value: Cha(Cho)1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913787889786631931, guid: 7458a43010f24a74d9730a8b60020e58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

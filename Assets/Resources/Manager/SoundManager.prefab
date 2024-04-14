@@ -46,8 +46,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfcee6da78ce3546915024d706d7109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmSource: {fileID: 2315522860339898961}
-  sfxSource: {fileID: 105278731388737427}
+  mixer: {fileID: 24100000, guid: 18a1ff0e3d1418f40bc2583b8bb5b16d, type: 2}
+  sfx:
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 7f6ac15d9cb2cef4995e1490d6de13b3, type: 3}
+  - name: ButtonMove
+    clip: {fileID: 8300000, guid: fdc91ef6ad1099c49934d30db91f3889, type: 3}
+  bgm:
+  - name: BGM
+    clip: {fileID: 8300000, guid: ba91b887a99059d48a8f11b0d24106ef, type: 3}
+  bgmPlayer: {fileID: 2315522860339898961}
+  sfxPlayer: {fileID: 105278731388737427}
 --- !u!1 &3112071428299456759
 GameObject:
   m_ObjectHideFlags: 0

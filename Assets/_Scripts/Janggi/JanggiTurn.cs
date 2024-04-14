@@ -26,11 +26,11 @@ public class JanggiTurn : Singleton<JanggiTurn>
     Coroutine timeLimit;
 
     public string CurrentTurn { get { return currentTurn; } }
-    public bool CanGoOut { get {  return canGoOut; } }
-    public float Timer {  get { return timer; } }
+    public bool CanGoOut { get { return canGoOut; } }
+    public float Timer { get { return timer; } }
     public int Turn { get { return turn; } set { turn = value; } }
-    public int HanSa { get {  return hanSa; } set {  hanSa = value; } }
-    public int ChoSa { get { return choSa; } set {  choSa = value; } }
+    public int HanSa { get { return hanSa; } set { hanSa = value; } }
+    public int ChoSa { get { return choSa; } set { choSa = value; } }
 
     private void Start()
     {
@@ -38,8 +38,6 @@ public class JanggiTurn : Singleton<JanggiTurn>
 
         timer = baseTime;
         turn = 0;
-
-        //timeLimit = StartCoroutine(CountTime());
     }
 
     private void Update()
@@ -56,7 +54,7 @@ public class JanggiTurn : Singleton<JanggiTurn>
     public bool CheckWhosTurn(string player)
     {
         if (player == null || currentTurn == null)
-        {      
+        {
             Debug.LogError("현재 누구의 턴인지 확인할 수 없습니다.");
             return false;
         }
@@ -65,14 +63,14 @@ public class JanggiTurn : Singleton<JanggiTurn>
         {
             return true;
         }
-        
+
         return false;
     }
 
     /// <summary>
     /// 장기 씬 플레이어의 턴을 만드는 함수 
     /// </summary>
-    public void OnTurn() 
+    public void OnTurn()
     {
         StopCoroutine(timeLimit);
 

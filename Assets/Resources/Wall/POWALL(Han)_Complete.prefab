@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCheck:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 16384
 --- !u!135 &7771597483636356436
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCheck:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 16384
   animator: {fileID: 6099255031911564955}
   attackRange: {fileID: 5565632974154574411}
   nonAttackRange: {fileID: 603758644235412359}
@@ -381,7 +381,7 @@ MonoBehaviour:
   damage: 10
   playerCheck:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 16384
 --- !u!54 &8027298472495011675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCheck:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 16384
 --- !u!135 &201331869069817237
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -5,9 +5,9 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 /// <summary>
 /// 제작 : 찬규
-/// 타이틀씬에서 사용하는 옵션의 사운드세팅
+/// 옵션의 사운드세팅
 /// </summary>
-public class TitleSound : MonoBehaviour
+public class SoundSetting : MonoBehaviour
 {
     [SerializeField] Button BGMOnButton;
     [SerializeField] Button SFXOnButton;

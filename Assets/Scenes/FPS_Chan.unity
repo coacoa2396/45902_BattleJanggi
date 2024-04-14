@@ -235,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654009547200630817, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4274217879494700384, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
       propertyPath: cameraRoot
@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: muzzlePointRoot
       value: 
       objectReference: {fileID: 1956380478}
+    - target: {fileID: 4904713546986704802, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6311082200927372582, guid: d5c7eb085df1c9d4f92f727a24487392, type: 3}
       propertyPath: zoomScope
       value: 
@@ -594,6 +598,10 @@ PrefabInstance:
     - target: {fileID: 3809177900620277012, guid: f2a8cc85befab264a9736794d8e38db1, type: 3}
       propertyPath: m_Name
       value: FPSAlpaca_Complete
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809177900620277012, guid: f2a8cc85befab264a9736794d8e38db1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1120,6 +1128,7 @@ MonoBehaviour:
   - {fileID: -6686843668723389247, guid: 6a86442112b569a4fb8fef463e4346e7, type: 3}
   - {fileID: 8832237183074100709, guid: 31300786525d76f4dacc739f4e23b42b, type: 3}
   - {fileID: 6037834804225058002, guid: 3e85241d73214f04cbb36260fb63f61f, type: 3}
+  fPSLoadManager: {fileID: 0}
 --- !u!1 &1435248771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1216,7 @@ Transform:
   m_GameObject: {fileID: 1435248771}
   serializedVersion: 2
   m_LocalRotation: {x: -0.05673965, y: 0.079786584, z: 0.008679249, w: 0.995158}
-  m_LocalPosition: {x: -2.9841104, y: 3.2, z: 7.4727907}
+  m_LocalPosition: {x: 1.0362926, y: 2.35, z: 11.138891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

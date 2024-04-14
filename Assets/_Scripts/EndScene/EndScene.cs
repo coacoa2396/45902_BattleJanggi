@@ -10,7 +10,7 @@ public class EndScene : BaseScene
 
     private void Awake()
     {
-        if (Manager.Game.WhoWin == "Han")
+        if (Manager.Game.GameWin == "Han")
         {
             winner = "Han";
         }

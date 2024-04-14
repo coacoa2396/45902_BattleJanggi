@@ -61,11 +61,11 @@ public class JanggiScene : BaseScene
 
     public void HanWin()
     {
-        Manager.Game.WhoWin = "Han";
+        Manager.Game.GameWin = "Han";
     }
 
     public void ChoWin()
     {
-        Manager.Game.WhoWin = "Cho";
+        Manager.Game.GameWin = "Cho";
     }
 }

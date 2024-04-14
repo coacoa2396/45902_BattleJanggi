@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Missile
   layers:
   - Default
   - TransparentFX
@@ -18,10 +19,10 @@ TagManager:
   - KnockBack
   - Wall
   - Attack
-  - 
-  - 
-  - 
-  - 
+  - Han
+  - Cho
+  - HanCamera
+  - ChoCamera
   - 
   - 
   - 

@@ -35,7 +35,7 @@ public class JanggiTurn : Singleton<JanggiTurn>
         timer = 0;
         turn = 0;
 
-        timeLimit = StartCoroutine(CountTime());
+        //timeLimit = StartCoroutine(CountTime());
     }
 
     private void Update()
@@ -111,5 +111,15 @@ public class JanggiTurn : Singleton<JanggiTurn>
 
         OnTurn();
         Manager.JanggiCamera.CameraMoveLow();
+    }
+
+    public void StopTurnCount()
+    {
+        StopCoroutine(timeLimit);
+    }
+
+    public void StartTurnCount()
+    {
+        timeLimit = StartCoroutine(CountTime());
     }
 }

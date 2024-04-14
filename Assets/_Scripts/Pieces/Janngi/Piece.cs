@@ -227,7 +227,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         underSpot = spot;
     }
 
-    public void Die()
+    public virtual void Die()
     {
         GetImage.color = Color.HSVToRGB(0, 0, 1);
         Destroy(gameObject);

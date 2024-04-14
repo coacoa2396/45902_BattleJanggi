@@ -14,6 +14,7 @@ public class JanggiScene : BaseScene
 {
     [SerializeField] GameObject SoundUI;
 
+
     bool isOn;
 
     public override IEnumerator LoadingRoutine()
@@ -56,5 +57,15 @@ public class JanggiScene : BaseScene
             isOn = false;
             SoundUI.SetActive(false);
         }
+    }
+
+    public void HanWin()
+    {
+        // 초나라의 왕이 죽었을 때
+    }
+
+    public void ChoWin()
+    {
+        // 한나라의 왕이 죽었을 때
     }
 }

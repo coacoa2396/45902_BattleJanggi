@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 제작 : 찬규, 예린
+/// </summary>
 public class FPSLoadManager : MonoBehaviour
 {
     [SerializeField] FPSSpotSetting spots;
@@ -12,7 +14,7 @@ public class FPSLoadManager : MonoBehaviour
         PieceData data = Manager.Data.GameData.pieceData;
         foreach (PiecePosData piece in data.pieces)
         {
-            if (!piece.isPlayerPiece)       // 플레이어블 기물이 아니면 
+            if (!piece.isPlayer1 || !piece.isPlayer2)       // 플레이어블 기물이 아니면 
             {
                 // 기물의 이름을 체크
                 switch (piece.pieceName)

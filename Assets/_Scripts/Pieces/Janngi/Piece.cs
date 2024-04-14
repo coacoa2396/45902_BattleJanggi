@@ -24,13 +24,15 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     [SerializeField] Image GetImage;
     [SerializeField] string whosPiece;
 
-    bool isFPSPlayer = false;
+    bool isPlayer1 = false;
+    bool isPlayer2 = false;
 
     public Material PieceMaterial { get { return pieceMaterial; } }
     public string PieceName { get { return pieceName; } }
     public string WhosPiece { get { return whosPiece; } }
     public bool IsClicked { set { isClicked = value; } }
-    public bool IsFPSPlayer { get {  return isFPSPlayer; } set { isFPSPlayer = value; } }
+    public bool IsPlayer1 { get { return isPlayer1; } set { isPlayer1 = value; } }
+    public bool IsPlayer2 { get { return isPlayer2; } set { isPlayer2 = value; } }
 
 
     List<Spot> CanGoSpots = new List<Spot>();
@@ -51,8 +53,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         {
             if (underSpot.InList)
             {
-                isFPSPlayer = true;
-                Manager.JanggiLogic.ClickedPiece.isFPSPlayer = true;
+                isPlayer1 = true;
+                Manager.JanggiLogic.ClickedPiece.isPlayer1 = true;
 
                 // 여기서 FPS씬으로 이동
                 TransFPS(underSpot.ListPiece, this);
@@ -203,12 +205,16 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     /// <param name="player2"></param>
     public void TransFPS(Piece player1, Piece player2)
     {
-        // 씬 매니저를 사용하여 로드
-        // FPS씬에 Player1은 gameObject의 FPSPrefab
-        // Player2는 collision.gameObject의 FPSPrefab으로 설정한다
+        if (player1.WhosPiece == "Han")
+        {
+            player1.isPlayer1 = true; player2.isPlayer2 = true;
+        }
+        else
+        {
+            player1.isPlayer2 = true; player2.isPlayer1 = true;
+        }
 
-        // 장기씬 테스트용
-        Die();
+        Manager.Scene.GetCurScene().GetComponent<JanggiScene>().SceneChange("FPSScene");
     }
     /// <summary>
     /// 제작 : 찬규

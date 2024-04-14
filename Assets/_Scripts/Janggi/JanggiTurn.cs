@@ -38,8 +38,6 @@ public class JanggiTurn : Singleton<JanggiTurn>
 
         timer = baseTime;
         turn = 0;
-
-        //timeLimit = StartCoroutine(CountTime());
     }
 
     private void Update()

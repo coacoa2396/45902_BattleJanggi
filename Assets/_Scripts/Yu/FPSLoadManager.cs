@@ -75,7 +75,6 @@ public class FPSLoadManager : MonoBehaviour
             }
             else
             {
-                // 플레이어 기물을 해당 위치에 생성해줄거야
                 if (piece.whosPiece == "Han")       // 기물이 한나라인 경우
                 {
                     switch (piece.pieceName)
@@ -84,11 +83,81 @@ public class FPSLoadManager : MonoBehaviour
                             FPSPiece fpsCha = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSTiger_Han");
                             Instantiate(fpsCha, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
+                        case "Sang":
+                            FPSPiece fpsSang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSElephant_Han");
+                            Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Ma":
+                            FPSPiece fpsMa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSHorse_Han");
+                            Instantiate(fpsMa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Po":
+                            FPSPiece fpsPo = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSAlpaca_Han");
+                            Instantiate(fpsPo, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Jol":
+                            FPSPiece fpsJol;
+                            if (piece.jolWeapon.Equals("Bow"))
+                            {
+                                fpsJol = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSDog(Bow)_Han");
+                            }
+                            else
+                            {
+                                fpsJol = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSDog(Pistol)_Han");
+                            }
+                            Instantiate(fpsJol, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Sa":
+                            FPSPiece fpsSa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSCat_Han");
+                            Instantiate(fpsSa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                         /*case "Jang":
+                             FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSLion_Han");
+                             Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                             break;*/
                     }
                 }
                 else                               // 기물이 초나라인 경우
                 {
-
+                    switch (piece.pieceName)
+                    {
+                        case "Cha":
+                            FPSPiece fpsCha = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSTiger_Cho");
+                            Instantiate(fpsCha, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Sang":
+                            FPSPiece fpsSang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSElephant_Cho");
+                            Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Ma":
+                            FPSPiece fpsMa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSHorse_Cho");
+                            Instantiate(fpsMa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Po":
+                            FPSPiece fpsPo = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSAlpaca_Cho");
+                            Instantiate(fpsPo, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Jol":
+                            FPSPiece fpsJol;
+                            if (piece.jolWeapon.Equals("Bow"))
+                            {
+                                fpsJol = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSDog(Bow)_Cho");
+                            }
+                            else
+                            {
+                                fpsJol = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSDog(Pistol)_Cho");
+                            }
+                            Instantiate(fpsJol, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                        case "Sa":
+                            FPSPiece fpsSa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSCat_Cho");
+                            Instantiate(fpsSa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                         /*case "Jang":
+                             FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSLion_Cho");
+                             Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                             break;*/
+                    }
                 }
             }
         }

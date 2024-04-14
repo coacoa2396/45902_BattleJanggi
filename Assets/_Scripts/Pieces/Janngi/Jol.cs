@@ -13,6 +13,10 @@ public class Jol : Piece
 
     Dictionary<char, int> currentPos;  // 현재 있는 Spot의 배열 위치 (== 말의 현재 위치)
 
+    string weaponCheck;
+
+    public string WeaponCheck { get { return weaponCheck; } set { weaponCheck = value; } }
+
     protected override void Start()
     {
         base.Start();
@@ -22,7 +26,6 @@ public class Jol : Piece
     {
         if (checkSpot.Contain(other.gameObject.layer))
         {
-            //transform.position = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             currentPos = other.gameObject.GetComponent<Spot>().ThisPos;
         }
     }

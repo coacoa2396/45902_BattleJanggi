@@ -19,7 +19,8 @@ public struct PiecePosData
     public int x;
     public int z;
 
-    public bool isPlayerPiece;
+    public bool isPlayer1;
+    public bool isPlayer2;
 }
 
 [Serializable]
@@ -37,7 +38,8 @@ public struct PieceData
 
             pieces[i].x = lists[i].ThisPos['x'];
             pieces[i].z = lists[i].ThisPos['z'];
-            pieces[i].isPlayerPiece = lists[i].WhatPiece.IsFPSPlayer;
+            pieces[i].isPlayer1 = lists[i].WhatPiece.IsPlayer1;
+            pieces[i].isPlayer2 = lists[i].WhatPiece.IsPlayer2;
         }
     }
 }

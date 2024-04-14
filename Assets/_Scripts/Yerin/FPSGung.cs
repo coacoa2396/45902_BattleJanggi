@@ -22,15 +22,20 @@ public class FPSGung : FPSPiece
 
     private void Start()
     {
-        WallSa[] cats = FindObjectsOfType<WallSa>();
-        if (cats != null && cats.Length > 0)
-        {
-            ExistSa = cats.Length;
-        }
-        else
-        {
-            ExistSa = 0;
-        }
+        //WallSa[] cats = FindObjectsOfType<WallSa>();
+        //if (cats != null && cats.Length > 0)
+        //{
+        //    ExistSa = cats.Length;
+        //}
+        //else
+        //{
+        //    ExistSa = 0;
+        //}
+
+        // 한나라의 궁일 때
+        ExistSa = Manager.JanggiTurn.HanSa;
+        // 초나라의 궁일 때
+        ExistSa = Manager.JanggiTurn.ChoSa;
     }
 
     public override void TakeDamage(float damage)

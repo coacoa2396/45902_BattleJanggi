@@ -18,6 +18,8 @@ public class JanggiTurn : Singleton<JanggiTurn>
     float baseTime = 60;
     float timer;
     int turn;       // 턴 수 체크
+    int hanSa = 2;  // 한나라의 사의 개수
+    int choSa = 2;  // 초나라의 사의 개수
 
     bool canGoOut;
 
@@ -27,6 +29,8 @@ public class JanggiTurn : Singleton<JanggiTurn>
     public bool CanGoOut { get {  return canGoOut; } }
     public float Timer {  get { return timer; } }
     public int Turn { get { return turn; } set { turn = value; } }
+    public int HanSa { get {  return hanSa; } set {  hanSa = value; } }
+    public int ChoSa { get { return choSa; } set {  choSa = value; } }
 
     private void Start()
     {
@@ -35,7 +39,7 @@ public class JanggiTurn : Singleton<JanggiTurn>
         timer = 0;
         turn = 0;
 
-        timeLimit = StartCoroutine(CountTime());
+        //timeLimit = StartCoroutine(CountTime());
     }
 
     private void Update()
@@ -111,5 +115,15 @@ public class JanggiTurn : Singleton<JanggiTurn>
 
         OnTurn();
         Manager.JanggiCamera.CameraMoveLow();
+    }
+
+    public void StopTurnCount()
+    {
+        StopCoroutine(timeLimit);
+    }
+
+    public void StartTurnCount()
+    {
+        timeLimit = StartCoroutine(CountTime());
     }
 }

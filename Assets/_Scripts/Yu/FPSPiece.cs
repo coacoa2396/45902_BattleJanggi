@@ -162,7 +162,7 @@ public class FPSPiece : MonoBehaviour
     /// <summary>
     /// 사망하는 함수
     /// </summary>
-    void Die()
+    protected virtual void Die()
     {
         Debug.Log("Die");
 

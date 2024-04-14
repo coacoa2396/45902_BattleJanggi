@@ -116,13 +116,6 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Han",
-                "x": 4,
-                "z": 5,
-                "isPlayerPiece": false
-            },
-            {
-                "pieceName": "Jol",
-                "whosPiece": "Han",
                 "x": 0,
                 "z": 6,
                 "isPlayerPiece": false
@@ -131,6 +124,13 @@
                 "pieceName": "Jol",
                 "whosPiece": "Han",
                 "x": 2,
+                "z": 6,
+                "isPlayerPiece": false
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 4,
                 "z": 6,
                 "isPlayerPiece": false
             },

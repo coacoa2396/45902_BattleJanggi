@@ -6,6 +6,9 @@ public class SetCamera : MonoBehaviour
 {
     private void Start()
     {
-        Manager.JanggiCamera.FindCamare();
+        if (Manager.JanggiTurn.CurrentTurn != null)
+        {
+            Manager.JanggiCamera.FindCamare();
+        }
     }
 }

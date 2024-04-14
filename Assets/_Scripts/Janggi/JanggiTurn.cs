@@ -31,6 +31,7 @@ public class JanggiTurn : Singleton<JanggiTurn>
     private void Start()
     {
         currentTurn = Han;
+
         timer = 0;
         turn = 0;
 
@@ -51,7 +52,7 @@ public class JanggiTurn : Singleton<JanggiTurn>
     public bool CheckWhosTurn(string player)
     {
         if (player == null || currentTurn == null)
-        {
+        {      
             Debug.LogError("현재 누구의 턴인지 확인할 수 없습니다.");
             return false;
         }

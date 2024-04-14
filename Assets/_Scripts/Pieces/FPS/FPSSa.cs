@@ -35,14 +35,4 @@ public class FPSSa : FPSPiece
             CoolTime(30f);
         }
     }
-
-    protected override void Die()
-    {
-        // 한나라의 사가 죽었을 경우
-        Manager.JanggiTurn.HanSa--;
-        // 초나라의 사가 죽었을 경우
-        Manager.JanggiTurn.ChoSa--;
-
-        base.Die();
-    }
 }

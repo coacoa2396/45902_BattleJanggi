@@ -19,6 +19,7 @@ public class Title : BaseScene
 
     public void StartGame()
     {
+        Manager.Game.Reset();
         Manager.Scene.LoadScene("JanggiScene");
     }
 

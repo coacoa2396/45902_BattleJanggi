@@ -61,11 +61,11 @@ public class JanggiScene : BaseScene
 
     public void HanWin()
     {
-        // 초나라의 왕이 죽었을 때
+        Manager.Game.WhoWin = "Han";
     }
 
     public void ChoWin()
     {
-        // 한나라의 왕이 죽었을 때
+        Manager.Game.WhoWin = "Cho";
     }
 }

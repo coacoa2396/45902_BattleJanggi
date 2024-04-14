@@ -40,7 +40,7 @@ public class Sa : Piece
             {
                 checkLeft();
             }
-            
+
             // ���� ������ Ȯ��
 
             if (JanggiSituation[currentPos['z'], currentPos['x'] + 1].IsCastle)
@@ -57,7 +57,7 @@ public class Sa : Piece
 
             // ���� ���� Ȯ��
 
-            if (currentPos['z'] != 9  && JanggiSituation[currentPos['z'] + 1, currentPos['x']].IsCastle)
+            if (currentPos['z'] != 9 && JanggiSituation[currentPos['z'] + 1, currentPos['x']].IsCastle)
             {
                 checkBack();
             }
@@ -100,7 +100,7 @@ public class Sa : Piece
             {
                 checkForward();
             }
-            
+
             // ���� ���� Ȯ��
 
             if (currentPos['z'] != 9)
@@ -296,5 +296,21 @@ public class Sa : Piece
 
             AddList(JanggiSituation[diagonalPos['z'], diagonalPos['x']]);
         }
+    }
+
+    public override void Die()
+    {
+        // 한나라의 사가 죽었을 경우
+        if (WhosPiece.Equals("Han"))
+        {
+            Manager.JanggiTurn.HanSa--;
+        }
+        // 초나라의 사가 죽었을 경우
+        else
+        {
+            Manager.JanggiTurn.ChoSa--;
+        }
+
+        base.Die();
     }
 }

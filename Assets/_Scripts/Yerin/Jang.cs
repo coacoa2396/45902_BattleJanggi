@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// 개발자: Yerin
@@ -12,6 +13,8 @@ public class Jang : Piece
     [SerializeField] LayerMask checkSpot;
 
     Dictionary<char, int> currentPos;  // 현재 있는 Spot의 배열 위치 (== 말의 현재 위치)
+
+    [SerializeField] UnityEvent OnJangDied;
 
     protected override void Start()
     {
@@ -298,5 +301,10 @@ public class Jang : Piece
 
             AddList(JanggiSituation[diagonalPos['z'], diagonalPos['x']]);
         }
+    }
+
+    public override void Die()
+    {
+        OnJangDied?.Invoke();
     }
 }

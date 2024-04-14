@@ -52,7 +52,7 @@ public class FPSLoadManager : MonoBehaviour
                             instancePo = Manager.Resource.Load<Wall>("Wall/POWALL(Cho)_Complete");
                             y = 180;
                         }
-                        
+
                         Instantiate(instancePo, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, y, 0)));
                         break;
                     case "Jang":
@@ -73,9 +73,23 @@ public class FPSLoadManager : MonoBehaviour
                 }
                 // 해당 위치에 벽을 생성해주고
             }
-            else                            // 플레이어블 기물이면 
+            else
             {
-                // FPS기물을 생성해준다
+                // 플레이어 기물을 해당 위치에 생성해줄거야
+                if (piece.whosPiece == "Han")       // 기물이 한나라인 경우
+                {
+                    switch (piece.pieceName)
+                    {
+                        case "Cha":
+                            FPSPiece fpsCha = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSTiger_Han");
+                            Instantiate(fpsCha, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
+                    }
+                }
+                else                               // 기물이 초나라인 경우
+                {
+
+                }
             }
         }
     }

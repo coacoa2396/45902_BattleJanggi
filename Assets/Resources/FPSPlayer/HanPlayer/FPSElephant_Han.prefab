@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 9171208395548638134}
   - component: {fileID: 8474852120041879210}
   - component: {fileID: 3629254681173951479}
+  - component: {fileID: -8896596765204145340}
   m_Layer: 13
   m_Name: FPSElephant_Han
   m_TagString: Untagged
@@ -285,6 +286,19 @@ MonoBehaviour:
   isJumping: 0
   waterBalloon: {fileID: 4169184217479831589, guid: daf49ecee01fba040b469e5c6336b279, type: 3}
   muzzlePoint: {fileID: 6646022077206822852}
+--- !u!114 &-8896596765204145340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702801423295926030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 3955571861422170955}
 --- !u!1 &1484218979391265916
 GameObject:
   m_ObjectHideFlags: 0

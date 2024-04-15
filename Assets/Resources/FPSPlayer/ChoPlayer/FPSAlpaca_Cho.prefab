@@ -151,6 +151,7 @@ MonoBehaviour:
   playerInput: {fileID: 2599376620768821975}
   skillInput: {fileID: 4701632853266706401}
   muzzlePoint: {fileID: 1463089758618931115}
+  binder: {fileID: 6253403269071694919}
   speed: 10
   damage: 10
 --- !u!114 &4701632853266706401
@@ -756,13 +757,14 @@ GameObject:
   - component: {fileID: 8127736826837379024}
   - component: {fileID: 4842597731346584698}
   - component: {fileID: 1426868310986836645}
+  - component: {fileID: 6253403269071694919}
   m_Layer: 14
   m_Name: FPSAlpaca_Cho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &118132460110765423
 Transform:
   m_ObjectHideFlags: 0
@@ -810,7 +812,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: GamePad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -971,6 +973,19 @@ MonoBehaviour:
   lerpRate: 0.105
   isKnockbacking: 0
   ySpeed: 0
+--- !u!114 &6253403269071694919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3802483177560506534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 2599376620768821975}
 --- !u!1 &4255882871447636438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5347415125741031609}
   - component: {fileID: 8976222843457995923}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: SkyCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,7 +1404,7 @@ GameObject:
   - component: {fileID: 8134073192522658541}
   - component: {fileID: 6010092940561604077}
   - component: {fileID: 2702349948665996018}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1927,7 +1942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463089758618931115}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: MuzzlePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

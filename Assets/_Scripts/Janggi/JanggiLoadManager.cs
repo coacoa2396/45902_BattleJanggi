@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 /// <summary>
-/// Á¦ÀÛ : Âù±Ô
-/// Àå±â¾ÀÀÇ µ¥ÀÌÅÍ·Îµå °ü¸®
+/// ì œì‘ : ì°¬ê·œ
+/// ì¥ê¸°ì”¬ì˜ ë°ì´í„°ë¡œë“œ ê´€ë¦¬
 /// </summary>
 public class JanggiLoadManager : MonoBehaviour
 {
     /// <summary>
-    /// Á¦ÀÛ : Âù±Ô
-    /// Å¸ÀÌÆ²¿¡¼­ Àå±â¾ÀÀ¸·Î ³Ñ¾î°¥¶§ »ç¿ëÇÏ´Â ÃÊ±â¼¼ÆÃÇÔ¼ö
+    /// ì œì‘ : ì°¬ê·œ
+    /// íƒ€ì´í‹€ì—ì„œ ì¥ê¸°ì”¬ìœ¼ë¡œ ë„˜ì–´ê°ˆë•Œ ì‚¬ìš©í•˜ëŠ” ì´ˆê¸°ì„¸íŒ…í•¨ìˆ˜
     /// </summary>
     public void TitletoJanggi()
     {
@@ -23,8 +23,8 @@ public class JanggiLoadManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Á¦ÀÛ : Âù±Ô
-    /// fps¾À¿¡¼­ Àå±â¾ÀÀ¸·Î ³Ñ¾î°¥¶§ »ç¿ëÇÏ´Â ÇÔ¼ö
+    /// ì œì‘ : ì°¬ê·œ
+    /// fpsì”¬ì—ì„œ ì¥ê¸°ì”¬ìœ¼ë¡œ ë„˜ì–´ê°ˆë•Œ ì‚¬ìš©í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
     public void FPStoJanggi()
     {
@@ -32,7 +32,7 @@ public class JanggiLoadManager : MonoBehaviour
         PieceData data = Manager.Data.GameData.pieceData;
         foreach (PiecePosData piece in data.pieces)
         {
-            if (piece.whosPiece.Equals("Han"))  // ÇÑ³ª¶óÀÏ °æ¿ì
+            if (piece.whosPiece.Equals("Han"))  // í•œë‚˜ë¼ì¼ ê²½ìš°
             {
                 switch (piece.pieceName)
                 {
@@ -69,11 +69,10 @@ public class JanggiLoadManager : MonoBehaviour
                 }
 
             }
-            else                                // ÃÊ³ª¶óÀÏ °æ¿ì
+            else                                // ì´ˆë‚˜ë¼ì¼ ê²½ìš°
             {
                 
             }
-
         }
     }
 }

@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895a8a25b951cb64bb77c46cf7feb04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GetImage: {fileID: 0}
   whosPiece: Han
   checkSpot:
     serializedVersion: 2

@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 3859608374581965052}
   - component: {fileID: 8027298472495011675}
   - component: {fileID: 1303242352084372973}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Obstacle-22-Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

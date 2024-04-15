@@ -20,8 +20,7 @@ public class WallArrow : MonoBehaviour
             collision.gameObject.TryGetComponent<FPSPiece>(out target);
 
             target?.TakeDamage(damage);
-
-            Destroy(gameObject);
         }
+            Destroy(gameObject);
     }
 }

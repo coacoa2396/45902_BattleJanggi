@@ -27,6 +27,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     bool isPlayer1 = false;
     bool isPlayer2 = false;
 
+    public Spot UnderSpot {  get { return underSpot; } }
     public Material PieceMaterial { get { return pieceMaterial; } }
     public string PieceName { get { return pieceName; } }
     public string WhosPiece { get { return whosPiece; } }

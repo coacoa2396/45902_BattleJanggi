@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49447f47a3232354e9769190ffc62091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GetImage: {fileID: 0}
   whosPiece: Han
   checkLayer:
     serializedVersion: 2

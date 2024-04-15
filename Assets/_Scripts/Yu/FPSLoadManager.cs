@@ -86,7 +86,7 @@ public class FPSLoadManager : MonoBehaviour
                             break;
                         case "Sang":
                             FPSPiece fpsSang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSElephant_Han");
-                            Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                             break;
                         case "Ma":
                             FPSPiece fpsMa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSHorse_Han");
@@ -112,10 +112,10 @@ public class FPSLoadManager : MonoBehaviour
                             FPSPiece fpsSa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSCat_Han");
                             Instantiate(fpsSa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
-                         /*case "Jang":
+                         case "Jang":
                              FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSLion_Han");
                              Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                             break;*/
+                             break;
                     }
                 }
                 else                               // 기물이 초나라인 경우
@@ -124,7 +124,7 @@ public class FPSLoadManager : MonoBehaviour
                     {
                         case "Cha":
                             FPSPiece fpsCha = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSTiger_Cho");
-                            Instantiate(fpsCha, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            Instantiate(fpsCha, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                             break;
                         case "Sang":
                             FPSPiece fpsSang = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSElephant_Cho");
@@ -132,11 +132,11 @@ public class FPSLoadManager : MonoBehaviour
                             break;
                         case "Ma":
                             FPSPiece fpsMa = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSHorse_Cho");
-                            Instantiate(fpsMa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            Instantiate(fpsMa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                             break;
                         case "Po":
                             FPSPiece fpsPo = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSAlpaca_Cho");
-                            Instantiate(fpsPo, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            Instantiate(fpsPo, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                             break;
                         case "Jol":
                             FPSPiece fpsJol;
@@ -152,16 +152,16 @@ public class FPSLoadManager : MonoBehaviour
                             {
                                 Debug.Log("Null");
                             }
-                            Instantiate(fpsJol, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            Instantiate(fpsJol, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                             break;
                         case "Sa":
                             FPSPiece fpsSa = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSCat_Cho");
-                            Instantiate(fpsSa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            Instantiate(fpsSa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                             break;
-                         /*case "Jang":
+                         case "Jang":
                              FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSLion_Cho");
-                             Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                             break;*/
+                             Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+                             break;
                     }
                 }
             }

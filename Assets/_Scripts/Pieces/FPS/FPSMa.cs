@@ -22,7 +22,7 @@ public class FPSMa : FPSPiece
         CanUseSkill = true;
     }
 
-    private void OnSkill(InputValue value)
+    protected override void OnSkill(InputValue value)
     {
         if (CanUseSkill)
         {
@@ -33,6 +33,7 @@ public class FPSMa : FPSPiece
             CanUseSkill = false;
 
             CoolTime(30f);
+            base.OnSkill(value);
         }
     }
 }

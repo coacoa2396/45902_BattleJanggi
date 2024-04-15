@@ -65,11 +65,12 @@ public class FPSGung : FPSPiece
         gungSkill.gameObject.SetActive(false);
     }
 
-    private void OnSkill(InputValue value)
+    protected override void OnSkill(InputValue value)
     {
         if (CanUseSkill)
         {
             skill = StartCoroutine(Skill());
+            base.OnSkill(value);
         }
     }
 }

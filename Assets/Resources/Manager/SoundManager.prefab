@@ -54,7 +54,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: fdc91ef6ad1099c49934d30db91f3889, type: 3}
   bgm:
   - name: BGM
-    clip: {fileID: 8300000, guid: ba91b887a99059d48a8f11b0d24106ef, type: 3}
+    clip: {fileID: 8300000, guid: ffa07f7fd27c30b49aec51be26ecb0e6, type: 3}
   bgmPlayer: {fileID: 2315522860339898961}
   sfxPlayer: {fileID: 105278731388737427}
 --- !u!1 &3112071428299456759

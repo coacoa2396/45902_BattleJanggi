@@ -121,10 +121,19 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Cho",
-                "x": 6,
+                "x": 4,
                 "z": 3,
                 "isPlayer1": false,
                 "isPlayer2": false,
+                "jolWeapon": "Bow"
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Cho",
+                "x": 7,
+                "z": 3,
+                "isPlayer1": true,
+                "isPlayer2": true,
                 "jolWeapon": "Pistol"
             },
             {
@@ -133,24 +142,6 @@
                 "x": 8,
                 "z": 3,
                 "isPlayer1": false,
-                "isPlayer2": false,
-                "jolWeapon": "Bow"
-            },
-            {
-                "pieceName": "Jol",
-                "whosPiece": "Cho",
-                "x": 4,
-                "z": 4,
-                "isPlayer1": true,
-                "isPlayer2": true,
-                "jolWeapon": "Bow"
-            },
-            {
-                "pieceName": "Jol",
-                "whosPiece": "Han",
-                "x": 4,
-                "z": 5,
-                "isPlayer1": true,
                 "isPlayer2": false,
                 "jolWeapon": "Bow"
             },
@@ -175,7 +166,16 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Han",
-                "x": 6,
+                "x": 4,
+                "z": 6,
+                "isPlayer1": false,
+                "isPlayer2": false,
+                "jolWeapon": "Bow"
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 7,
                 "z": 6,
                 "isPlayer1": false,
                 "isPlayer2": false,
@@ -204,7 +204,7 @@
                 "whosPiece": "Han",
                 "x": 7,
                 "z": 7,
-                "isPlayer1": false,
+                "isPlayer1": true,
                 "isPlayer2": false,
                 "jolWeapon": ""
             },

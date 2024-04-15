@@ -6,13 +6,12 @@ using UnityEngine.XR;
 /// 제작 : 찬규
 /// 장기씬의 데이터로드 관리
 /// </summary>
-public class JanggiLoadManager : MonoBehaviour
+public class JanggiLoadManager : Singleton<JanggiLoadManager>
 {
     private void Start()
     {
         TitletoJanggi();
     }
-
     /// <summary>
     /// 제작 : 찬규
     /// 타이틀에서 장기씬으로 넘어갈때 사용하는 초기세팅함수

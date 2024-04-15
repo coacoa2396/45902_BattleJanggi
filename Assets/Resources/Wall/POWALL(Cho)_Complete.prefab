@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 581695535274637711}
   - component: {fileID: 5328472831507955414}
   - component: {fileID: 1233903756136206976}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: POWALL(Cho)_Complete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 7443845662952440543}
   - component: {fileID: 7835680279138412624}
   - component: {fileID: 5909273878946570221}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 7427285782964165545}
   - component: {fileID: 8787557334854516548}
   - component: {fileID: 1487600427300240282}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: NonAttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 5790686061367874041}
   - component: {fileID: 755991869600528052}
   - component: {fileID: 3262010326466383315}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Obstacle-22.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 154773823439849909}
   - component: {fileID: 3478408843240534026}
   - component: {fileID: 8109642017904736055}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Obstacle-22-Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5502296666068602483}
   - component: {fileID: 1962614511558658471}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Obstacle-22.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

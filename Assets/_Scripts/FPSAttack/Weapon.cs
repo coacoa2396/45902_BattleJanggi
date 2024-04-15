@@ -15,6 +15,8 @@ public class Weapon : MonoBehaviour
 
     [Header("Property")]
     [SerializeField] float damage;
+    [SerializeField] public int maxMagazine;       // ÅºÃ¢ÀÌ ²Ë Â÷ÀÖ´Â °æ¿ì ÅºÈ¯ÀÇ ¼ö
+    [SerializeField] public int curMagazine;       // ÇöÀç ÅºÃ¢ÀÇ ÅºÈ¯ ¼ö
 
     public float Damage { get { return damage; } }
 

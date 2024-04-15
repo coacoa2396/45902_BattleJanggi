@@ -238,6 +238,8 @@ GameObject:
   - component: {fileID: 7518072325810411896}
   - component: {fileID: 1961322674247180265}
   - component: {fileID: -9103986936004069863}
+  - component: {fileID: 5713725312951571182}
+  - component: {fileID: -5311024113412574712}
   m_Layer: 14
   m_Name: FPSDog(Pistol)_Cho
   m_TagString: Untagged
@@ -392,11 +394,31 @@ MonoBehaviour:
   groundCheck:
     serializedVersion: 2
     m_Bits: 256
+  hanCheck:
+    serializedVersion: 2
+    m_Bits: 8192
+  uiCoolTime1: {fileID: 0}
+  uiCoolTime2: {fileID: 0}
   moveSpeed: 10
   breakPower: 5
   isGround: 0
   isWalking: 0
   isJumping: 0
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -5311024113412574712}
+        m_TargetAssemblyTypeName: WinCho, Assembly-CSharp
+        m_MethodName: ChoWin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8451350281703966581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +487,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 5549699796441294848}
+--- !u!114 &5713725312951571182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901606590622490297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4914d95507d14544a9c8faf6ec852f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimCanvas: {fileID: 2090430911041879909}
+--- !u!114 &-5311024113412574712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901606590622490297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a3798411f99234993d3b147d907334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3126722455307803966
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +573,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &5733696781942495344
 MonoBehaviour:
@@ -700,7 +747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69bf8aa0fbcf05e43936fa283406d26b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50cb2a82c80f3cc4793b28d88742f0b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1001,11 +1048,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   damage: 15
+  maxMagazine: 10
+  curMagazine: 10
   bullet: {fileID: -82932085561339355, guid: 4a64052e861fca84ab608f73a5e1157f, type: 3}
   muzzlePoint: {fileID: 4038623127695543184}
   muzzleFlash: {fileID: 4028339142292882029}
-  maxMagazine: 10
-  curMagazine: 10
 --- !u!114 &5013744320679318028
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 
@@ -18,6 +19,9 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] Weapon weapon;
     [SerializeField] Animator animator;
     [SerializeField] LayerMask groundCheck;
+    [SerializeField] LayerMask hanCheck;
+    [SerializeField] UICoolTime1 uiCoolTime1;
+    [SerializeField] UICoolTime2 uiCoolTime2;
 
     [Header("Property")]
     [SerializeField] float moveSpeed;
@@ -31,6 +35,7 @@ public class FPSPiece : MonoBehaviour
 
     Coroutine coolTime;
 
+    public float HP { get { return hp; } }
     public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
     public bool CanUseSkill { get { return canUseSkill; } set { canUseSkill = value; } }
     public Weapon Weapon { get { return weapon; } }
@@ -39,10 +44,27 @@ public class FPSPiece : MonoBehaviour
 
     private Vector3 moveDir;
 
+    [SerializeField] UnityEvent OnDied;
+
     void Awake()
     {
         groundList = new List<Collider>();
     }
+
+    public void Start()
+    {
+        if (hanCheck.Contain(gameObject.layer))
+        {
+            uiCoolTime1 = FindAnyObjectByType<UICoolTime1>();
+            uiCoolTime2 = null;
+        }
+        else
+        {
+            uiCoolTime1 = null;
+            uiCoolTime2 = FindObjectOfType<UICoolTime2>();
+        }
+    }
+
     private void FixedUpdate()
     {
         Move();
@@ -145,6 +167,18 @@ public class FPSPiece : MonoBehaviour
         isJumping = true;
     }
 
+    protected virtual void OnSkill(InputValue value)
+    {
+        if (hanCheck.Contain(gameObject.layer))
+        {
+            uiCoolTime1.CoolTimeCheck();
+        }
+        else
+        {
+            uiCoolTime2.CoolTimeCheck();
+        }
+    }
+
     /// <summary>
     /// 데미지를 받는 함수
     /// </summary>
@@ -165,7 +199,7 @@ public class FPSPiece : MonoBehaviour
     protected virtual void Die()
     {
         Debug.Log("Die");
-
+        OnDied?.Invoke();
         Destroy(gameObject);
     }
 

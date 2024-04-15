@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   damage: 10
+  maxMagazine: 25
+  curMagazine: 25
   muzzlePoint: {fileID: 830460732027199624}
   maxDistance: 500
   muzzleFlash: {fileID: 1465343711603991489}
@@ -57,8 +59,6 @@ MonoBehaviour:
   lineRenderer: {fileID: 6329843826618432249}
   sound: {fileID: 5101960205873874359}
   hitPoint: {fileID: 0}
-  maxMagazine: 25
-  curMagazine: 25
 --- !u!82 &5101960205873874359
 AudioSource:
   m_ObjectHideFlags: 0
@@ -885,14 +885,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69bf8aa0fbcf05e43936fa283406d26b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50cb2a82c80f3cc4793b28d88742f0b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1100,6 +1100,8 @@ GameObject:
   - component: {fileID: 6047495471518324392}
   - component: {fileID: 8084870940038358158}
   - component: {fileID: -3863057339153629710}
+  - component: {fileID: -2092196736651110917}
+  - component: {fileID: -1334935586487543626}
   m_Layer: 13
   m_Name: FPSTiger_Han
   m_TagString: Untagged
@@ -1309,11 +1311,31 @@ MonoBehaviour:
   groundCheck:
     serializedVersion: 2
     m_Bits: 256
+  hanCheck:
+    serializedVersion: 2
+    m_Bits: 8192
+  uiCoolTime1: {fileID: 0}
+  uiCoolTime2: {fileID: 0}
   moveSpeed: 10
   breakPower: 5
   isGround: 0
   isWalking: 0
   isJumping: 0
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1334935586487543626}
+        m_TargetAssemblyTypeName: WinHan, Assembly-CSharp
+        m_MethodName: HanWin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   skill: {fileID: 8300096753000430975}
 --- !u!114 &-3863057339153629710
 MonoBehaviour:
@@ -1328,6 +1350,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1524727186119034055}
+--- !u!114 &-2092196736651110917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416922587502132683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4914d95507d14544a9c8faf6ec852f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimCanvas: {fileID: 5328016632412425265}
+--- !u!114 &-1334935586487543626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416922587502132683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425b05e449a3356459946ede18b3941a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4678703781770814373
 GameObject:
   m_ObjectHideFlags: 0

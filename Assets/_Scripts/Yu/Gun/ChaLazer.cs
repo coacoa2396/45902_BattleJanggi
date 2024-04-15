@@ -17,9 +17,6 @@ public class ChaLazer : Weapon
 
     [SerializeField] Transform hitPoint;
 
-    [SerializeField] int maxMagazine;       // 탄창이 꽉 차있는 경우 탄환의 수
-    [SerializeField] int curMagazine;       // 현재 탄창의 탄환 수
-
     float rate = 1.5f;     // 연사속도
     bool isfire;
 

@@ -38,4 +38,16 @@ public class FPSScene : BaseScene
     {
         Manager.Scene.LoadScene(sceneName);        
     }
+
+    public void HanWin()
+    {
+        Manager.Game.FpsWin = "Han";
+        SceneChange("JanggiScene");
+    }
+
+    public void ChoWin()
+    {
+        Manager.Game.FpsWin = "Cho";
+        SceneChange("JanggiScene");
+    }
 }

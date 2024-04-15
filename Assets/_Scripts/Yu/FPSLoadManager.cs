@@ -63,7 +63,7 @@ public class FPSLoadManager : MonoBehaviour
                         Wall instanceWall = Manager.Resource.Load<Wall>("Wall/BaseWALL_Complete"); ;
                         y = 0;
 
-                        if (piece.whosPiece.Equals("Cho"))
+                        if (piece.whosPiece.Equals("Han"))
                         {
                             y = 180;
                         }

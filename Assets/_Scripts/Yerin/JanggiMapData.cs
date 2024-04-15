@@ -22,6 +22,8 @@ public struct PiecePosData
     public bool isPlayer1;
     public bool isPlayer2;
 
+    public int imageNum;
+
     public string jolWeapon;
 }
 
@@ -42,6 +44,8 @@ public struct PieceData
             pieces[i].z = lists[i].ThisPos['z'];
             pieces[i].isPlayer1 = lists[i].WhatPiece.IsPlayer1;
             pieces[i].isPlayer2 = lists[i].WhatPiece.IsPlayer2;
+
+            pieces[i].imageNum = lists[i].WhatPiece.ImageNum;
 
             if (lists[i].WhatPiece.GetComponent<Jol>() != null)
             {

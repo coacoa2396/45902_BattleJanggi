@@ -11,6 +11,8 @@ public class JanggiLoadManager : MonoBehaviour
     private void Start()
     {
         TitletoJanggi();
+
+        Manager.KillListManager.SetImageNum();
     }
 
     /// <summary>

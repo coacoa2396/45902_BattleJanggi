@@ -27,6 +27,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     bool isPlayer1 = false;
     bool isPlayer2 = false;
 
+    int imageNum;
+
     public Spot UnderSpot {  get { return underSpot; } }
     public Material PieceMaterial { get { return pieceMaterial; } }
     public string PieceName { get { return pieceName; } }
@@ -34,6 +36,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     public bool IsClicked { set { isClicked = value; } }
     public bool IsPlayer1 { get { return isPlayer1; } set { isPlayer1 = value; } }
     public bool IsPlayer2 { get { return isPlayer2; } set { isPlayer2 = value; } }
+    public int ImageNum { get { return imageNum; } set {  imageNum = value; } }
 
 
     List<Spot> CanGoSpots = new List<Spot>();
@@ -230,7 +233,15 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     public virtual void Die()
     {
-        GetImage.color = Color.HSVToRGB(0, 0, 1);
+        if (whosPiece.Equals("Han"))
+        {
+            Manager.KillListManager.SetHanKill(imageNum);
+        }
+        else
+        {
+            Manager.KillListManager.SetChoKill(imageNum);
+        }
+
         Destroy(gameObject);
     }
 }

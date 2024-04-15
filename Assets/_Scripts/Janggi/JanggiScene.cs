@@ -25,6 +25,7 @@ public class JanggiScene : BaseScene
     {
         DataSave();
         Manager.Scene.LoadScene(sceneName);
+        Manager.KillListManager.gameObject.SetActive(false);
     }
 
     void DataSave()

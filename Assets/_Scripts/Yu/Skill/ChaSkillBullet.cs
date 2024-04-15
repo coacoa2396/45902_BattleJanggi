@@ -11,6 +11,8 @@ public class ChaSkillBullet : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] float speed;
 
+    public float Damage {  get { return damage; } }
+
     private void Start()
     {
         damage = 10;

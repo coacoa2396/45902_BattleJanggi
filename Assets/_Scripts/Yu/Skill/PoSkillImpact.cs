@@ -11,6 +11,8 @@ public class PoSkillImpact : MonoBehaviour
 {
     [SerializeField] float damage;
 
+    public float Damage { get { return damage; } }
+
     private void Start()
     {
         StartCoroutine(AttackFlow());

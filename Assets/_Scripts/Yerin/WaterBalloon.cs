@@ -11,6 +11,8 @@ public class WaterBalloon : Bullet
 {
     [SerializeField] GameObject slowdownFloor;
     [SerializeField] LayerMask groundCheck;
+    [SerializeField] LayerMask playerCheck;
+
     public void Shoot(Vector3 dir)
     {
         Rigid.AddForce(dir * Speed * 10);
@@ -32,6 +34,16 @@ public class WaterBalloon : Bullet
             Instantiate(slowdownFloor, transform.position, Quaternion.identity);
 
             gameObject.SetActive(false);
+        }
+
+        if (playerCheck.Contain(collision.gameObject.layer)) 
+        {
+            if (collision.gameObject.layer != gameObject.layer)
+            {
+                collision.gameObject.GetComponent<FPSPiece>().TakeDamage(20f);
+
+                gameObject.SetActive(false);
+            }
         }
     }
 }

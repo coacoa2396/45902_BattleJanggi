@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlowdownFloor : MonoBehaviour
@@ -40,7 +41,7 @@ public class SlowdownFloor : MonoBehaviour
             playerSpeed = other.GetComponent<FPSPiece>().MoveSpeed;
 
             other.GetComponent<FPSPiece>().MoveSpeed = playerSpeed / 2;
-
+            
             inPlayer = other.gameObject;
         }
     }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// °³¹ßÀÚ: Yerin
+/// ê°œë°œì: Yerin
 /// 
-/// Æ÷(º®)¿¡¼­ ³ª°¡´Â È­»ì °ü·Ã Å¬·¡½º
+/// í¬(ë²½)ì—ì„œ ë‚˜ê°€ëŠ” í™”ì‚´ ê´€ë ¨ í´ë˜ìŠ¤
 /// </summary>
 public class WallArrow : MonoBehaviour
 {

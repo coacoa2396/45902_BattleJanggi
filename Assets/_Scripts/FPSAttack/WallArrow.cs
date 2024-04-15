@@ -21,7 +21,8 @@ public class WallArrow : MonoBehaviour
 
             target?.TakeDamage(damage);
 
-            Destroy(gameObject);
         }
+
+        Destroy(gameObject);
     }
 }

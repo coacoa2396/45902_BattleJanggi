@@ -16,7 +16,11 @@ public class FPSGung : FPSPiece
 
     [SerializeField] int existSa;           // 남아있는 사의 개수만큼 피격무시 방어막 생성
 
+    [SerializeField] bool canDamaged = true;
+
     public int ExistSa { get { return existSa; } set { existSa = value; if (existSa == 0) shield.SetActive(false); } }
+
+    public bool CanDamaged { get {  return canDamaged; } set { canDamaged = value; } }
 
     Coroutine skill;
 
@@ -36,6 +40,11 @@ public class FPSGung : FPSPiece
 
     public override void TakeDamage(float damage)
     {
+        if (!canDamaged) 
+        {
+            return;
+        }
+
         if (ExistSa > 0)
         {
             ExistSa--;

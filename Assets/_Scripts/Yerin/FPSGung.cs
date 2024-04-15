@@ -23,7 +23,7 @@ public class FPSGung : FPSPiece
     private void Start()
     {
         // 한나라의 궁일때
-        if (gameObject.name == "FPSJang_Han")
+        if (gameObject.layer == LayerMask.NameToLayer("Han"))
         {
             ExistSa = Manager.JanggiTurn.HanSa;
         }

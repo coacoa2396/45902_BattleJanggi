@@ -12,7 +12,7 @@ public class JanggiLoadManager : MonoBehaviour
         PieceData data = Manager.Data.GameData.pieceData;
         foreach (PiecePosData piece in data.pieces)
         {
-            switch ()
+
         }
     }
 }

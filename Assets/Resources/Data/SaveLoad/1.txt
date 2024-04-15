@@ -74,21 +74,21 @@
                 "jolWeapon": ""
             },
             {
+                "pieceName": "Jang",
+                "whosPiece": "Cho",
+                "x": 4,
+                "z": 1,
+                "isPlayer1": false,
+                "isPlayer2": false,
+                "jolWeapon": ""
+            },
+            {
                 "pieceName": "Po",
                 "whosPiece": "Cho",
                 "x": 1,
                 "z": 2,
                 "isPlayer1": false,
                 "isPlayer2": false,
-                "jolWeapon": ""
-            },
-            {
-                "pieceName": "Jang",
-                "whosPiece": "Cho",
-                "x": 4,
-                "z": 2,
-                "isPlayer1": true,
-                "isPlayer2": true,
                 "jolWeapon": ""
             },
             {
@@ -112,18 +112,18 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Cho",
-                "x": 3,
+                "x": 2,
                 "z": 3,
                 "isPlayer1": false,
                 "isPlayer2": false,
-                "jolWeapon": "Bow"
+                "jolWeapon": "Pistol"
             },
             {
                 "pieceName": "Jol",
-                "whosPiece": "Han",
+                "whosPiece": "Cho",
                 "x": 4,
                 "z": 3,
-                "isPlayer1": true,
+                "isPlayer1": false,
                 "isPlayer2": false,
                 "jolWeapon": "Bow"
             },
@@ -147,15 +147,6 @@
             },
             {
                 "pieceName": "Jol",
-                "whosPiece": "Cho",
-                "x": 2,
-                "z": 4,
-                "isPlayer1": false,
-                "isPlayer2": false,
-                "jolWeapon": "Pistol"
-            },
-            {
-                "pieceName": "Jol",
                 "whosPiece": "Han",
                 "x": 0,
                 "z": 6,
@@ -171,6 +162,15 @@
                 "isPlayer1": false,
                 "isPlayer2": false,
                 "jolWeapon": "Pistol"
+            },
+            {
+                "pieceName": "Jol",
+                "whosPiece": "Han",
+                "x": 4,
+                "z": 6,
+                "isPlayer1": false,
+                "isPlayer2": false,
+                "jolWeapon": "Bow"
             },
             {
                 "pieceName": "Jol",

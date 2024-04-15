@@ -11,9 +11,6 @@ public class PoDMR : Gun
     [SerializeField] Transform muzzlePoint;
     [SerializeField] ParticleSystem muzzleFlash;
 
-    [SerializeField] int maxMagazine;       // 탄창이 꽉 차있는 경우 탄환의 수
-    [SerializeField] int curMagazine;       // 현재 탄창의 탄환 수
-
     float rate = 2f;        // 발사간격
 
     bool checkFirable;

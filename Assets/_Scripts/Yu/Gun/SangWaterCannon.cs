@@ -11,7 +11,7 @@ public class SangWaterCannon : Gun
 
     bool checkFirable;
 
-    private void Start()
+    protected override void Start()
     {
         checkFirable = true;
     }

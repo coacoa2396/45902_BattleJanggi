@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6683232570068823589}
   - component: {fileID: 1585292290769867366}
   - component: {fileID: 5799505566927295354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Debris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4912,7 +4912,7 @@ GameObject:
   - component: {fileID: 8450474585404597913}
   - component: {fileID: 4442225449159467501}
   - component: {fileID: 1263646978233464115}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BubblesSurfaceAcid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9923,7 +9923,7 @@ GameObject:
   - component: {fileID: 7185557310090393881}
   - component: {fileID: 6569736132856202876}
   - component: {fileID: 5780775005686298066}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BubblesRisingAcid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14965,7 +14965,7 @@ GameObject:
   - component: {fileID: 3169273674087079878}
   - component: {fileID: 289716922292488464}
   - component: {fileID: 687216986607405549}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EndBurst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19863,7 +19863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3474029027071922188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SangDecelerateArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19897,7 +19897,7 @@ GameObject:
   - component: {fileID: 7110040273144804060}
   - component: {fileID: 1821244415258148306}
   - component: {fileID: 5280929009399179667}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RisingEmbers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24806,7 +24806,7 @@ GameObject:
   - component: {fileID: 4598153052153566232}
   - component: {fileID: 2974591793629652608}
   - component: {fileID: 3118656357372558603}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29761,7 +29761,7 @@ GameObject:
   - component: {fileID: 8031722774406701822}
   - component: {fileID: 8004058296208578986}
   - component: {fileID: 3415956767799170900}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AcidCauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29871,7 +29871,7 @@ GameObject:
   - component: {fileID: 2410745282486705192}
   - component: {fileID: 2215291925374057613}
   - component: {fileID: 1996233046165319450}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SangWall_Complete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30020,7 +30020,7 @@ GameObject:
   - component: {fileID: 231463447709217923}
   - component: {fileID: 5635275986746047057}
   - component: {fileID: 1790380778652290977}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TinyBubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34987,7 +34987,7 @@ GameObject:
   - component: {fileID: 1029446645542515264}
   - component: {fileID: 8659308285328219933}
   - component: {fileID: 8050849908946794387}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EndSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

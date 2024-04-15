@@ -7,8 +7,9 @@ public class FPSPo : FPSPiece
 {
     [SerializeField] FPSPoSkill skill;
 
-    public void OnSkill(InputValue value)
+    protected override void OnSkill(InputValue value)
     {
         skill.OnSkill(value);
+        base.OnSkill(value);
     }
 }

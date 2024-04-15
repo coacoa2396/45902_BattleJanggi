@@ -24,7 +24,7 @@ public class FPSSang : FPSPiece
         muzzlePoint.SetActive(false);
     }
 
-    private void OnSkill(InputValue value)
+    protected override void OnSkill(InputValue value)
     {
         if (CanUseSkill)
         {
@@ -35,6 +35,7 @@ public class FPSSang : FPSPiece
             CanUseSkill = false;
 
             CoolTime(60f);
+            base.OnSkill(value);
         }
     }
 

@@ -463,7 +463,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &7696354237939297712
 MonoBehaviour:
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69bf8aa0fbcf05e43936fa283406d26b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50cb2a82c80f3cc4793b28d88742f0b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1046,6 +1046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   damage: 5
+  maxMagazine: 0
+  curMagazine: 0
   bullet: {fileID: 7206925092389850155, guid: 7852624f8afa2b5498098aa56cc6df68, type: 3}
   muzzlePoint: {fileID: 2876101231695592373}
   muzzleFlash: {fileID: 7840446318633972182}
@@ -1167,6 +1169,8 @@ GameObject:
   - component: {fileID: 1673088210252710616}
   - component: {fileID: 2387205166372487175}
   - component: {fileID: -7873678249107168858}
+  - component: {fileID: -7573385399428616083}
+  - component: {fileID: 3774454034451622768}
   m_Layer: 14
   m_Name: FPSElephant_Cho
   m_TagString: Untagged
@@ -1368,18 +1372,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  controller: {fileID: 0}
-  rigid: {fileID: 0}
-  weapon: {fileID: 0}
-  animator: {fileID: 0}
+  controller: {fileID: 5385261725029991376}
+  rigid: {fileID: 1190153772860866171}
+  weapon: {fileID: 3083798462311631553}
+  animator: {fileID: 6498849829435521325}
   groundCheck:
     serializedVersion: 2
     m_Bits: 256
+  hanCheck:
+    serializedVersion: 2
+    m_Bits: 8192
+  uiCoolTime1: {fileID: 0}
+  uiCoolTime2: {fileID: 0}
   moveSpeed: 10
   breakPower: 5
   isGround: 0
   isWalking: 0
   isJumping: 0
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3774454034451622768}
+        m_TargetAssemblyTypeName: WinCho, Assembly-CSharp
+        m_MethodName: ChoWin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   waterBalloon: {fileID: 4169184217479831589, guid: daf49ecee01fba040b469e5c6336b279, type: 3}
   muzzlePoint: {fileID: 5040166954996950907}
 --- !u!114 &-7873678249107168858
@@ -1395,6 +1419,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 5872815145767605076}
+--- !u!114 &-7573385399428616083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925936952526395120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4914d95507d14544a9c8faf6ec852f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimCanvas: {fileID: 5539165276531384434}
+--- !u!114 &3774454034451622768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925936952526395120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a3798411f99234993d3b147d907334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8122340605640182003
 GameObject:
   m_ObjectHideFlags: 0

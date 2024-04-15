@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2273388671407969304}
   - component: {fileID: 3858631917125217667}
   - component: {fileID: 1862942399113206922}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Obstacle-28.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3316713169530186102}
   - component: {fileID: 6267933133461000461}
   - component: {fileID: 4891896410597240718}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MaWallAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4935,7 +4935,7 @@ GameObject:
   - component: {fileID: 633281628787655809}
   - component: {fileID: 2107558508462941481}
   - component: {fileID: 6247771413883605988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MagicSparkles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9761,7 +9761,7 @@ GameObject:
   - component: {fileID: 13727017602576605}
   - component: {fileID: 2929874067136030589}
   - component: {fileID: 7410209360589737528}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MaWall_Complete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9881,7 +9881,7 @@ GameObject:
   - component: {fileID: 8665887619114849919}
   - component: {fileID: 4378729078058522632}
   - component: {fileID: 4768593653519826109}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Waves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14705,7 +14705,7 @@ GameObject:
   - component: {fileID: 8113143120127386762}
   - component: {fileID: 7003827083480658207}
   - component: {fileID: 3323870991480540916}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Obstacle-28.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}

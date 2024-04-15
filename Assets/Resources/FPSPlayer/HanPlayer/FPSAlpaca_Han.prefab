@@ -77,7 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2247462475713034977}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: MuzzlePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,13 +116,14 @@ GameObject:
   - component: {fileID: 8805779515318158012}
   - component: {fileID: 4037479939588628546}
   - component: {fileID: 5463342598632635457}
+  - component: {fileID: 2495106627234671251}
   m_Layer: 13
   m_Name: FPSAlpaca_Han
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4982578873842433932
 Transform:
   m_ObjectHideFlags: 0
@@ -170,7 +171,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: GamePad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -331,6 +332,19 @@ MonoBehaviour:
   lerpRate: 0.105
   isKnockbacking: 0
   ySpeed: 0
+--- !u!114 &2495106627234671251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765764966523003222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 5641168986429533568}
 --- !u!1 &877789334010622466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1560,7 @@ MonoBehaviour:
   playerInput: {fileID: 5641168986429533568}
   skillInput: {fileID: 6850959036892949411}
   muzzlePoint: {fileID: 2247462475713034977}
+  binder: {fileID: 2495106627234671251}
   speed: 10
   damage: 10
 --- !u!114 &6850959036892949411
@@ -1624,7 +1639,7 @@ GameObject:
   - component: {fileID: 1068903697249238065}
   - component: {fileID: 5814527348200270167}
   - component: {fileID: 2604162342238319259}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1887,7 +1902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2591729897031501810}
   - component: {fileID: 2591418184937040757}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: SkyCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}

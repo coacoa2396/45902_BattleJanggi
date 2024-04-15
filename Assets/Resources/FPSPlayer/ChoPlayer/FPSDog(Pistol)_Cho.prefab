@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 8451350281703966581}
   - component: {fileID: 7518072325810411896}
   - component: {fileID: 1961322674247180265}
+  - component: {fileID: -9103986936004069863}
   m_Layer: 14
   m_Name: FPSDog(Pistol)_Cho
   m_TagString: Untagged
@@ -451,6 +452,19 @@ MonoBehaviour:
   lerpRate: 0.105
   isKnockbacking: 0
   ySpeed: 0
+--- !u!114 &-9103986936004069863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901606590622490297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 5549699796441294848}
 --- !u!1 &3126722455307803966
 GameObject:
   m_ObjectHideFlags: 0

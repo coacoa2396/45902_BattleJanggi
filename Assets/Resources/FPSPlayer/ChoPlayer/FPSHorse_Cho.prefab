@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 7333844031445579526}
   - component: {fileID: 195880363402118838}
   - component: {fileID: 5365543359527613838}
+  - component: {fileID: 4989105136541538984}
   m_Layer: 14
   m_Name: FPSHorse_Cho
   m_TagString: Untagged
@@ -1014,6 +1015,19 @@ MonoBehaviour:
   isGround: 0
   isWalking: 0
   isJumping: 0
+--- !u!114 &4989105136541538984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266919077495251283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 3024610263206588631}
 --- !u!1 &5327411708491171191
 GameObject:
   m_ObjectHideFlags: 0

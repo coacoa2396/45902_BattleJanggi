@@ -18,6 +18,7 @@ public class FPSPoSkill : MonoBehaviour
     [SerializeField] PlayerInput playerInput;
     [SerializeField] PlayerInput skillInput;
     [SerializeField] Transform muzzlePoint;
+    [SerializeField] FPSControllerBinder binder;
 
     [SerializeField] float speed;
     [SerializeField] float damage;
@@ -79,6 +80,15 @@ public class FPSPoSkill : MonoBehaviour
                 skyCam.Priority = 1;
                 StartCoroutine(CoolTimeCheck());
                 transform.position = playerInput.gameObject.transform.position;
+               
+                if (gameObject.layer == LayerMask.NameToLayer("Han"))   // 1P  
+                {
+                    binder.SetGamepad0();
+                }
+                else
+                {
+                    binder.SetGamepad1();
+                }
             }
         }
     }

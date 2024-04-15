@@ -1382,6 +1382,7 @@ GameObject:
   - component: {fileID: 669028280080827468}
   - component: {fileID: 6893805282492857743}
   - component: {fileID: 7699089525347490514}
+  - component: {fileID: -1844885812886081014}
   m_Layer: 14
   m_Name: FPSTiger_Cho
   m_TagString: Untagged
@@ -1597,6 +1598,19 @@ MonoBehaviour:
   isWalking: 0
   isJumping: 0
   skill: {fileID: 5978426436116916291}
+--- !u!114 &-1844885812886081014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6729344840074106049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 851365836667497104}
 --- !u!1 &7123707921210473399
 GameObject:
   m_ObjectHideFlags: 0

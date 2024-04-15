@@ -591,6 +591,7 @@ GameObject:
   - component: {fileID: 5405713723451701882}
   - component: {fileID: 871355957967912894}
   - component: {fileID: 7489325838769475974}
+  - component: {fileID: 8275963744771604980}
   m_Layer: 13
   m_Name: FPSCat_Han
   m_TagString: Untagged
@@ -805,6 +806,19 @@ MonoBehaviour:
   lerpRate: 0.105
   isKnockbacking: 0
   ySpeed: 0
+--- !u!114 &8275963744771604980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615555792621008303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 3510108349578316230}
 --- !u!1 &3617726413275649802
 GameObject:
   m_ObjectHideFlags: 0

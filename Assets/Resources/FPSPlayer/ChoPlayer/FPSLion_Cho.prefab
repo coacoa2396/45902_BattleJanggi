@@ -633,6 +633,7 @@ GameObject:
   - component: {fileID: 8624783596841634505}
   - component: {fileID: 8925774895568636719}
   - component: {fileID: 8587782019519953105}
+  - component: {fileID: 6162817521404328220}
   m_Layer: 14
   m_Name: FPSLion_Cho
   m_TagString: Untagged
@@ -852,6 +853,19 @@ MonoBehaviour:
   lerpRate: 0.105
   isKnockbacking: 0
   ySpeed: 0
+--- !u!114 &6162817521404328220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649458047198716413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 6769075946365292415}
 --- !u!1 &2763689898041367689
 GameObject:
   m_ObjectHideFlags: 0

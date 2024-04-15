@@ -868,6 +868,7 @@ GameObject:
   - component: {fileID: 2073353045398674394}
   - component: {fileID: 5523747703228284872}
   - component: {fileID: 3718602519389508712}
+  - component: {fileID: -8803156230655099760}
   m_Layer: 13
   m_Name: FPSHorse_Han
   m_TagString: Untagged
@@ -1081,6 +1082,19 @@ MonoBehaviour:
   isGround: 0
   isWalking: 0
   isJumping: 0
+--- !u!114 &-8803156230655099760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4209834205843571071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 5351670790838798260}
 --- !u!1 &4832216544769040280
 GameObject:
   m_ObjectHideFlags: 0

@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 5715914557633113117}
   - component: {fileID: 1311162353071092395}
   - component: {fileID: 5638129143251579147}
+  - component: {fileID: -3594396394909325060}
   m_Layer: 14
   m_Name: FPSCat_Cho
   m_TagString: Untagged
@@ -443,6 +444,19 @@ MonoBehaviour:
   lerpRate: 0.105
   isKnockbacking: 0
   ySpeed: 0
+--- !u!114 &-3594396394909325060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819907296072509138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 3568166323609579785}
 --- !u!1 &2389525044167173400
 GameObject:
   m_ObjectHideFlags: 0

@@ -1099,6 +1099,7 @@ GameObject:
   - component: {fileID: 6377387467924569308}
   - component: {fileID: 6047495471518324392}
   - component: {fileID: 8084870940038358158}
+  - component: {fileID: -3863057339153629710}
   m_Layer: 13
   m_Name: FPSTiger_Han
   m_TagString: Untagged
@@ -1314,6 +1315,19 @@ MonoBehaviour:
   isWalking: 0
   isJumping: 0
   skill: {fileID: 8300096753000430975}
+--- !u!114 &-3863057339153629710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416922587502132683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b7830febccd7749b34fdb82b26b57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 1524727186119034055}
 --- !u!1 &4678703781770814373
 GameObject:
   m_ObjectHideFlags: 0

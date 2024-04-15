@@ -15,7 +15,7 @@ public class FPSLoadManager : MonoBehaviour
         PieceData data = Manager.Data.GameData.pieceData;
         foreach (PiecePosData piece in data.pieces)
         {
-            if (!piece.isPlayer1 || !piece.isPlayer2)       // 플레이어블 기물이 아니면 
+            if (!piece.isPlayer1 && !piece.isPlayer2)       // 플레이어블 기물이 아니면 
             {
                 // 기물의 이름을 체크
                 switch (piece.pieceName)
@@ -123,39 +123,43 @@ public class FPSLoadManager : MonoBehaviour
                     switch (piece.pieceName)
                     {
                         case "Cha":
-                            FPSPiece fpsCha = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSTiger_Cho");
+                            FPSPiece fpsCha = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSTiger_Cho");
                             Instantiate(fpsCha, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
                         case "Sang":
-                            FPSPiece fpsSang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSElephant_Cho");
+                            FPSPiece fpsSang = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSElephant_Cho");
                             Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
                         case "Ma":
-                            FPSPiece fpsMa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSHorse_Cho");
+                            FPSPiece fpsMa = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSHorse_Cho");
                             Instantiate(fpsMa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
                         case "Po":
-                            FPSPiece fpsPo = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSAlpaca_Cho");
+                            FPSPiece fpsPo = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSAlpaca_Cho");
                             Instantiate(fpsPo, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
                         case "Jol":
                             FPSPiece fpsJol;
                             if (piece.jolWeapon.Equals("Bow"))
                             {
-                                fpsJol = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSDog(Bow)_Cho");
+                                fpsJol = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSDog(Bow)_Cho");
                             }
                             else
                             {
-                                fpsJol = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSDog(Pistol)_Cho");
+                                fpsJol = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSDog(Pistol)_Cho");
+                            }
+                            if (fpsJol == null)
+                            {
+                                Debug.Log("Null");
                             }
                             Instantiate(fpsJol, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
                         case "Sa":
-                            FPSPiece fpsSa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSCat_Cho");
+                            FPSPiece fpsSa = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSCat_Cho");
                             Instantiate(fpsSa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
                          /*case "Jang":
-                             FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSLion_Cho");
+                             FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSLion_Cho");
                              Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                              break;*/
                     }

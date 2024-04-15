@@ -14,7 +14,6 @@ public class JanggiScene : BaseScene
 {
     [SerializeField] GameObject SoundUI;
 
-
     bool isOn;
 
     public override IEnumerator LoadingRoutine()

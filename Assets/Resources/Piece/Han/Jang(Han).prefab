@@ -154,6 +154,9 @@ MonoBehaviour:
   checkSpot:
     serializedVersion: 2
     m_Bits: 128
+  OnJangDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2713613439469457458
 PrefabInstance:
   m_ObjectHideFlags: 0

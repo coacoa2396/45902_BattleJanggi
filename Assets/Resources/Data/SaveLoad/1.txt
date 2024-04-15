@@ -101,6 +101,7 @@
                 "jolWeapon": ""
             },
             {
+
                 "pieceName": "Jol",
                 "whosPiece": "Cho",
                 "x": 0,

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// 제작 : 찬규, 예린
+/// fps씬의 데이터 로드 관리
 /// </summary>
 public class FPSLoadManager : MonoBehaviour
 {

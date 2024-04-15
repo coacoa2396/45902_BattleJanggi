@@ -11,6 +11,8 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
     private void Start()
     {
         TitletoJanggi();
+
+        Manager.KillListManager.SetImageNum();
     }
     /// <summary>
     /// 제작 : 찬규

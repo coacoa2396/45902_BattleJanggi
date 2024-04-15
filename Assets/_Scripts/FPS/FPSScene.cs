@@ -36,7 +36,8 @@ public class FPSScene : BaseScene
 
     public void SceneChange(string sceneName)
     {
-        Manager.Scene.LoadScene(sceneName);        
+        Manager.Scene.LoadScene(sceneName);
+        Manager.KillListManager.gameObject.SetActive(true);
     }
 
     public void HanWin()

@@ -124,12 +124,12 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Cho",
-                "x": 4,
+                "x": 2,
                 "z": 3,
                 "isPlayer1": false,
                 "isPlayer2": false,
-                "imageNum": 12,
-                "jolWeapon": "Bow"
+                "imageNum": 13,
+                "jolWeapon": "Pistol"
             },
             {
                 "pieceName": "Jol",
@@ -154,22 +154,22 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Cho",
-                "x": 2,
+                "x": 4,
                 "z": 4,
                 "isPlayer1": true,
                 "isPlayer2": true,
-                "imageNum": 13,
-                "jolWeapon": "Pistol"
+                "imageNum": 12,
+                "jolWeapon": "Bow"
             },
             {
                 "pieceName": "Jol",
                 "whosPiece": "Han",
-                "x": 2,
+                "x": 4,
                 "z": 5,
                 "isPlayer1": true,
                 "isPlayer2": false,
-                "imageNum": 13,
-                "jolWeapon": "Pistol"
+                "imageNum": 12,
+                "jolWeapon": "Bow"
             },
             {
                 "pieceName": "Jol",
@@ -184,12 +184,12 @@
             {
                 "pieceName": "Jol",
                 "whosPiece": "Han",
-                "x": 4,
+                "x": 2,
                 "z": 6,
                 "isPlayer1": false,
                 "isPlayer2": false,
-                "imageNum": 12,
-                "jolWeapon": "Bow"
+                "imageNum": 13,
+                "jolWeapon": "Pistol"
             },
             {
                 "pieceName": "Jol",

@@ -203,5 +203,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPlayer:
     serializedVersion: 2
-    m_Bits: 64
-  damage: 2
+    m_Bits: 24576
+  damage: 10

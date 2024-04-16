@@ -29960,7 +29960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 24576
 --- !u!65 &2215291925374057613
 BoxCollider:
   m_ObjectHideFlags: 0

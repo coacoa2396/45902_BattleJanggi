@@ -9869,7 +9869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 24576
 --- !u!1 &6047205161427991095
 GameObject:
   m_ObjectHideFlags: 0

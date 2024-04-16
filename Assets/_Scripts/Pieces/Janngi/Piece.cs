@@ -1,7 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -29,14 +26,14 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     int imageNum;
 
-    public Spot UnderSpot {  get { return underSpot; } }
+    public Spot UnderSpot { get { return underSpot; } }
     public Material PieceMaterial { get { return pieceMaterial; } }
     public string PieceName { get { return pieceName; } }
     public string WhosPiece { get { return whosPiece; } }
     public bool IsClicked { set { isClicked = value; } }
     public bool IsPlayer1 { get { return isPlayer1; } set { isPlayer1 = value; } }
     public bool IsPlayer2 { get { return isPlayer2; } set { isPlayer2 = value; } }
-    public int ImageNum { get { return imageNum; } set {  imageNum = value; } }
+    public int ImageNum { get { return imageNum; } set { imageNum = value; } }
 
 
     List<Spot> CanGoSpots = new List<Spot>();

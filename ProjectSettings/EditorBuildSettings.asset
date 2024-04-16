@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene/FPSScene.unity
     guid: 7bd2e36a68586064daa9fb4426f0567c
+  - enabled: 1
+    path: Assets/Scenes/Scene/EndScene.unity
+    guid: 138bff5a26319974b9d9d3d7f6c845d3
   m_configObjects: {}

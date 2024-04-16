@@ -36,9 +36,8 @@ public class JanggiLogic : Singleton<JanggiLogic>
     /// <summary>
     /// 장기씬이 시작될때 
     /// </summary>
-    private void Start()
-    {
-        
+    void Start()
+    {        
         Spot[] children = GetComponentsInChildren<Spot>();
         for (int z = 0; z < 10; z++)
         {
@@ -54,5 +53,7 @@ public class JanggiLogic : Singleton<JanggiLogic>
                 spots[z, x].SetPos(z, x);
             }
         }
+
+        Manager.JanggiLoadManager.LoadStart();
     }    
 }

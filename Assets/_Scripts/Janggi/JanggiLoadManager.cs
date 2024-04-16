@@ -8,7 +8,7 @@ using UnityEngine.XR;
 /// </summary>
 public class JanggiLoadManager : Singleton<JanggiLoadManager>
 {
-    private void Start()
+    public void LoadStart()
     {
         TitletoJanggi();
 

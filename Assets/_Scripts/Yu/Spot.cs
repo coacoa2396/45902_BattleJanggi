@@ -40,7 +40,7 @@ public class Spot : MonoBehaviour, IPointerClickHandler
     public bool IsCastle { get { return isCastle; } }
     public bool ISCastleCenter { get { return isCastleCenter; } }
     public Dictionary<char, int> DiagonalPos { get { return diagonalPos; } }
-    private void Start()
+    private void Awake()
     {
         thisPos = new Dictionary<char, int>();
 

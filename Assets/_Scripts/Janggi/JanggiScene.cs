@@ -62,10 +62,18 @@ public class JanggiScene : BaseScene
     public void HanWin()
     {
         Manager.Game.GameWin = "Han";
+        Manager.Scene.LoadScene("EndScene");
+        Manager.KillListManager.gameObject.SetActive(false);
+
+        Manager.JanggiLogic.IsSet = true;
     }
 
     public void ChoWin()
     {
         Manager.Game.GameWin = "Cho";
+        Manager.Scene.LoadScene("EndScene");
+        Manager.KillListManager.gameObject.SetActive(false);
+
+        Manager.JanggiLogic.IsSet = true;
     }
 }

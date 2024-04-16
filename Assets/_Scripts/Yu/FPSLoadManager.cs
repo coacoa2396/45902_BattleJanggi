@@ -16,7 +16,6 @@ public class FPSLoadManager : MonoBehaviour
 
         foreach (PiecePosData piece in data.pieces)
         {
-            Debug.Log("in");
             if (!piece.isPlayer1 && !piece.isPlayer2)       // 플레이어블 기물이 아니면 
             {
                 // 기물의 이름을 체크

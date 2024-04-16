@@ -10,9 +10,16 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
 {
     public void LoadStart()
     {
-        TitletoJanggi();
-
-        Manager.KillListManager.SetImageNum();
+        if (Manager.JanggiTurn.Turn <= 1)
+        {
+            TitletoJanggi();
+            Manager.KillListManager.SetImageNum();
+            Manager.KillListManager.gameObject.SetActive(true);
+        }
+        else
+        {
+            FPStoJanggi();
+        }
     }
     /// <summary>
     /// 제작 : 찬규
@@ -124,6 +131,8 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
         PieceData data = Manager.Data.GameData.pieceData;
         Piece FPS1 = null;
         Piece FPS2 = null;
+        Spot FPS1Spot = null;
+        Spot FPS2Spot = null;
 
         foreach (PiecePosData piece in data.pieces)
         {
@@ -133,43 +142,80 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                 {
                     case "Cha":
                         Piece HanCha = Manager.Resource.Load<Piece>("Piece/Han/Cha(Han)");
-                        Piece _HanCha = Instantiate(HanCha, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer1 == true) FPS1 = _HanCha;
+                        Piece _HanCha = Instantiate(HanCha, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        if (piece.isPlayer1 == true)
+                        {
+                            FPS1 = _HanCha;
+                            FPS1Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                     case "Ma":
                         Piece HanMa = Manager.Resource.Load<Piece>("Piece/Han/Ma(Han)");
-                        Piece _HanMa = Instantiate(HanMa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer1 == true) FPS1 = _HanMa;
+                        Piece _HanMa = Instantiate(HanMa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        if (piece.isPlayer1 == true)
+                        {
+                            FPS1 = _HanMa;
+                            FPS1Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                     case "Sang":
                         Piece HanSang = Manager.Resource.Load<Piece>("Piece/Han/Sang(Han)");
-                        Piece _HanSang = Instantiate(HanSang, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer1 == true) FPS1 = _HanSang;
+                        Piece _HanSang = Instantiate(HanSang, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        if (piece.isPlayer1 == true)
+                        {
+                            FPS1 = _HanSang;
+                            FPS1Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                     case "Po":
                         Piece HanPo = Manager.Resource.Load<Piece>("Piece/Han/Po(Han)");
-                        Piece _HanPo = Instantiate(HanPo, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer1 == true) FPS1 = _HanPo;
+                        Piece _HanPo = Instantiate(HanPo, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        if (piece.isPlayer1 == true)
+                        {
+                            FPS1 = _HanPo;
+                            FPS1Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                     case "Sa":
                         Piece HanSa = Manager.Resource.Load<Piece>("Piece/Han/Sa(Han)");
-                        Piece _HanSa = Instantiate(HanSa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer1 == true) FPS1 = _HanSa;
+                        Piece _HanSa = Instantiate(HanSa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        if (piece.isPlayer1 == true)
+                        {
+                            FPS1 = _HanSa;
+                            FPS1Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
-                    case "Jol(Bow)":
-                        Piece HanJolBow = Manager.Resource.Load<Piece>("Piece/Han/Jol(Han)Bow");
-                        Piece _HanJolBow = Instantiate(HanJolBow, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer1 == true) FPS1 = _HanJolBow;
-                        break;
-                    case "Jol(Pistol)":
-                        Piece HanJolPistol = Manager.Resource.Load<Piece>("Piece/Han/Jol(Han)Pistol");
-                        Piece _HanJolPistol = Instantiate(HanJolPistol, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer1 == true) FPS1 = _HanJolPistol;
-                        break;
+                    case "Jol":
+                        if (piece.jolWeapon == "Bow")
+                        {
+                            Piece HanJolBow = Manager.Resource.Load<Piece>("Piece/Han/Jol(Han)Bow");
+                            Piece _HanJolBow = Instantiate(HanJolBow, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                            if (piece.isPlayer1 == true)
+                            {
+                                FPS1 = _HanJolBow;
+                                FPS1Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                            }
+                            break;
+                        }
+                        else
+                        {
+                            Piece HanJolPistol = Manager.Resource.Load<Piece>("Piece/Han/Jol(Han)Pistol");
+                            Piece _HanJolPistol = Instantiate(HanJolPistol, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                            if (piece.isPlayer1 == true)
+                            {
+                                FPS1 = _HanJolPistol;
+                                FPS1Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                            }
+                            break;
+                        }
                     case "Jang":
                         Piece HanJang = Manager.Resource.Load<Piece>("Piece/Han/Jang(Han)");
-                        Piece _HanJang = Instantiate(HanJang, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer1 == true) FPS1 = _HanJang;
+                        Piece _HanJang = Instantiate(HanJang, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        if (piece.isPlayer1 == true)
+                        {
+                            FPS1 = _HanJang;
+                            FPS1Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                 }
             }
@@ -180,42 +226,79 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Cha":
                         Piece ChoCha = Manager.Resource.Load<Piece>("Piece/Cho/Cha(Cho)");
                         Piece _ChoCha = Instantiate(ChoCha, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer2 == true) FPS2 = _ChoCha;
+                        if (piece.isPlayer2 == true)
+                        {
+                            FPS2 = _ChoCha;
+                            FPS2Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                     case "Ma":
                         Piece ChoMa = Manager.Resource.Load<Piece>("Piece/Cho/Ma(Cho)");
                         Piece _ChoMa = Instantiate(ChoMa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer2 == true) FPS2 = _ChoMa;
+                        if (piece.isPlayer2 == true)
+                        {
+                            FPS2 = _ChoMa;
+                            FPS2Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                     case "Sang":
                         Piece ChoSang = Manager.Resource.Load<Piece>("Piece/Cho/Sang(Cho)");
                         Piece _ChoSang = Instantiate(ChoSang, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer2 == true) FPS2 = _ChoSang;
+                        if (piece.isPlayer2 == true)
+                        {
+                            FPS2 = _ChoSang;
+                            FPS2Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                     case "Po":
                         Piece ChoPo = Manager.Resource.Load<Piece>("Piece/Cho/Po(Cho)");
                         Piece _ChoPo = Instantiate(ChoPo, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer2 == true) FPS2 = _ChoPo;
+                        if (piece.isPlayer2 == true)
+                        {
+                            FPS2 = _ChoPo;
+                            FPS2Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                     case "Sa":
                         Piece ChoSa = Manager.Resource.Load<Piece>("Piece/Cho/Sa(Cho)");
                         Piece _ChoSa = Instantiate(ChoSa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer2 == true) FPS2 = _ChoSa;
+                        if (piece.isPlayer2 == true)
+                        {
+                            FPS2 = _ChoSa;
+                            FPS2Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
-                    case "Jol(Bow)":
-                        Piece ChoJolBow = Manager.Resource.Load<Piece>("Piece/Cho/Jol(Cho)Bow");
-                        Piece _ChoJolBow = Instantiate(ChoJolBow, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer2 == true) FPS2 = _ChoJolBow;
-                        break;
-                    case "Jol(Pistol)":
-                        Piece ChoJolPistol = Manager.Resource.Load<Piece>("Piece/Cho/Jol(Cho)Pistol");
-                        Piece _ChoJolPistol = Instantiate(ChoJolPistol, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer2 == true) FPS2 = _ChoJolPistol;
-                        break;
+                    case "Jol":
+                        if (piece.jolWeapon == "Bow")
+                        {
+                            Piece ChoJolBow = Manager.Resource.Load<Piece>("Piece/Cho/Jol(Cho)Bow");
+                            Piece _ChoJolBow = Instantiate(ChoJolBow, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            if (piece.isPlayer2 == true)
+                            {
+                                FPS2 = _ChoJolBow;
+                                FPS2Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                            }
+                            break;
+                        }
+                        else
+                        {
+                            Piece ChoJolPistol = Manager.Resource.Load<Piece>("Piece/Cho/Jol(Cho)Pistol");
+                            Piece _ChoJolPistol = Instantiate(ChoJolPistol, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            if (piece.isPlayer2 == true)
+                            {
+                                FPS2 = _ChoJolPistol;
+                                FPS2Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                            }
+                            break;
+                        }
                     case "Jang":
                         Piece ChoJang = Manager.Resource.Load<Piece>("Piece/Cho/Jang(Cho)");
                         Piece _ChoJang = Instantiate(ChoJang, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                        if (piece.isPlayer2 == true) FPS2 = _ChoJang;
+                        if (piece.isPlayer2 == true)
+                        {
+                            FPS2 = _ChoJang;
+                            FPS2Spot = Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x];
+                        }
                         break;
                 }
             }
@@ -226,14 +309,17 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
             Debug.Log("오류");
         }
 
+        Debug.Log(Manager.Game.FpsWin);
+        Debug.Log(Manager.JanggiTurn.CurrentTurn);
+
         // FPS 승리 패배 구현
-        if (Manager.JanggiTurn.CurrentTurn == "Han")        // 한나라의 턴인 경우
+        if (Manager.JanggiTurn.CurrentTurn == "Cho")        // 한나라의 턴인 경우
         {
-            if (Manager.Game.FpsWin == FPS1.name)           // 한나라 기물이 이겼을 때
+            if (Manager.Game.FpsWin.Equals("Han"))           // 한나라 기물이 이겼을 때
             {
-                Spot FPS2Spot = FPS2.UnderSpot;
+
                 FPS2.Die();
-                FPS1.MovePiece(FPS2Spot);
+                FPS1.transform.position = new Vector3(FPS2Spot.transform.position.x, FPS1.transform.position.y, FPS2Spot.transform.position.z);
             }
             else                                            // 초나라 기물이 이겼을 때
             {
@@ -242,15 +328,14 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
         }
         else                                                // 초나라의 턴인 경우
         {
-            if (Manager.Game.FpsWin == FPS1.name)           // 한나라 기물이 이겼을 때
+            if (Manager.Game.FpsWin.Equals("Han"))           // 한나라 기물이 이겼을 때
             {
                 FPS2.Die();
             }
             else                                            // 초나라 기물이 이겼을 때
             {
-                Spot FPS1Spot = FPS1.UnderSpot;
                 FPS1.Die();
-                FPS2.MovePiece(FPS1Spot);
+                FPS2.transform.position = new Vector3(FPS1Spot.transform.position.x, FPS2.transform.position.y, FPS1Spot.transform.position.z);
             }
         }
     }

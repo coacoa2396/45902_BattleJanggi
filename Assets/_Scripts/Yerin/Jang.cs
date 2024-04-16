@@ -306,5 +306,6 @@ public class Jang : Piece
     public override void Die()
     {
         OnJangDied?.Invoke();
+        base.Die();
     }
 }

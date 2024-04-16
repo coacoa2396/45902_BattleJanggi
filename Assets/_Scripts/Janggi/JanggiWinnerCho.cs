@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinCho : MonoBehaviour
+public class JanggiWinnerCho : MonoBehaviour
 {
     [ContextMenu("ChoWin")]
     public void ChoWin()
     {
-        FPSScene curScene = FindObjectOfType<FPSScene>();
+        JanggiScene curScene = FindObjectOfType<JanggiScene>();
 
         curScene.ChoWin();
     }

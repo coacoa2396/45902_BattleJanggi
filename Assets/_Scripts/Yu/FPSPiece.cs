@@ -194,7 +194,7 @@ public class FPSPiece : MonoBehaviour
         Die();
     }
 
-    /// <summary>
+    /// <summary>as
     /// 사망하는 함수
     /// </summary>
     protected virtual void Die()

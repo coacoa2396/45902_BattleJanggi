@@ -28,6 +28,12 @@ public class Title : BaseScene
 
         isClicked = true;
         Manager.Game.GameWinReset();
+
+        if (Manager.JanggiTurn != null && Manager.JanggiTurn.Turn > 1)
+        {
+            Manager.JanggiTurn.Turn = 1;
+        }
+
         Manager.Scene.LoadScene("JanggiScene");
     }
 

@@ -37,7 +37,7 @@ public class JanggiTurn : Singleton<JanggiTurn>
         currentTurn = Han;
 
         timer = baseTime;
-        turn = 0;
+        turn = 1;
     }
 
     private void Update()

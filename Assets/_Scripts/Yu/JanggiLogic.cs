@@ -28,10 +28,12 @@ public class JanggiLogic : Singleton<JanggiLogic>
 
     bool clickedPieceExist;
     Piece clickedPiece;
+    bool isSet;
 
     public Spot[,] JanggiLogicSituation { get { return spots; } }
     public bool ClickedPieceExist { get { return clickedPieceExist; } set { clickedPieceExist = value; } }
     public Piece ClickedPiece { get { return clickedPiece; } set { clickedPiece = value; } }
+    public bool IsSet { get { return isSet; } set { isSet = value; } }
 
     /// <summary>
     /// 장기씬이 시작될때 
@@ -54,6 +56,6 @@ public class JanggiLogic : Singleton<JanggiLogic>
             }
         }
 
-        Manager.JanggiLoadManager.LoadStart();
+        isSet = true;
     }    
 }

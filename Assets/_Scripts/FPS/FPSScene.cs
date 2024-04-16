@@ -42,6 +42,7 @@ public class FPSScene : BaseScene
 
     public void HanWin()
     {
+        Debug.Log("SceneFuc");
         Manager.Game.FpsWin = "Han";
         SceneChange("JanggiScene");
     }

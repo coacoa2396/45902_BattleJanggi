@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinHan : MonoBehaviour
+public class JanggiWinnerHan : MonoBehaviour
 {
     [ContextMenu("HanWin")]
     public void HanWin()
     {
-        FPSScene curScene = FindObjectOfType<FPSScene>();
+        JanggiScene curScene = FindObjectOfType<JanggiScene>();
 
         curScene.HanWin();
     }

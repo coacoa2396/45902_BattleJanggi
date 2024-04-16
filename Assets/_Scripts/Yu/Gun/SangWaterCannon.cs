@@ -10,10 +10,11 @@ public class SangWaterCannon : Gun
     [SerializeField] float rate;        // 발사간격
 
     bool checkFirable;
+    bool isReloading;
 
     protected override void Start()
     {
-        checkFirable = true;
+        checkFirable = true;        
     }
 
     public override void Fire()

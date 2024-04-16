@@ -14,11 +14,13 @@ public class PoDMR : Gun
     float rate = 2f;        // 발사간격
 
     bool checkFirable;
+    bool isReloading;
 
     protected override void Start()
     {
         base.Start();
         checkFirable = true;
+        isReloading = false;
     }
 
     void OnReload(InputValue value)
@@ -45,6 +47,11 @@ public class PoDMR : Gun
         }
         else
         {
+            isReloading = true;
+
+            if (isReloading)
+                return;
+
             StartCoroutine(Reload());
         }
     }
@@ -61,6 +68,7 @@ public class PoDMR : Gun
         checkFirable = false;
         yield return new WaitForSeconds(1f);
         checkFirable = true;
+        isReloading = false;
         curMagazine = maxMagazine;
     }
 }

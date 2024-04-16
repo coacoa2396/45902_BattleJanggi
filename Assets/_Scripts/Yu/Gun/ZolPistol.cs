@@ -13,11 +13,13 @@ public class ZolPistol : Gun
 
     float rate = 0.75f;     // 연사속도
     bool isfire;
+    bool isReloading;
 
     protected override void Start()
     {
         base.Start();
         isfire = true;
+        isReloading = false;
     }
 
     void OnReload(InputValue value)
@@ -44,6 +46,11 @@ public class ZolPistol : Gun
         }
         else
         {
+            isReloading = true;
+
+            if (isReloading)
+                return;
+
             StartCoroutine(Reload());
         }
     }
@@ -60,6 +67,7 @@ public class ZolPistol : Gun
         isfire = false;
         yield return new WaitForSeconds(1f);
         isfire = true;
+        isReloading = false;
         curMagazine = maxMagazine;
     }
 }

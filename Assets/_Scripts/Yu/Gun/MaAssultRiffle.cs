@@ -53,12 +53,7 @@ public class MaAssultRiffle : Gun
                 yield return new WaitForSeconds(rate);
             }
             else
-            {
-
-                if (isReloading)
-                    continue;
-
-                isReloading = true;
+            {                                
                 StartCoroutine(Reload());
                 break;
             }
@@ -80,8 +75,7 @@ public class MaAssultRiffle : Gun
     {
         isfire = false;
         yield return new WaitForSeconds(1f);
-        isfire = true;
-        isReloading = false;
+        isfire = true;        
         curMagazine = maxMagazine;
     }
 }

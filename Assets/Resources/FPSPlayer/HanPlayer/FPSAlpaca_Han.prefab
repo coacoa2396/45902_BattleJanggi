@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5463342598632635457}
   - component: {fileID: 2495106627234671251}
   - component: {fileID: -541689864462576189}
-  - component: {fileID: 8579043166360560588}
+  - component: {fileID: -8145467115786892687}
   m_Layer: 13
   m_Name: FPSAlpaca_Han
   m_TagString: Untagged
@@ -276,6 +276,9 @@ MonoBehaviour:
   hanCheck:
     serializedVersion: 2
     m_Bits: 8192
+  dieCheck:
+    serializedVersion: 2
+    m_Bits: 131072
   uiCoolTime1: {fileID: 0}
   uiCoolTime2: {fileID: 0}
   moveSpeed: 10
@@ -286,9 +289,9 @@ MonoBehaviour:
   OnDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8579043166360560588}
-        m_TargetAssemblyTypeName: WinHan, Assembly-CSharp
-        m_MethodName: HanWin
+      - m_Target: {fileID: -8145467115786892687}
+        m_TargetAssemblyTypeName: WinCho, Assembly-CSharp
+        m_MethodName: ChoWin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -380,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimCanvas: {fileID: 5637693515720559263}
---- !u!114 &8579043166360560588
+--- !u!114 &-8145467115786892687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -389,7 +392,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 765764966523003222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 425b05e449a3356459946ede18b3941a, type: 3}
+  m_Script: {fileID: 11500000, guid: a1a3798411f99234993d3b147d907334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &877789334010622466

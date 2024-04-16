@@ -31,7 +31,7 @@ public class UICoolTime2 : MonoBehaviour
 
     private void LateUpdate()
     {
-        text.text = $"{timer}";
+        text.text = $"{(int)timer}";
     }
 
     public void CoolTimeCheck()

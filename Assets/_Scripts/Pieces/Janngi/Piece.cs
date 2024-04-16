@@ -55,8 +55,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         {
             if (underSpot.InList)
             {
-                isPlayer1 = true;
-                Manager.JanggiLogic.ClickedPiece.isPlayer1 = true;
+                //isPlayer1 = true;
+                //Manager.JanggiLogic.ClickedPiece.isPlayer1 = true;
 
                 // 여기서 FPS씬으로 이동
                 TransFPS(underSpot.ListPiece, this);

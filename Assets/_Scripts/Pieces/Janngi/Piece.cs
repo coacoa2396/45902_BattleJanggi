@@ -20,6 +20,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
     [SerializeField] Image GetImage;
     [SerializeField] string whosPiece;
+    [SerializeField] AudioSource moveSound;
 
     bool isPlayer1 = false;
     bool isPlayer2 = false;
@@ -149,6 +150,8 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
 
         pieceMaterial.color = Color.white;
         isClicked = false;
+
+        moveSound.Play();
 
         DeleteList();
         Manager.JanggiTurn.OnTurn();

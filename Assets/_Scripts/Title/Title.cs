@@ -11,6 +11,8 @@ public class Title : BaseScene
 
     bool isOn;
 
+    bool isClicked;
+
     private void Start()
     {
         isOn = false;
@@ -19,6 +21,12 @@ public class Title : BaseScene
 
     public void StartGame()
     {
+        if (isClicked)
+        {
+            return;
+        }
+
+        isClicked = true;
         Manager.Game.GameWinReset();
         Manager.Scene.LoadScene("JanggiScene");
     }

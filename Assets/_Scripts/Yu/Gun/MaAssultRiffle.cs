@@ -54,11 +54,11 @@ public class MaAssultRiffle : Gun
             }
             else
             {
-                isReloading = true;
 
                 if (isReloading)
                     continue;
 
+                isReloading = true;
                 StartCoroutine(Reload());
                 break;
             }

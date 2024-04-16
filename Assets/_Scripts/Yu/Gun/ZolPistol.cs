@@ -46,10 +46,10 @@ public class ZolPistol : Gun
         }
         else
         {
-            isReloading = true;
 
             if (isReloading)
                 return;
+            isReloading = true;
 
             StartCoroutine(Reload());
         }

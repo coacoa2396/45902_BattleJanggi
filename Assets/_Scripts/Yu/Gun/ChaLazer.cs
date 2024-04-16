@@ -72,11 +72,11 @@ public class ChaLazer : Weapon
         }
         else
         {
-            isReloading = true;
 
             if (isReloading)
                 return;
 
+            isReloading = true;
             StartCoroutine(Reload());
         }
     }

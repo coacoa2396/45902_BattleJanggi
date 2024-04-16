@@ -47,10 +47,10 @@ public class ShurikenInit : ChargingWeapon
         }
         else
         {
-            isReloading = true;
 
             if(isReloading)
                 return;
+            isReloading = true;
             StartCoroutine(Reload());
         }
     }

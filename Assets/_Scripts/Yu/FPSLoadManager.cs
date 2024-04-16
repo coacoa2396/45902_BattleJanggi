@@ -88,7 +88,7 @@ public class FPSLoadManager : MonoBehaviour
                             break;
                         case "Sang":
                             FPSPiece fpsSang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSElephant_Han");
-                            Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+                            Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
                             break;
                         case "Ma":
                             FPSPiece fpsMa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSHorse_Han");
@@ -130,7 +130,7 @@ public class FPSLoadManager : MonoBehaviour
                             break;
                         case "Sang":
                             FPSPiece fpsSang = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSElephant_Cho");
-                            Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            Instantiate(fpsSang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                             break;
                         case "Ma":
                             FPSPiece fpsMa = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSHorse_Cho");

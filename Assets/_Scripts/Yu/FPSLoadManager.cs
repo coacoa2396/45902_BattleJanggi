@@ -13,8 +13,10 @@ public class FPSLoadManager : MonoBehaviour
     {
         Manager.Data.LoadData(1);
         PieceData data = Manager.Data.GameData.pieceData;
+
         foreach (PiecePosData piece in data.pieces)
         {
+            Debug.Log("in");
             if (!piece.isPlayer1 && !piece.isPlayer2)       // 플레이어블 기물이 아니면 
             {
                 // 기물의 이름을 체크
@@ -112,10 +114,10 @@ public class FPSLoadManager : MonoBehaviour
                             FPSPiece fpsSa = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSCat_Han");
                             Instantiate(fpsSa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
                             break;
-                         case "Jang":
-                             FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSLion_Han");
-                             Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
-                             break;
+                        case "Jang":
+                            FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/HanPlayer/FPSLion_Han");
+                            Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            break;
                     }
                 }
                 else                               // 기물이 초나라인 경우
@@ -158,10 +160,10 @@ public class FPSLoadManager : MonoBehaviour
                             FPSPiece fpsSa = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSCat_Cho");
                             Instantiate(fpsSa, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
                             break;
-                         case "Jang":
-                             FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSLion_Cho");
-                             Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
-                             break;
+                        case "Jang":
+                            FPSPiece fpsJang = Manager.Resource.Load<FPSPiece>("FPSPlayer/ChoPlayer/FPSLion_Cho");
+                            Instantiate(fpsJang, spots.FPSLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+                            break;
                     }
                 }
             }

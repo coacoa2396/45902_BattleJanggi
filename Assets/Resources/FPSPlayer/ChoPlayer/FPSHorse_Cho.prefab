@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 5365543359527613838}
   - component: {fileID: 4989105136541538984}
   - component: {fileID: 5324852645325877068}
-  - component: {fileID: -453412377350404688}
+  - component: {fileID: -6555901629865556229}
   m_Layer: 14
   m_Name: FPSHorse_Cho
   m_TagString: Untagged
@@ -1015,6 +1015,9 @@ MonoBehaviour:
   hanCheck:
     serializedVersion: 2
     m_Bits: 8192
+  dieCheck:
+    serializedVersion: 2
+    m_Bits: 131072
   uiCoolTime1: {fileID: 0}
   uiCoolTime2: {fileID: 0}
   moveSpeed: 10
@@ -1025,9 +1028,9 @@ MonoBehaviour:
   OnDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -453412377350404688}
-        m_TargetAssemblyTypeName: WinCho, Assembly-CSharp
-        m_MethodName: ChoWin
+      - m_Target: {fileID: -6555901629865556229}
+        m_TargetAssemblyTypeName: WinHan, Assembly-CSharp
+        m_MethodName: HanWin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1063,7 +1066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimCanvas: {fileID: 2797762914729260572}
---- !u!114 &-453412377350404688
+--- !u!114 &-6555901629865556229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1072,7 +1075,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5266919077495251283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1a3798411f99234993d3b147d907334, type: 3}
+  m_Script: {fileID: 11500000, guid: 425b05e449a3356459946ede18b3941a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5327411708491171191

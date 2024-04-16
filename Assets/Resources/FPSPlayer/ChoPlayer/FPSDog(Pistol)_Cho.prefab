@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 1961322674247180265}
   - component: {fileID: -9103986936004069863}
   - component: {fileID: 5713725312951571182}
-  - component: {fileID: -5311024113412574712}
+  - component: {fileID: 3885269778564838740}
   m_Layer: 14
   m_Name: FPSDog(Pistol)_Cho
   m_TagString: Untagged
@@ -397,6 +397,9 @@ MonoBehaviour:
   hanCheck:
     serializedVersion: 2
     m_Bits: 8192
+  dieCheck:
+    serializedVersion: 2
+    m_Bits: 131072
   uiCoolTime1: {fileID: 0}
   uiCoolTime2: {fileID: 0}
   moveSpeed: 10
@@ -407,9 +410,9 @@ MonoBehaviour:
   OnDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -5311024113412574712}
-        m_TargetAssemblyTypeName: WinCho, Assembly-CSharp
-        m_MethodName: ChoWin
+      - m_Target: {fileID: 3885269778564838740}
+        m_TargetAssemblyTypeName: WinHan, Assembly-CSharp
+        m_MethodName: HanWin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -500,7 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimCanvas: {fileID: 2090430911041879909}
---- !u!114 &-5311024113412574712
+--- !u!114 &3885269778564838740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -509,7 +512,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2901606590622490297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1a3798411f99234993d3b147d907334, type: 3}
+  m_Script: {fileID: 11500000, guid: 425b05e449a3356459946ede18b3941a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3126722455307803966

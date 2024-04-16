@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 5638129143251579147}
   - component: {fileID: -3594396394909325060}
   - component: {fileID: 3438589144211618406}
-  - component: {fileID: 1896972352566094947}
+  - component: {fileID: 1050969072888117752}
   m_Layer: 14
   m_Name: FPSCat_Cho
   m_TagString: Untagged
@@ -388,6 +388,9 @@ MonoBehaviour:
   hanCheck:
     serializedVersion: 2
     m_Bits: 8192
+  dieCheck:
+    serializedVersion: 2
+    m_Bits: 131072
   uiCoolTime1: {fileID: 0}
   uiCoolTime2: {fileID: 0}
   moveSpeed: 10
@@ -398,9 +401,9 @@ MonoBehaviour:
   OnDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1896972352566094947}
-        m_TargetAssemblyTypeName: WinCho, Assembly-CSharp
-        m_MethodName: ChoWin
+      - m_Target: {fileID: 1050969072888117752}
+        m_TargetAssemblyTypeName: WinHan, Assembly-CSharp
+        m_MethodName: HanWin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -492,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimCanvas: {fileID: 2157015395091536419}
---- !u!114 &1896972352566094947
+--- !u!114 &1050969072888117752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,7 +504,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819907296072509138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1a3798411f99234993d3b147d907334, type: 3}
+  m_Script: {fileID: 11500000, guid: 425b05e449a3356459946ede18b3941a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2389525044167173400

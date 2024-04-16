@@ -20,6 +20,7 @@ public class FPSPiece : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] LayerMask groundCheck;
     [SerializeField] LayerMask hanCheck;
+    [SerializeField] LayerMask dieCheck;
     [SerializeField] UICoolTime1 uiCoolTime1;
     [SerializeField] UICoolTime2 uiCoolTime2;
 
@@ -210,6 +211,11 @@ public class FPSPiece : MonoBehaviour
             groundList.Add(other);
             isGround = true;
             isJumping = false;
+        }
+
+        if (dieCheck.Contain(other.gameObject.layer))
+        {
+            Die();
         }
     }
     private void OnTriggerExit(Collider other)

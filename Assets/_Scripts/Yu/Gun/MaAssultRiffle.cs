@@ -13,6 +13,7 @@ public class MaAssultRiffle : Gun
 
     float rate = 0.2f;     // 연사속도
     bool isfire;
+    bool isReloading;
 
     Coroutine coroutine;
 
@@ -20,6 +21,7 @@ public class MaAssultRiffle : Gun
     {
         base.Start();
         isfire = true;
+        isReloading = false;
     }
 
     void OnReload(InputValue value)
@@ -52,6 +54,11 @@ public class MaAssultRiffle : Gun
             }
             else
             {
+                isReloading = true;
+
+                if (isReloading)
+                    continue;
+
                 StartCoroutine(Reload());
                 break;
             }
@@ -74,6 +81,7 @@ public class MaAssultRiffle : Gun
         isfire = false;
         yield return new WaitForSeconds(1f);
         isfire = true;
+        isReloading = false;
         curMagazine = maxMagazine;
     }
 }

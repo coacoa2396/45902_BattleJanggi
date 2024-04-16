@@ -1047,8 +1047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 7398856554534650246}
-  normalScope: {fileID: 0}
-  zoomScope: {fileID: 0}
+  normalScope: {fileID: 4008320870130791246}
+  zoomScope: {fileID: 968497551510661624}
   normalFOV: 60
   zoomFOV: 20
   lerpFOV: 0

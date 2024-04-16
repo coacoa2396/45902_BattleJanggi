@@ -16,10 +16,10 @@ public class FPSCameraController : MonoBehaviour
 
     private void Update()
     {
-        xRotation -= inputDir.y * mouseSensitivity * Time.deltaTime;
+        xRotation -= inputDir.y * mouseSensitivity * 2f * Time.deltaTime;
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
 
-        transform.Rotate(Vector3.up, inputDir.x * mouseSensitivity * Time.deltaTime);
+        transform.Rotate(Vector3.up, inputDir.x * mouseSensitivity * 2f * Time.deltaTime);
         cameraRoot.localRotation = Quaternion.Euler(xRotation, 0, 0);
         muzzlePointRoot.localRotation = Quaternion.Euler(xRotation, 0, 0);
         //cameraRoot.Rotate(Vector3.right, -inputDir.y * mouseSensitivity * Time.deltaTime);

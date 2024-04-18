@@ -25,7 +25,7 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
     bool isPlayer1 = false;
     bool isPlayer2 = false;
 
-    int imageNum;
+    [SerializeField] int imageNum;
 
     public Spot UnderSpot { get { return underSpot; } }
     public Material PieceMaterial { get { return pieceMaterial; } }
@@ -55,9 +55,6 @@ public class Piece : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, 
         {
             if (underSpot.InList)
             {
-                //isPlayer1 = true;
-                //Manager.JanggiLogic.ClickedPiece.isPlayer1 = true;
-
                 // 여기서 FPS씬으로 이동
                 TransFPS(underSpot.ListPiece, this);
                 underSpot.ClickMove();    // 움직이는건 승리를 했을 경우에 실행

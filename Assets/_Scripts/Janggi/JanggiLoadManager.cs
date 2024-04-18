@@ -143,6 +143,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Cha":
                         Piece HanCha = Manager.Resource.Load<Piece>("Piece/Han/Cha(Han)");
                         Piece _HanCha = Instantiate(HanCha, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        _HanCha.ImageNum = piece.imageNum;
                         if (piece.isPlayer1 == true)
                         {
                             FPS1 = _HanCha;
@@ -152,6 +153,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Ma":
                         Piece HanMa = Manager.Resource.Load<Piece>("Piece/Han/Ma(Han)");
                         Piece _HanMa = Instantiate(HanMa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        _HanMa.ImageNum = piece.imageNum;
                         if (piece.isPlayer1 == true)
                         {
                             FPS1 = _HanMa;
@@ -161,6 +163,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Sang":
                         Piece HanSang = Manager.Resource.Load<Piece>("Piece/Han/Sang(Han)");
                         Piece _HanSang = Instantiate(HanSang, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        _HanSang.ImageNum = piece.imageNum;
                         if (piece.isPlayer1 == true)
                         {
                             FPS1 = _HanSang;
@@ -170,6 +173,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Po":
                         Piece HanPo = Manager.Resource.Load<Piece>("Piece/Han/Po(Han)");
                         Piece _HanPo = Instantiate(HanPo, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        _HanPo.ImageNum = piece.imageNum;
                         if (piece.isPlayer1 == true)
                         {
                             FPS1 = _HanPo;
@@ -179,6 +183,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Sa":
                         Piece HanSa = Manager.Resource.Load<Piece>("Piece/Han/Sa(Han)");
                         Piece _HanSa = Instantiate(HanSa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                        _HanSa.ImageNum = piece.imageNum;
                         if (piece.isPlayer1 == true)
                         {
                             FPS1 = _HanSa;
@@ -190,6 +195,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                         {
                             Piece HanJolBow = Manager.Resource.Load<Piece>("Piece/Han/Jol(Han)Bow");
                             Piece _HanJolBow = Instantiate(HanJolBow, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                            _HanJolBow.ImageNum = piece.imageNum;
                             if (piece.isPlayer1 == true)
                             {
                                 FPS1 = _HanJolBow;
@@ -201,6 +207,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                         {
                             Piece HanJolPistol = Manager.Resource.Load<Piece>("Piece/Han/Jol(Han)Pistol");
                             Piece _HanJolPistol = Instantiate(HanJolPistol, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.Euler(0, 180, 0));
+                            _HanJolPistol.ImageNum = piece.imageNum;
                             if (piece.isPlayer1 == true)
                             {
                                 FPS1 = _HanJolPistol;
@@ -226,6 +233,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Cha":
                         Piece ChoCha = Manager.Resource.Load<Piece>("Piece/Cho/Cha(Cho)");
                         Piece _ChoCha = Instantiate(ChoCha, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                        _ChoCha.ImageNum = piece.imageNum;
                         if (piece.isPlayer2 == true)
                         {
                             FPS2 = _ChoCha;
@@ -235,6 +243,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Ma":
                         Piece ChoMa = Manager.Resource.Load<Piece>("Piece/Cho/Ma(Cho)");
                         Piece _ChoMa = Instantiate(ChoMa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                        _ChoMa.ImageNum = piece.imageNum;
                         if (piece.isPlayer2 == true)
                         {
                             FPS2 = _ChoMa;
@@ -244,6 +253,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Sang":
                         Piece ChoSang = Manager.Resource.Load<Piece>("Piece/Cho/Sang(Cho)");
                         Piece _ChoSang = Instantiate(ChoSang, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                        _ChoSang.ImageNum = piece.imageNum;
                         if (piece.isPlayer2 == true)
                         {
                             FPS2 = _ChoSang;
@@ -253,6 +263,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Po":
                         Piece ChoPo = Manager.Resource.Load<Piece>("Piece/Cho/Po(Cho)");
                         Piece _ChoPo = Instantiate(ChoPo, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                        _ChoPo.ImageNum = piece.imageNum;
                         if (piece.isPlayer2 == true)
                         {
                             FPS2 = _ChoPo;
@@ -262,6 +273,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                     case "Sa":
                         Piece ChoSa = Manager.Resource.Load<Piece>("Piece/Cho/Sa(Cho)");
                         Piece _ChoSa = Instantiate(ChoSa, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                        _ChoSa.ImageNum = piece.imageNum;
                         if (piece.isPlayer2 == true)
                         {
                             FPS2 = _ChoSa;
@@ -273,6 +285,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                         {
                             Piece ChoJolBow = Manager.Resource.Load<Piece>("Piece/Cho/Jol(Cho)Bow");
                             Piece _ChoJolBow = Instantiate(ChoJolBow, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            _ChoJolBow.ImageNum = piece.imageNum;
                             if (piece.isPlayer2 == true)
                             {
                                 FPS2 = _ChoJolBow;
@@ -284,6 +297,7 @@ public class JanggiLoadManager : Singleton<JanggiLoadManager>
                         {
                             Piece ChoJolPistol = Manager.Resource.Load<Piece>("Piece/Cho/Jol(Cho)Pistol");
                             Piece _ChoJolPistol = Instantiate(ChoJolPistol, Manager.JanggiLogic.JanggiLogicSituation[piece.z, piece.x].transform.position, Quaternion.identity);
+                            _ChoJolPistol.ImageNum = piece.imageNum;
                             if (piece.isPlayer2 == true)
                             {
                                 FPS2 = _ChoJolPistol;

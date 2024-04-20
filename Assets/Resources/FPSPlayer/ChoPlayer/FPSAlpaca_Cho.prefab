@@ -1098,7 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4914d95507d14544a9c8faf6ec852f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimCanvas: {fileID: 0}
+  aimCanvas: {fileID: 7613857531289852548}
 --- !u!114 &581029857473781281
 MonoBehaviour:
   m_ObjectHideFlags: 0

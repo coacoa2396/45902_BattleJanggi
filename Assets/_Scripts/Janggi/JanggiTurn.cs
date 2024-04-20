@@ -124,4 +124,9 @@ public class JanggiTurn : Singleton<JanggiTurn>
     {
         timeLimit = StartCoroutine(CountTime());
     }
+
+    public void TimerSet()
+    {
+        timer = baseTime;
+    }
 }

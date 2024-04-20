@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetCamera : MonoBehaviour
+public class SetJanggi : MonoBehaviour
 {
     private void Start()
     {
         if (Manager.JanggiTurn.CurrentTurn != null)
         {
             Manager.JanggiCamera.FindCamare();
+            Manager.JanggiTurn.TimerSet();
         }
     }
 }

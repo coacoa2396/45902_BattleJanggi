@@ -20,4 +20,6 @@ public class GameManager : Singleton<GameManager>
     {
         GameWin = null;
     }
+
+    public bool debugMode;
 }

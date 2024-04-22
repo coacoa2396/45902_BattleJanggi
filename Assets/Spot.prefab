@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8092136126913354874}
   - component: {fileID: 3559444572594337562}
   - component: {fileID: 5702216628879467856}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -37.002, y: 36.657, z: -23.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 99631ee8b65468845a01f005181ec6e7, type: 2}
+  - {fileID: 2100000, guid: 11b1e85f14f4fe5498d104fdd9b70b5a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,3 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e59572de77f1b42ad6fe8468ea1768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCheck:
+    serializedVersion: 2
+    m_Bits: 64
+  inList: 0
+  onPiece: 0
+  checkCanGo: 0

@@ -10,6 +10,7 @@ public class SetJanggi : MonoBehaviour
         {
             Manager.JanggiCamera.FindCamare();
             Manager.JanggiTurn.TimerSet();
+            Manager.KillListManager.gameObject.SetActive(true);
         }
     }
 }

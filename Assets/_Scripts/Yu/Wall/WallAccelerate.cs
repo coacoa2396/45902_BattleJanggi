@@ -12,7 +12,7 @@ public class WallAccelerate : Wall
 
     float baseSpeed = 10f;
 
-    // TriggerEnter로 버프체크하고
+    // TriggerEnter로 체크하고
     private void OnTriggerEnter(Collider other)
     {
         if (checkPlayer.Contain(other.gameObject.layer))

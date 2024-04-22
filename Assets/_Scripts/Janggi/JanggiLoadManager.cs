@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 /// <summary>
-/// 제작 : 찬규
+/// 제작 : 찬규, 예린
 /// 장기씬의 데이터로드 관리
 /// </summary>
 public class JanggiLoadManager : Singleton<JanggiLoadManager>

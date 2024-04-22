@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// 제작 : 찬규
+/// 플레이어1의 스킬쿨타임 체크
+/// </summary>
 public class UICoolTime1 : MonoBehaviour
 {
     [SerializeField] Image circle;

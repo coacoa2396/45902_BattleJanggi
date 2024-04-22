@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 제작 : 찬규
+/// 가시벽 클래스
+/// </summary>
 public class WallSting : Wall
 {
     [SerializeField] LayerMask checkPlayer;

@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 제작 : 찬규
+/// 장기말(차)의 레일건에서 나가는 탄환
+/// </summary>
 public class ChaSkillBullet : MonoBehaviour
 {
     [SerializeField] LayerMask railGunCheck;            // 플레이어와 벽 체크

@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+/// <summary>
+/// 제작 : 찬규
+/// FPS차의 스킬 컴포넌트
+/// </summary>
 public class FPSChaSkill : MonoBehaviour
 {
     [SerializeField] Transform muzzlePoint;

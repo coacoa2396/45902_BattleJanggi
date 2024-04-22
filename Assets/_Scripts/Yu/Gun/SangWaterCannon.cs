@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 제작 : 찬규
+/// 장기말 (상)의 물대포
+/// </summary>
 public class SangWaterCannon : Gun
 {
     [SerializeField] Transform muzzlePoint;

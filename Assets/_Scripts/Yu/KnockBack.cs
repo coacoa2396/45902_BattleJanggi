@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 제작 : 찬규
+/// 넉백 관련 클래스
+/// </summary>
 public class KnockBack : MonoBehaviour
 {
     [SerializeField] LayerMask knockBackCheck;

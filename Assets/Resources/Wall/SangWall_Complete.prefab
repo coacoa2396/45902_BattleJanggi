@@ -4912,7 +4912,7 @@ GameObject:
   - component: {fileID: 8450474585404597913}
   - component: {fileID: 4442225449159467501}
   - component: {fileID: 1263646978233464115}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: BubblesSurfaceAcid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

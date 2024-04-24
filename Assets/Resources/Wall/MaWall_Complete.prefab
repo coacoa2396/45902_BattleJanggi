@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3316713169530186102}
   - component: {fileID: 6267933133461000461}
   - component: {fileID: 4891896410597240718}
-  m_Layer: 11
+  m_Layer: 18
   m_Name: MaWallAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}

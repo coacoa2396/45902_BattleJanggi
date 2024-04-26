@@ -23,6 +23,11 @@ public class EndScene : BaseScene
         {
             winner = "Cho";
         }
+
+        Destroy(Manager.JanggiLogic.gameObject);
+        Destroy(Manager.KillListManager.gameObject);
+        Destroy(Manager.JanggiTurn.gameObject);
+        Destroy(Manager.JanggiLoadManager.gameObject);
     }
     /// <summary>
     /// 게임종료 기능

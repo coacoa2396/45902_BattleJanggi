@@ -24,6 +24,7 @@ public class EndScene : BaseScene
             winner = "Cho";
         }
 
+        // 다시 게임을 시작할 수 있게 초기화 작업이 필요한 싱글톤을 가진 gameObject들을 삭제
         Destroy(Manager.JanggiLogic.gameObject);
         Destroy(Manager.KillListManager.gameObject);
         Destroy(Manager.JanggiTurn.gameObject);

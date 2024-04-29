@@ -51,7 +51,7 @@ public class DataManager : Singleton<DataManager>
         }
     }
 
-    public bool ExistData(int index = 0)
+    public bool ExistData(int index)
     {
         return File.Exists($"{path}/{index}.txt");
     }

@@ -18,12 +18,6 @@ public class ARBullet : Bullet
     {
         base.OnEnable();
         Rigid.velocity = transform.forward * Speed;
-
-        if (Manager.Game.debugMode)
-        {
-            Debug.Log(Rigid.velocity);
-            EditorApplication.isPaused = true;
-        }
     }
     /// <summary>
     /// 탄환의 피격판정

@@ -18,7 +18,8 @@ public class DataManager : Singleton<DataManager>
         gameData = new GameData();
     }
 
-    public void SaveData(int index = 0)
+    [ContextMenu("Save")]
+    public void SaveData(int index)
     {
         if (Directory.Exists(path) == false)
         {
@@ -29,7 +30,8 @@ public class DataManager : Singleton<DataManager>
         File.WriteAllText($"{path}/{index}.txt", json);
     }
 
-    public void LoadData(int index = 0)
+    [ContextMenu("Load")]
+    public void LoadData(int index)
     {
         if (File.Exists($"{path}/{index}.txt") == false)
         {
@@ -49,7 +51,7 @@ public class DataManager : Singleton<DataManager>
         }
     }
 
-    public bool ExistData(int index = 0)
+    public bool ExistData(int index)
     {
         return File.Exists($"{path}/{index}.txt");
     }

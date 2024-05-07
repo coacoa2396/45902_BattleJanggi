@@ -1,42 +1,52 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+
+[System.Serializable]
+public class Sound
+{
+    public string name;
+    public AudioClip clip;
+}
 
 public class SoundManager : Singleton<SoundManager>
 {
-    [SerializeField] AudioSource bgmSource;
-    [SerializeField] AudioSource sfxSource;
+    public AudioMixer mixer;
 
-    public float BGMVolme { get { return bgmSource.volume; } set { bgmSource.volume = value; } }
-    public float SFXVolme { get { return sfxSource.volume; } set { sfxSource.volume = value; } }
+    [SerializeField] Sound[] sfx = null;
+    [SerializeField] Sound[] bgm = null;
 
-    public void PlayBGM(AudioClip clip)
+    [SerializeField] AudioSource bgmPlayer = null;
+    [SerializeField] AudioSource sfxPlayer = null;
+
+
+    public void PlayBGM(string p_bgmName)
     {
-        if (bgmSource.isPlaying)
+        for (int i = 0; i < bgm.Length; i++)
         {
-            bgmSource.Stop();
+            if (p_bgmName == bgm[i].name)
+            {
+                bgmPlayer.clip = bgm[i].clip;
+                bgmPlayer.Play();
+            }
         }
-        bgmSource.clip = clip;
-        bgmSource.Play();
     }
 
     public void StopBGM()
     {
-        if (bgmSource.isPlaying == false)
-            return;
-
-        bgmSource.Stop();
+        bgmPlayer.Stop();
     }
 
-    public void PlaySFX(AudioClip clip)
-    {
-        sfxSource.PlayOneShot(clip);
-    }
 
-    public void StopSFX()
+    public void PlaySFX(string p_sfxName)
     {
-        if (sfxSource.isPlaying == false)
-            return;
-
-        sfxSource.Stop();
+        for (int i = 0; i < sfx.Length; i++)
+        {
+            if (p_sfxName == sfx[i].name)
+            {
+                sfxPlayer.clip = sfx[i].clip;
+                sfxPlayer.PlayOneShot(sfxPlayer.clip);
+            }
+        }
     }
 }

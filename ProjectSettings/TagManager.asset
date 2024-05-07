@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HanCamera
+  - ChoCamera
   layers:
   - Default
   - TransparentFX
@@ -13,16 +15,16 @@ TagManager:
   - UI
   - Player
   - Spot
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Invisible
+  - KnockBack
+  - Wall
+  - Attack
+  - Han
+  - Cho
+  - HanCamera
+  - ChoCamera
+  - Die
   - 
   - 
   - 
@@ -38,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UI
+    uniqueID: 158264423
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -10,7 +10,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] Canvas inGameCanvas;
 
     [SerializeField] Image popUpBlocker;
-    [SerializeField] Button inGameBlocker;
+    [SerializeField] ButtonSound inGameBlocker;
 
     private Stack<PopUpUI> popUpStack = new Stack<PopUpUI>();
     private float prevTimeScale;

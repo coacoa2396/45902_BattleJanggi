@@ -10,6 +10,10 @@ public static class Manager
     public static SoundManager Sound { get { return SoundManager.Instance; } }
     public static UIManager UI { get { return UIManager.Instance; } }
     public static JanggiLogic JanggiLogic { get {  return JanggiLogic.Instance; } }
+    public static JanggiTurn JanggiTurn { get { return JanggiTurn.Instance; } }
+    public static JanggiCamera JanggiCamera { get { return JanggiCamera.Instance; } }
+    public static JanggiLoadManager JanggiLoadManager { get { return JanggiLoadManager.Instance; } }
+    public static KillListManager KillListManager { get {  return KillListManager.Instance; } }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()
@@ -29,5 +33,6 @@ public static class Manager
         SceneManager.CreateInstance();
         SoundManager.CreateInstance();
         UIManager.CreateInstance();
+        Data.LoadData(1);
     }
 }

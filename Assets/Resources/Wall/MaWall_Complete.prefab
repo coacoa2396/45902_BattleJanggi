@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3316713169530186102}
   - component: {fileID: 6267933133461000461}
   - component: {fileID: 4891896410597240718}
-  m_Layer: 18
+  m_Layer: 2
   m_Name: MaWallAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4935,7 +4935,7 @@ GameObject:
   - component: {fileID: 633281628787655809}
   - component: {fileID: 2107558508462941481}
   - component: {fileID: 6247771413883605988}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: MagicSparkles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9881,7 +9881,7 @@ GameObject:
   - component: {fileID: 8665887619114849919}
   - component: {fileID: 4378729078058522632}
   - component: {fileID: 4768593653519826109}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: Waves
   m_TagString: Untagged
   m_Icon: {fileID: 0}

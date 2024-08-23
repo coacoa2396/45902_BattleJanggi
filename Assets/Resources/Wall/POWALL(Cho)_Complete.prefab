@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 8094586000670050605}
   - component: {fileID: 7694431996669469110}
   - component: {fileID: 581695535274637711}
-  - component: {fileID: 5328472831507955414}
-  - component: {fileID: 1233903756136206976}
   m_Layer: 11
   m_Name: POWALL(Cho)_Complete
   m_TagString: Untagged
@@ -124,48 +122,6 @@ MonoBehaviour:
   nonAttackRange: {fileID: 8787557334854516548}
   bow: {fileID: 7126251856665798026}
   rotSpeed: 10
---- !u!135 &5328472831507955414
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583222958600485179}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 8
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &1233903756136206976
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583222958600485179}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 4
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1054584506472423091
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +133,7 @@ GameObject:
   - component: {fileID: 7443845662952440543}
   - component: {fileID: 7835680279138412624}
   - component: {fileID: 5909273878946570221}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +202,7 @@ GameObject:
   - component: {fileID: 7427285782964165545}
   - component: {fileID: 8787557334854516548}
   - component: {fileID: 1487600427300240282}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: NonAttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +272,7 @@ GameObject:
   - component: {fileID: 755991869600528052}
   - component: {fileID: 3262010326466383315}
   - component: {fileID: 879263452270405638}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: Obstacle-22.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +381,7 @@ GameObject:
   - component: {fileID: 154773823439849909}
   - component: {fileID: 3478408843240534026}
   - component: {fileID: 8109642017904736055}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: Obstacle-22-Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5502296666068602483}
   - component: {fileID: 1962614511558658471}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: Obstacle-22.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
